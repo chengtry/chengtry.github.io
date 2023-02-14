@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Even - A super concise theme for Hugo</title>
+    <title>Posts on chengtry</title>
     <link>https://chengtry.github.io/post/</link>
-    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <description>Recent content in Posts on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 14 Feb 2023 18:43:01 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
@@ -23,6 +23,15 @@
       
       <guid>https://chengtry.github.io/post/test-one/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chengtry.github.io/post/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chengtry.github.io/post/redis/</guid>
+      <description>Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进</description>
     </item>
     
   </channel>

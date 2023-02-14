@@ -30,6 +30,12 @@
   </url>
   
   <url>
+    <loc>https://chengtry.github.io/post/redis/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chengtry.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
