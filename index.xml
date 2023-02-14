@@ -5,6 +5,25 @@
     <link>https://chengtry.github.io/</link>
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 Feb 2023 18:43:01 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://chengtry.github.io/post/test/</link>
+      <pubDate>Tue, 14 Feb 2023 18:43:01 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/test/</guid>
+      <description>just test hugo!!!</description>
+    </item>
+    
+    <item>
+      <title>Test One</title>
+      <link>https://chengtry.github.io/post/test-one/</link>
+      <pubDate>Tue, 14 Feb 2023 17:55:24 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/test-one/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

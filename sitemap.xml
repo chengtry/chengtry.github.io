@@ -2,13 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chengtry.github.io/categories/</loc>
+    <loc>https://chengtry.github.io/</loc>
+    <lastmod>2023-02-14T18:43:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chengtry.github.io/</loc>
+    <loc>https://chengtry.github.io/post/</loc>
+    <lastmod>2023-02-14T18:43:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/test/</loc>
+    <lastmod>2023-02-14T18:43:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/test-one/</loc>
+    <lastmod>2023-02-14T17:55:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
