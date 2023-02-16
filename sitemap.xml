@@ -3,20 +3,27 @@
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-02-14T19:55:47+08:00</lastmod>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chengtry.github.io/post/java/</loc>
-    <lastmod>2023-02-14T19:55:47+08:00</lastmod>
+    <loc>https://chengtry.github.io/post/docker/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/java/</loc>
     <lastmod>2023-02-14T19:55:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
