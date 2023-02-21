@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Linux">
 <meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
 <meta itemprop="dateModified" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="wordCount" content="8132">
+<meta itemprop="wordCount" content="8136">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"/>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time"> 2023-02-18 </span>
         
-          <span class="more-meta"> 约 8132 字 </span>
+          <span class="more-meta"> 约 8136 字 </span>
           <span class="more-meta"> 预计阅读 17 分钟 </span>
         
       </div>
@@ -611,13 +611,9 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">我的阿里云root账户密码：Aliyunyc1999
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#创建用户名为yc的用户</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#创建用户名为yc的用户</span>
 </span></span><span class="line"><span class="cl">useradd yc
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#修改yc用户密码</span>
@@ -1623,14 +1619,10 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#第一次安装MySQL有默认密码，我的默认密码是：I8pehLnR2+t#</span>
 </span></span><span class="line"><span class="cl">mysql -uroot -pI8pehLnR2+t# （-p后面的是密码）
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#我的MySQL密码：Aliyunyc1999</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 启动mysql服务</span>
 </span></span><span class="line"><span class="cl">service mysqld start
@@ -1986,17 +1978,17 @@ Failed to start mysqld.service: Unit not found.</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建root用户</span>
-</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;Aliyunyc1999&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;（填写自己的密码）&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 报错</span>
 </span></span><span class="line"><span class="cl">ERROR <span class="m">1290</span> <span class="o">(</span>HY000<span class="o">)</span>: The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement
 </span></span><span class="line"><span class="cl">执行 flush privileges<span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 再次创建root用户</span>
-</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;Aliyunyc1999&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;（填写自己的密码）&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 再次报错</span>
 </span></span><span class="line"><span class="cl">ERROR <span class="m">1396</span> <span class="o">(</span>HY000<span class="o">)</span>: Operation CREATE USER failed <span class="k">for</span> <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span>
 </span></span><span class="line"><span class="cl">执行 drop user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 再再次创建root用户</span>
-</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;Aliyunyc1999&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">create user <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> identified by <span class="s1">&#39;（填写自己的密码）&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">OK
 </span></span><span class="line"><span class="cl"><span class="c1"># 赋予所有库所有表操作权限</span>
 </span></span><span class="line"><span class="cl">GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> WITH GRANT OPTION<span class="p">;</span>

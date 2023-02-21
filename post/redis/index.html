@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Redis">
 <meta itemprop="description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"><meta itemprop="datePublished" content="2023-02-14T19:48:43+08:00" />
 <meta itemprop="dateModified" content="2023-02-14T19:48:43+08:00" />
-<meta itemprop="wordCount" content="11893">
+<meta itemprop="wordCount" content="11414">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis"/>
 <meta name="twitter:description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"/>
@@ -130,8 +130,8 @@
       <div class="post-meta">
         <span class="post-time"> 2023-02-14 </span>
         
-          <span class="more-meta"> 约 11893 字 </span>
-          <span class="more-meta"> 预计阅读 24 分钟 </span>
+          <span class="more-meta"> 约 11414 字 </span>
+          <span class="more-meta"> 预计阅读 23 分钟 </span>
         
       </div>
     </header>
@@ -315,7 +315,6 @@
       <ul>
         <li><a href="#1添加依赖">1.添加依赖</a></li>
         <li><a href="#2yml配置">2.yml配置</a></li>
-        <li><a href="#xxxxxxxxxx1进入windos下的ssh目录用git-bash操作cd-cusersyangchengsshssh-keygenid_rsa_remote--这个是生成私钥的名称自己定义不写的话默认id_rsa-生成完私钥后还会生成一个公钥公钥名为id_rsa_remotepub2打开cusersyangchengssh中的config文件添加如下内容host-8140139--hostname-8140139--user-rootpreferredauthentications-publickey-本地文件注意这个地方是放私钥的路径identityfile-cusersyangchengsshid_rsa_remote3将公钥拷贝到服务器上也就是id_rsa_remotepub文件4在服务器上也使用-ssh-keygen-命令进入rootssh目录5-mv-rootid_rsa_remotepub-rootssh6cat-sshid_rsa_remotepub--sshauthorized_keys-需要注意的是ssh目录的权限需要为700authorized_keys设置为600chmod-700-rootsshchmod-600-rootsshauthorized_keys-如果发现修改不了权限lsattr查询chattr--ia-rootsshauthorized_keys7重启ssh服务systemctl-restart-sshd8vscode就可以免密登录这台服务器-ll--a-可以显示隐藏文件例如ssh文件shell">xxxxxxxxxx 1.进入windos下的.ssh目录（用git bash操作）cd C:\Users\yangcheng.sshssh-keygenid_rsa_remote # 这个是生成私钥的名称，自己定义。不写的话默认id_rsa# 生成完私钥后还会生成一个公钥，公钥名为id_rsa_remote.pub​2.打开C:\Users\yangcheng.ssh中的config文件，添加如下内容Host 8.140.1.39  HostName 8.140.1.39  User rootPreferredAuthentications publickey​# 本地文件，注意这个地方是放私钥的路径IdentityFile C:\Users\yangcheng.ssh\id_rsa_remote​3.将公钥拷贝到服务器上（也就是id_rsa_remote.pub文件）4.在服务器上也使用 ssh-keygen 命令，进入/root/.ssh目录5. mv /root/id_rsa_remote.pub /root/.ssh/6.cat ~/.ssh/id_rsa_remote.pub &raquo; ~/.ssh/authorized_keys# 需要注意的是：.ssh/目录的权限需要为700！authorized_keys设置为600chmod 700 /root/.sshchmod 600 /root/.ssh/authorized_keys# 如果发现修改不了权限,lsattr查询chattr -ia /root/.ssh/authorized_keys7.重启ssh服务systemctl restart sshd8.vscode就可以免密登录这台服务器# ll -a 可以显示隐藏文件（例如：.ssh文件）shell</a></li>
         <li><a href="#4遇到的问题">4.遇到的问题</a>
           <ul>
             <li><a href="#41-启动项目显示unable-to-connect-to-81401396381">4.1 启动项目显示Unable to connect to 8.140.1.39:6381</a></li>
@@ -2435,8 +2434,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">connect-timeout</span><span class="p">:</span><span class="w"> </span><span class="m">10000</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="xxxxxxxxxx1进入windos下的ssh目录用git-bash操作cd-cusersyangchengsshssh-keygenid_rsa_remote--这个是生成私钥的名称自己定义不写的话默认id_rsa-生成完私钥后还会生成一个公钥公钥名为id_rsa_remotepub2打开cusersyangchengssh中的config文件添加如下内容host-8140139--hostname-8140139--user-rootpreferredauthentications-publickey-本地文件注意这个地方是放私钥的路径identityfile-cusersyangchengsshid_rsa_remote3将公钥拷贝到服务器上也就是id_rsa_remotepub文件4在服务器上也使用-ssh-keygen-命令进入rootssh目录5-mv-rootid_rsa_remotepub-rootssh6cat-sshid_rsa_remotepub--sshauthorized_keys-需要注意的是ssh目录的权限需要为700authorized_keys设置为600chmod-700-rootsshchmod-600-rootsshauthorized_keys-如果发现修改不了权限lsattr查询chattr--ia-rootsshauthorized_keys7重启ssh服务systemctl-restart-sshd8vscode就可以免密登录这台服务器-ll--a-可以显示隐藏文件例如ssh文件shell">xxxxxxxxxx 1.进入windos下的.ssh目录（用git bash操作）cd C:\Users\yangcheng.sshssh-keygenid_rsa_remote # 这个是生成私钥的名称，自己定义。不写的话默认id_rsa# 生成完私钥后还会生成一个公钥，公钥名为id_rsa_remote.pub​2.打开C:\Users\yangcheng.ssh中的config文件，添加如下内容Host 8.140.1.39  HostName 8.140.1.39  User rootPreferredAuthentications publickey​# 本地文件，注意这个地方是放私钥的路径IdentityFile C:\Users\yangcheng.ssh\id_rsa_remote​3.将公钥拷贝到服务器上（也就是id_rsa_remote.pub文件）4.在服务器上也使用 ssh-keygen 命令，进入/root/.ssh目录5. mv /root/id_rsa_remote.pub /root/.ssh/6.cat ~/.ssh/id_rsa_remote.pub &raquo; ~/.ssh/authorized_keys# 需要注意的是：.ssh/目录的权限需要为700！authorized_keys设置为600chmod 700 /root/.sshchmod 600 /root/.ssh/authorized_keys# 如果发现修改不了权限,lsattr查询chattr -ia /root/.ssh/authorized_keys7.重启ssh服务systemctl restart sshd8.vscode就可以免密登录这台服务器# ll -a 可以显示隐藏文件（例如：.ssh文件）shell</h2>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
