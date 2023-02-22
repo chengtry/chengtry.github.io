@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Nginx - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/nginx/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Nginx" />
+<meta property="og:description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/nginx/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-22T20:22:37+08:00" />
+<meta property="article:modified_time" content="2023-02-22T20:22:37+08:00" />
+
+<meta itemprop="name" content="Nginx">
+<meta itemprop="description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少"><meta itemprop="datePublished" content="2023-02-22T20:22:37+08:00" />
+<meta itemprop="dateModified" content="2023-02-22T20:22:37+08:00" />
+<meta itemprop="wordCount" content="5328">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nginx"/>
+<meta name="twitter:description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Nginx</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-22 </span>
+        
+          <span class="more-meta"> 约 5328 字 </span>
+          <span class="more-meta"> 预计阅读 11 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nginx">nginx</a>
+      <ul>
+        <li><a href="#简介">简介</a>
+          <ul>
+            <li><a href="#1nginx是什么">1.nginx是什么</a></li>
+            <li><a href="#2nginx作用">2.nginx作用</a></li>
+          </ul>
+        </li>
+        <li><a href="#nginx安装">nginx安装</a>
+          <ul>
+            <li><a href="#第一步安装-pcre">第一步，安装 pcre</a></li>
+            <li><a href="#第二步安装所需其他依赖">第二步：安装所需其他依赖</a></li>
+            <li><a href="#第三步安装nginx">第三步：安装nginx</a></li>
+          </ul>
+        </li>
+        <li><a href="#nginx解压安装">nginx解压安装</a>
+          <ul>
+            <li><a href="#第四步测试">第四步：测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#nginx常用命令">nginx常用命令</a>
+          <ul>
+            <li><a href="#1启动命令">1.启动命令</a></li>
+            <li><a href="#2关闭命令">2.关闭命令</a></li>
+            <li><a href="#3重新加载命令">3.重新加载命令</a></li>
+          </ul>
+        </li>
+        <li><a href="#4指定配置文件">4.指定配置文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试nginx反向代理">测试nginx反向代理</a>
+      <ul>
+        <li><a href="#通过-wwwyccom访问-tomcat-初始界面">通过 <a href="http://www.yc.com">www.yc.com</a>访问 Tomcat 初始界面</a>
+          <ul>
+            <li><a href="#启动tomcat">启动tomcat</a></li>
+            <li><a href="#本机-host-文件配置">本机 host 文件配置</a></li>
+            <li><a href="#在-nginx-中进行请求转发配置反向代理配置">在 nginx 中进行请求转发配置(反向代理配置)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#负载均衡的几种常用方式">负载均衡的几种常用方式</a>
+      <ul>
+        <li><a href="#1轮询默认">1.轮询(默认)</a></li>
+        <li><a href="#2weight">2.weight</a></li>
+        <li><a href="#3ip_hash">3.ip_hash</a></li>
+        <li><a href="#4fair第三方">4.fair(第三方)</a></li>
+        <li><a href="#5url_hash第三方">5.url_hash(第三方)</a></li>
+      </ul>
+    </li>
+    <li><a href="#nginx路径配置信息">nginx路径配置信息</a>
+      <ul>
+        <li><a href="#a实际访问的端口服务http1270018080apiabc">A：实际访问的端口服务：http://127.0.0.1:8080/api/abc</a></li>
+        <li><a href="#b实际访问的端口服务http1270018080apiabc">B：实际访问的端口服务：http://127.0.0.1:8080//api/abc</a></li>
+        <li><a href="#c实际访问的端口服务http1270018080day06apiapiabc">C：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
+        <li><a href="#d实际访问的端口服务http1270018080day06apiapiabc">D：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
+        <li><a href="#e实际访问的端口服务http1270018080serverapiabc">E：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
+        <li><a href="#f实际访问的端口服务http1270018080serverapiabc">F：实际访问的端口服务：http://127.0.0.1:8080/server//api/abc</a></li>
+        <li><a href="#g实际访问的端口服务http1270018080serverapiabc">G：实际访问的端口服务：http://127.0.0.1:8080/serverapi/abc</a></li>
+        <li><a href="#h实际访问的端口服务http1270018080serverapiabc">H：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
+      </ul>
+    </li>
+    <li><a href="#遇到的问题">遇到的问题</a>
+      <ul>
+        <li><a href="#一个springboot文件上传程序用nginx代理访问报错404">一个SpringBoot文件上传程序用nginx代理，访问报错404</a></li>
+        <li><a href="#nginx代理静态资源404问题">nginx代理静态资源404问题</a></li>
+        <li><a href="#nginx实际开发环境配置信息">nginx实际开发环境配置信息</a></li>
+        <li><a href="#文件上传遇到413-request-entity-too-large请求实体太大">文件上传遇到413 Request Entity Too Large（请求实体太大）</a></li>
+        <li><a href="#nignx代理前端文件重定向后端口变了">nignx代理前端文件重定向后，端口变了</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装keepalived">安装keepalived</a>
+      <ul>
+        <li><a href="#下载安装">下载安装</a></li>
+        <li><a href="#启动停止">启动停止</a></li>
+        <li><a href="#配置systemctl">配置systemctl</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="nginx">nginx</h1>
+<h2 id="简介">简介</h2>
+<h3 id="1nginx是什么">1.nginx是什么</h3>
+<p>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。</p>
+<p>Nginx 是高性能的 HTTP 和反向代理的web服务器，处理高并发能力是十分强大的，能经受高负 载的考验,有报告表明能支持高达 50,000 个并发连接数。</p>
+<h3 id="2nginx作用">2.nginx作用</h3>
+<h4 id="1反向代理">（1）反向代理</h4>
+<p>反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端,</p>
+<p>简单来说就是真实的服务器不能直接被外部网络访问，想要访问必须通过代理。</p>
+<h4 id="2负载均衡">（2）负载均衡</h4>
+<p>负载均衡也是 Nginx 常用的一个功能，当有2台或以上服务器时，根据规则随机的将请求分发到指定的服务器上处理，负载均衡配置一般都需要同时配置反向代理，通过反向代理跳转到负载均衡。</p>
+<h4 id="3http服务器">（3）HTTP服务器</h4>
+<p>Nginx本身也是一个静态资源的服务器，当只有静态资源的时候，就可以使用Nginx来做服务器，同时现在也很流行动静分离，就可以通过Nginx来实现</p>
+<h4 id="4正向代理">（4）正向代理</h4>
+<p>意思是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。</p>
+<h2 id="nginx安装">nginx安装</h2>
+<h3 id="第一步安装-pcre">第一步，安装 pcre</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解压文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar –xvf pcre-8.37.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入解压缩的 pcre-8.37 执行 ./configure,解压之后进行编译</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">依次执行以下命令
+</span></span><span class="line"><span class="cl">./configure
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="第二步安装所需其他依赖">第二步：安装所需其他依赖</h3>
+<p>安装openss，zlib，gcc依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum -y install make zlib zlib-devel gcc-c++ libtool    openssl openssl-devel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="第三步安装nginx">第三步：安装nginx</h3>
+<p>nginx官网下载：nginx.org</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -xvf nginx-1.19.8.tar.gz
+</span></span><span class="line"><span class="cl">进入nginx目录下执行 ./configure
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span><span class="line"><span class="cl">安装成功后 usr/local 下会增一个 nginx 文件夹
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx解压安装">nginx解压安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1 解压</span>
+</span></span><span class="line"><span class="cl">cd到安装目录下
+</span></span><span class="line"><span class="cl">tar -zxvf nginx-1.12.2.tar.gz
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 进入home目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> nginx-1.12.2
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 /ths/nginx 要安装的目录</span>
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/ths/nginx 
+</span></span><span class="line"><span class="cl"><span class="c1"># 4 编译并安装</span>
+</span></span><span class="line"><span class="cl">make <span class="o">&amp;&amp;</span> make install  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="第四步测试">第四步：测试</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/nginx/sbin/
+</span></span><span class="line"><span class="cl">./nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">浏览器直接通过ip地址访问，测试能否成功！<span class="o">(</span>这里如果访问不成，进不去，要考虑是否将防火墙关闭！<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx常用命令">nginx常用命令</h2>
+<h3 id="1启动命令">1.启动命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#在/usr/local/nginx/sbin 目录下执行</span>
+</span></span><span class="line"><span class="cl">./nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2关闭命令">2.关闭命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#在/usr/local/nginx/sbin 目录下执行</span>
+</span></span><span class="line"><span class="cl">./nginx -s stop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3重新加载命令">3.重新加载命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#在/usr/local/nginx/sbin 目录下执行</span>
+</span></span><span class="line"><span class="cl">./nginx -s reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4指定配置文件">4.指定配置文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./nginx -c /usr/local/nginx.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="测试nginx反向代理">测试nginx反向代理</h1>
+<h2 id="通过-wwwyccom访问-tomcat-初始界面">通过 <a href="https://www.yc.com">www.yc.com</a>访问 Tomcat 初始界面</h2>
+<h3 id="启动tomcat">启动tomcat</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">在tomcat的bin目录下输入
+</span></span><span class="line"><span class="cl">./startup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="本机-host-文件配置">本机 host 文件配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">host文件所在目录：C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\d</span>rivers<span class="se">\e</span>tc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#手动设置nginx反向代理  将www.yc.com映射至8.140.1.39</span>
+</span></span><span class="line"><span class="cl">8.140.1.39  www.yc.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="在-nginx-中进行请求转发配置反向代理配置">在 nginx 中进行请求转发配置(反向代理配置)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">修改nginx.conf配置文件
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        listen       80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server_name  8.131.111.20<span class="p">;</span>    <span class="c1">#nginx访问地址</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#charset koi8-r;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#access_log  logs/host.access.log  main;</span>
+</span></span><span class="line"><span class="cl">        location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_pass http://8.131.111.20:8080<span class="p">;</span>    <span class="c1">#转发到目标地址</span>
+</span></span><span class="line"><span class="cl">            index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        location /ResourceCatalog <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              add_header <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span> <span class="s1">&#39;*&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Credentials&#39;</span> <span class="s1">&#39;true&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header Cache-Control private<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Methods&#39;</span> <span class="s1">&#39;GET, POST, OPTIONS&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">               add_header <span class="s1">&#39;Access-Control-Allow-Headers&#39;</span> <span class="s1">&#39;DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">              add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="k">return</span> 200<span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            proxy_pass http://10.100.241.203:8077/ResourceCatalog<span class="p">;</span>
+</span></span><span class="line"><span class="cl">       <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#error_page  404              /404.html;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># redirect server error pages to the static page /50x.html</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">        error_page   <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span>  /50x.html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="负载均衡的几种常用方式">负载均衡的几种常用方式</h1>
+<h2 id="1轮询默认">1.轮询(默认)</h2>
+<p>每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器宕机，能自动剔除掉。</p>
+<h2 id="2weight">2.weight</h2>
+<p>weight代表权重，默认为1，权重越高被分配的客户端越多。</p>
+<p>指定轮询几率，weight和访问比率成正比，用户后端服务器性能不均的情况。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">upstream myserver <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8080 <span class="nv">weight</span><span class="o">=</span>5<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8081 <span class="nv">weight</span><span class="o">=</span>10<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如上，8080的权重为5 8081权重为10，则nginx 负载均衡分配时，分配的8081比例更大</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3ip_hash">3.ip_hash</h2>
+<p>每个请求按访问IP的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session问题，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">upstream myserver <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        ip_hash<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8081<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如上，每个请求按访问 ip 的hash 结果分配，即：某一个用户访问该服务器，根据该用户的ip地址分配一个ip_hash，并随机分配到端口为8080或者8081的服务器，该用户这个ip下次再访问服务器时，仍然默认访问上次分配的服务器，而不会再次随机分配。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4fair第三方">4.fair(第三方)</h2>
+<p>按后端服务器的响应时间来分配请求，响应时间短的优先分配，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">upstream myserver <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 123.56.241.139:8081<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        fair<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如上，访问该服务器时，通过判断 8080 或者 8081 服务器响应的时间，来进行分配访问，谁的响应时间短，优先访问谁。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5url_hash第三方">5.url_hash(第三方)</h2>
+<p>按访问url的hash结果来分配请求，使每个url定向 。到同一个后端服务器，后端服务器为缓存时比较有效。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">upstream backserver <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    server 192.168.1.101:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server 192.168.1.102:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server 192.168.1.103:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">hash</span> <span class="nv">$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    hash_method crc32<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="nginx路径配置信息">nginx路径配置信息</h1>
+<h2 id="a实际访问的端口服务http1270018080apiabc">A：实际访问的端口服务：http://127.0.0.1:8080/api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#A 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="b实际访问的端口服务http1270018080apiabc">B：实际访问的端口服务：http://127.0.0.1:8080//api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#B 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="c实际访问的端口服务http1270018080day06apiapiabc">C：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#C 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="d实际访问的端口服务http1270018080day06apiapiabc">D：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#D 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="e实际访问的端口服务http1270018080serverapiabc">E：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#E 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/server/<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="f实际访问的端口服务http1270018080serverapiabc">F：实际访问的端口服务：http://127.0.0.1:8080/server//api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#F 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/server/<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="g实际访问的端口服务http1270018080serverapiabc">G：实际访问的端口服务：http://127.0.0.1:8080/serverapi/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#G 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/server<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="h实际访问的端口服务http1270018080serverapiabc">H：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#H 访问http://127.0.0.1:8080/day06api/api/abc</span>
+</span></span><span class="line"><span class="cl">location /day06api <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   proxy_pass http://127.0.0.1:8080/server<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">1.proxy_pass 最后有斜线时(即端口后只有斜线,例如A和B中的proxy_pass)，location 最后有斜线时，最终组成的url:proxy_pass + location最后一个斜线以后的部分
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2.proxy_pass 最后有斜线时(即端口后只有斜线,例如A和B中的proxy_pass)，location 最后无斜线时，最终组成的url:proxy_pass + 斜线 + location后面的所有部分(但不包含location后面的所有部分的第一个斜线) //其实就是比1多个斜线
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3.proxy_pass 最后无斜线时，location 最后有斜线时，最终组成的url:proxy_pass + location + 请求url中location以后的所有部分(不包含第一个/)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4.proxy_pass 最后无斜线时，location 最后无斜线时，最终组成的url:proxy_pass + location + “/” + 请求url中location以后的所有部分(不包含第一个/)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">5.proxy_pass 最后有斜线时(且已经包含了至少一级目录,例如E和F中的proxy_pass)，location 最后有斜线时，最终组成的url:proxy_pass + location以后的所有部分(但不包含第一个/)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">6.proxy_pass 最后有斜线时(且已经包含了至少一级目录,例如E和F中的proxy_pass)，location 最后无斜线时，最终组成的url:proxy_pass + “/” + location以后的所有部分(包含第一个/)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">7.proxy_pass 最后无斜线时(且包含了至少一级目录,例如G和H中的proxy_pass)，location 最后有斜线时，最终组成的url:proxy_pass + location以后的所有部分(不包含第一个/)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">8.proxy_pass 最后无斜线时(且包含了至少一级目录,例如G和H中的proxy_pass)，location 最后无斜线时，最终组成的url:proxy_pass + location以后的所有部分(包含第一个/)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="遇到的问题">遇到的问题</h1>
+<h2 id="一个springboot文件上传程序用nginx代理访问报错404">一个SpringBoot文件上传程序用nginx代理，访问报错404</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="o">.</span> <span class="n">问题发现一</span>
+</span></span><span class="line"><span class="cl"><span class="n">程序部署的IP地址</span><span class="err">：</span> <span class="n">8</span><span class="o">.</span><span class="na">140</span><span class="o">.</span><span class="na">1</span><span class="o">.</span><span class="na">39</span><span class="o">:</span><span class="n">8765</span>
+</span></span><span class="line"><span class="cl"><span class="n">路径什么的都没有问题</span><span class="err">，</span><span class="n">最后F12的时候看到404访问的IP端口是</span> <span class="n">8</span><span class="o">.</span><span class="na">140</span><span class="o">.</span><span class="na">1</span><span class="o">.</span><span class="na">39</span><span class="o">:</span><span class="n">80</span><span class="err">，</span><span class="n">这个明显就不对</span>
+</span></span><span class="line"><span class="cl"><span class="n">查看nginx</span><span class="o">.</span><span class="na">conf发现出现G</span><span class="err">（</span><span class="n">上面nginx路径配置信息中的G</span><span class="err">）</span><span class="n">中一样的问题</span><span class="err">，</span><span class="n">修改配置重启nginx访问成功</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">2</span><span class="o">.</span> <span class="n">问题发现二</span>
+</span></span><span class="line"><span class="cl"><span class="n">程序访问地址</span><span class="err">：</span><span class="n">http</span><span class="o">:</span><span class="c1">//8.140.1.39/upload/file（加上文件）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">用ApiPost调用发现报错404</span><span class="err">，</span><span class="n">地址是</span><span class="err">：</span><span class="s">&#34;path&#34;</span><span class="o">:</span> <span class="s">&#34;/uploadfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">返回信息</span><span class="err">：</span>  
+</span></span><span class="line"><span class="cl">  <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;timestamp&#34;</span><span class="o">:</span> <span class="s">&#34;2022-02-07T02:41:09.663+00:00&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;status&#34;</span><span class="o">:</span> <span class="n">404</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;error&#34;</span><span class="o">:</span> <span class="s">&#34;Not Found&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;path&#34;</span><span class="o">:</span> <span class="s">&#34;/uploadfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">这个程序访问的Controller层是</span><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/upload/file&#34;</span><span class="o">)</span><span class="err">，</span><span class="n">是不会出现</span><span class="o">/</span><span class="n">uploadfile的路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">这时应该考虑是nginx配置的问题</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx代理静态资源404问题">nginx代理静态资源404问题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#直接访问ip + 端口 + olympics + 静态资源</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#例如：10.100.245.18:8088/olympics/olympics.html</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">location ^~ /olympics/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  expires 3d<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  access_log off<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx实际开发环境配置信息">nginx实际开发环境配置信息</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#user  nobody;</span>
+</span></span><span class="line"><span class="cl">worker_processes  1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#error_log  logs/error.log;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#error_log  logs/error.log  notice;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#error_log  logs/error.log  info;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#pid        logs/nginx.pid;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">events <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    worker_connections  1024<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">http <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    include       mime.types<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    include /ths/nginx/conf/nginx_province_8074.conf<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    default_type  application/octet-stream<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#                  &#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#                  &#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#access_log  logs/access.log  main;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    sendfile        on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#tcp_nopush     on;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#keepalive_timeout  0;</span>
+</span></span><span class="line"><span class="cl">    keepalive_timeout  65<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#gzip  on;</span>
+</span></span><span class="line"><span class="cl">     gzip  on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_min_length    5k<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_buffers    <span class="m">4</span> 16k<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_http_version  1.1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_comp_level  3<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_types  text/plain application/x-javascript text/css application/xml application/json text/javascript<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_vary on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    gzip_disable <span class="s2">&#34;MSIE [1-6]\.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        listen       8073<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server_name  localhost<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#charset koi8-r;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#access_log  logs/host.access.log  main;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       location ^~ /idp-micro-app/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">           add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header Access-Control-Allow-Headers X-Requested-With<span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header Access-Control-Allow-Methods GET,POST,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">           root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">       access_log off<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        location ^~ /fileserver/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Headers X-Requested-With<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Methods GET,POST,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        access_log off<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      location ^~ /idp-base-app/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">          add_header Access-Control-Allow-Headers X-Requested-With<span class="p">;</span>
+</span></span><span class="line"><span class="cl">          add_header Access-Control-Allow-Methods GET,POST,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">          root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">          access_log off<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       location /ou <span class="o">{</span>
+</span></span><span class="line"><span class="cl">           add_header <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span> <span class="s1">&#39;*&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header <span class="s1">&#39;Access-Control-Allow-Credentials&#39;</span> <span class="s1">&#39;true&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header Cache-Control private<span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header <span class="s1">&#39;Access-Control-Allow-Methods&#39;</span> <span class="s1">&#39;GET, POST, OPTIONS&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">           add_header <span class="s1">&#39;Access-Control-Allow-Headers&#39;</span> <span class="s1">&#39;DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">           <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">              add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="k">return</span> 200<span class="p">;</span>
+</span></span><span class="line"><span class="cl">           <span class="o">}</span>      
+</span></span><span class="line"><span class="cl">     proxy_pass http://10.100.13.37:8071/ou<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    location /cas <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        add_header <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span> <span class="s1">&#39;*&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header <span class="s1">&#39;Access-Control-Allow-Credentials&#39;</span> <span class="s1">&#39;true&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Cache-Control private<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header <span class="s1">&#39;Access-Control-Allow-Methods&#39;</span> <span class="s1">&#39;GET, POST, OPTIONS&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header <span class="s1">&#39;Access-Control-Allow-Headers&#39;</span> <span class="s1">&#39;DNT,X-CustomHeader,Keep-Alive,User-Age
+</span></span></span><span class="line"><span class="cl"><span class="s1">        nt,X-Requested-With,If-Modified-Sinc
+</span></span></span><span class="line"><span class="cl"><span class="s1">        e,Cache-Control,Content-Type&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> 200<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://10.100.13.37:8071/cas<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     location /service/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://10.100.13.37:8076/service/<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span>:<span class="nv">$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header REMOTE-HOST <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_pass_request_headers on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_http_version 1.1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Connection  <span class="s2">&#34;upgrade&#34;</span><span class="p">;</span>            
+</span></span><span class="line"><span class="cl">        access_log on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       location /attachment <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span> <span class="s1">&#39;*&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Credentials&#39;</span> <span class="s1">&#39;true&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header Cache-Control private<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Methods&#39;</span> <span class="s1">&#39;GET, POST, OPTIONS&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header <span class="s1">&#39;Access-Control-Allow-Headers&#39;</span> <span class="s1">&#39;DNT,X-CustomHeader,Keep-Alive,User-Age
+</span></span></span><span class="line"><span class="cl"><span class="s1">            nt,X-Requested-With,If-Modified-Sinc
+</span></span></span><span class="line"><span class="cl"><span class="s1">            e,Cache-Control,Content-Type&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="nv">$request_method</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,PATCH,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> 200<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">         proxy_pass http://10.100.13.37:8072/attachment<span class="p">;</span>
+</span></span><span class="line"><span class="cl">       <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        location /service_p/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            proxy_pass http://10.100.13.37:8076/service_p/<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header Host <span class="nv">$host</span>:<span class="nv">$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header REMOTE-HOST <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_pass_request_headers on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_http_version 1.1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            proxy_set_header Connection  <span class="s2">&#34;upgrade&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            access_log on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#error_page  404              /404.html;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># redirect server error pages to the static page /50x.html</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">        error_page   <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span>  /50x.html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#location ~ \.php$ {</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    proxy_pass   http://127.0.0.1;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#location ~ \.php$ {</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    root           html;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    fastcgi_pass   127.0.0.1:9000;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    fastcgi_index  index.php;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    include        fastcgi_params;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># deny access to .htaccess files, if Apache&#39;s document root</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># concurs with nginx&#39;s one</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#location ~ /\.ht {</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#    deny  all;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># another virtual host using mix of IP-, name-, and port-based configuration</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#server {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    listen       8000;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    listen       somename:8080;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    server_name  somename  alias  another.alias;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#    location / {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#        root   html;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#        index  index.html index.htm;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    }</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># HTTPS server</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#server {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    listen       443 ssl;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    server_name  localhost;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_certificate      cert.pem;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_certificate_key  cert.key;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_session_cache    shared:SSL:1m;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_session_timeout  5m;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    ssl_prefer_server_ciphers  on;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#    location / {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#        root   html;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#        index  index.html index.htm;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    }</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="文件上传遇到413-request-entity-too-large请求实体太大">文件上传遇到413 Request Entity Too Large（请求实体太大）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Nginx默认最大能够上传1MB文件，大于1MB的文件自然无法上传，打开nginx.conf
+</span></span><span class="line"><span class="cl">http<span class="o">{</span> <span class="o">}</span>中设置：client_max_body_size 50m<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20221111142559785.png" alt="image-20221111142559785"></p>
+<h2 id="nignx代理前端文件重定向后端口变了">nignx代理前端文件重定向后，端口变了</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 背景：项目原始地址：http://172.19.109.3:8073/idp-base-app</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 改项目映射的公网地址：http://220.182.43.203:18073/idp-base-app</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 浏览器访问公网地址http://220.182.43.203:18073/idp-base-app 会重定向到 http://220.182.43.203:8073/idp-base-app （8073端口），nginx配置的出口是8073端口</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解决办法：代理http://172.19.109.3:8073/idp-base-app重定向到http://172.19.109.3:8073/idp-base-app/即可</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">location ^~ /idp-base-app <span class="o">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">return</span> <span class="m">301</span> <span class="nv">$scheme</span>://220.182.43.203:18073/idp-base-app/<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">location ^~ /idp-base-app/ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Origin *<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Headers X-Requested-With<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        add_header Access-Control-Allow-Methods GET,POST,OPTIONS<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header        X-Real-IP       <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header        Host            <span class="nv">$host</span>:<span class="nv">$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header        X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_pass_request_headers              on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        root   html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        access_log off<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="安装keepalived">安装keepalived</h1>
+<h2 id="下载安装">下载安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zxvf keepalived-2.2.7.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> keepalived-2.2.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/usr/local/keepalived
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">make <span class="o">&amp;&amp;</span> make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="启动停止">启动停止</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">service keepalived start
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止</span>
+</span></span><span class="line"><span class="cl">service keepalived stop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置systemctl">配置systemctl</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重新加载</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload 
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置开机自动启动</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> keepalived.service 
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消开机自动启动</span>
+</span></span><span class="line"><span class="cl">systemctl disable keepalived.service 
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">systemctl start keepalived.service 
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止</span>
+</span></span><span class="line"><span class="cl">systemctl stop keepalived.service 
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-02-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/springcloud/">
+            <span class="next-text nav-default">SpringCloud</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
