@@ -37,7 +37,35 @@
   </url>
   
   <url>
+    <loc>https://chengtry.github.io/categories/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/docker/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chengtry.github.io/post/docker/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/study/</loc>
+    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/</loc>
     <lastmod>2023-02-16T19:57:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -53,18 +81,6 @@
   <url>
     <loc>https://chengtry.github.io/post/redis/</loc>
     <lastmod>2023-02-14T19:48:43+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
