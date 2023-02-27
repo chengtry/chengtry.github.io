@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chengtry.github.io/categories/</loc>
+    <lastmod>2023-02-22T20:22:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chengtry.github.io/</loc>
+    <lastmod>2023-02-22T20:22:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/nginx/</loc>
     <lastmod>2023-02-22T20:22:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,6 +37,34 @@
   </url>
   
   <url>
+    <loc>https://chengtry.github.io/categories/study/</loc>
+    <lastmod>2023-02-22T20:22:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/</loc>
+    <lastmod>2023-02-22T20:22:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/java/</loc>
+    <lastmod>2023-02-20T19:46:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/spring-cloud-alibaba/</loc>
+    <lastmod>2023-02-20T19:46:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chengtry.github.io/post/springcloud/</loc>
     <lastmod>2023-02-20T19:46:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -30,15 +72,15 @@
   </url>
   
   <url>
-    <loc>https://chengtry.github.io/post/linux/</loc>
+    <loc>https://chengtry.github.io/tags/linux/</loc>
     <lastmod>2023-02-18T21:57:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
+    <loc>https://chengtry.github.io/post/linux/</loc>
+    <lastmod>2023-02-18T21:57:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,20 +94,6 @@
   
   <url>
     <loc>https://chengtry.github.io/post/docker/</loc>
-    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/categories/study/</loc>
-    <lastmod>2023-02-16T19:57:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/</loc>
     <lastmod>2023-02-16T19:57:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
