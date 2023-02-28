@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/redis/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-14T19:48:43+08:00" />
-<meta property="article:modified_time" content="2023-02-28T16:21:08+08:00" />
+<meta property="article:modified_time" content="2023-02-28T16:36:45+08:00" />
 
 <meta itemprop="name" content="Redis">
 <meta itemprop="description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"><meta itemprop="datePublished" content="2023-02-14T19:48:43+08:00" />
-<meta itemprop="dateModified" content="2023-02-28T16:21:08+08:00" />
-<meta itemprop="wordCount" content="11492">
+<meta itemprop="dateModified" content="2023-02-28T16:36:45+08:00" />
+<meta itemprop="wordCount" content="11344">
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis"/>
 <meta name="twitter:description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"/>
@@ -131,8 +131,9 @@
         <span class="post-time"> 2023-02-14 </span>
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
+            <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 11492 字 </span>
+          <span class="more-meta"> 约 11344 字 </span>
           <span class="more-meta"> 预计阅读 23 分钟 </span>
         
       </div>
@@ -453,13 +454,13 @@
 </span></span><span class="line"><span class="cl"><span class="n">第二步</span><span class="err">：</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">进程号</span><span class="o">/</span><span class="n">cwd</span>   <span class="n">得到安装目录信息</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20210310095730403.png" alt="image-20210310095730403"></p>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210310095730403.png" alt=""></p>
 <h2 id="查看redis版本号">查看Redis版本号：</h2>
 <h3 id="1-redis-server---version">1. redis-server &ndash;version</h3>
 <h3 id="2-redis-cli--v">2. redis-cli -v</h3>
-<p><img src="F:%5Cimages%5CTypora%5Cimage-20210310101418280.png" alt="image-20210310101418280"></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210310101418280.png" alt=""></p>
 <h3 id="3-启动redis后用info命令">3. 启动redis后，用info命令</h3>
-<p><img src="F:%5Cimages%5CTypora%5Cimage-20210310101443498.png" alt="image-20210310101443498"></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210310101443498.png" alt=""></p>
 <h2 id="redis启动停止重启设置密码进入">Redis启动、停止、重启、设置密码、进入</h2>
 <h3 id="redis启动">Redis启动:</h3>
 <div class="highlight"><div class="chroma">
@@ -532,17 +533,52 @@
 </div><h1 id="五种基本类型">五种基本类型</h1>
 <h2 id="string类型">String类型</h2>
 <h3 id="常见命令">常见命令：</h3>
-<p>exists key：判断键是否存在</p>
-<p>del key：删除键值对</p>
-<p>move key db：将键值对移动到指定数据库</p>
-<p>expire key second：设置键值对的过期时间</p>
-<p>type key：查看value的数据类型</p>
-<h3 id="ttl命令">TTL命令：</h3>
-<p>Redis的key，通过TTL命令返回key的过期时间，一般来说有3种：</p>
-<p>1.当前key没有设置过期时间，所以会返回-1.</p>
-<p>2.当前key有设置过期时间，而且key已经过期，所以会返回-2.</p>
-<p>3.当前key有设置过期时间，且key还没有过期，故会返回key的正常剩余时间.</p>
-<h3 id="设置和取消过期时间">设置和取消过期时间</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exists key：判断键是否存在
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">del key：删除键值对
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">move key db：将键值对移动到指定数据库
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">expire key second：设置键值对的过期时间
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> key：查看value的数据类型
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="ttl命令">TTL命令：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Redis的key，通过TTL命令返回key的过期时间，一般来说有3种：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1.当前key没有设置过期时间，所以会返回-1.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2.当前key有设置过期时间，而且key已经过期，所以会返回-2.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3.当前key有设置过期时间，且key还没有过期，故会返回key的正常剩余时间.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置和取消过期时间">设置和取消过期时间</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -566,9 +602,19 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="rename-和-renamex-命令">rename 和 renamex 命令：</h3>
-<p><code>RENAME key newkey</code> 修改 key 的名称</p>
-<p><code>RENAMENX key newkey</code> 仅当 newkey 不存在时，将 key 改名为 newkey</p>
-<h3 id="命令代码">命令代码：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="sb">`</span>RENAME key newkey<span class="sb">`</span> 修改 key 的名称
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="sb">`</span>RENAMENX key newkey<span class="sb">`</span> 仅当 newkey 不存在时，将 key 改名为 newkey 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="命令代码">命令代码：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1987,14 +2033,12 @@
 <p><strong>布隆过滤器原理</strong></p>
 <p>原理就是一个对一个key进行k个hash算法获取k个值，在比特数组中将这k个值散列后设定为1，然后查的时候如果特定的这几个位置都为1，那么布隆过滤器判断该key存在。布隆过滤器可能会误判，如果它说不存在那肯定不存在，如果它说存在，那数据有可能实际不存在；Redis的bitmap只支持2^32大小，对应到内存也就是512MB，误判率万分之一，可以放下2亿左右的数据，性能高，空间占用率及小，省去了大量无效的数据库连接。</p>
 <p>因此我们可以通过布隆过滤器，将Redis缓存穿透控制在一个可容范围内。布隆过滤器可以判断某个数据一定不存在，但是无法判断一定存在。</p>
-<h4 id="xxxxxxxxxx-重新加载systemctl-daemon-reload--设置开机自动启动systemctl-enable-keepalivedservice--取消开机自动启动systemctl-disable-keepalivedservice--启动systemctl-start-keepalivedservice--停止systemctl-stop-keepalivedservice-bash">xxxxxxxxxx # 重新加载systemctl daemon-reload # 设置开机自动启动systemctl enable keepalived.service # 取消开机自动启动systemctl disable keepalived.service # 启动systemctl start keepalived.service # 停止systemctl stop keepalived.service bash</h4>
 <h2 id="缓存击穿">缓存击穿</h2>
 <h3 id="概念-1">概念：</h3>
 <p>相较于缓存穿透，缓存击穿的目的性更强，一个存在的key，在缓存过期的一刻，同时有大量的请求，这些请求都会击穿到DB，造成瞬时DB请求量大、压力骤增。这就是缓存被击穿，只是针对其中某个key的缓存不可用而导致击穿，但是其他的key依然可以使用缓存响应。 比如热搜排行上，一个热点新闻被同时大量访问就可能导致缓存击穿。</p>
 <h3 id="解决方案-1">解决方案：</h3>
 <h4 id="1设置热点数据永不过期">1.设置热点数据永不过期</h4>
 <p>这样就不会出现热点数据过期的情况，但是当Redis内存空间满的时候也会清理部分数据，而且此种方案会占用空间，一旦热点数据多了起来，就会占用部分空间。</p>
-<h4 id="xxxxxxxxxx-重新加载systemctl-daemon-reload--设置开机自动启动systemctl-enable-keepalivedservice--取消开机自动启动systemctl-disable-keepalivedservice--启动systemctl-start-keepalivedservice--停止systemctl-stop-keepalivedservice-bash-1">xxxxxxxxxx # 重新加载systemctl daemon-reload # 设置开机自动启动systemctl enable keepalived.service # 取消开机自动启动systemctl disable keepalived.service # 启动systemctl start keepalived.service # 停止systemctl stop keepalived.service bash</h4>
 <p>在访问key之前，采用SETNX（set if not exists）来设置另一个短期key来锁住当前key的访问，访问结束再删除该短期key。保证同时刻只有一个线程访问。这样对锁的要求就十分高。</p>
 <h2 id="缓存雪崩">缓存雪崩</h2>
 <h3 id="概念-2">概念：</h3>
@@ -2008,9 +2052,19 @@
 <p>数据加热的含义就是在正式部署之前，我先把可能的数据先预先访问一遍，这样部分可能大量访问的数据就会加载到缓存中。在即将发生大并发访问前手动触发加载缓存不同的key，设置不同的过期时间，让缓存失效的时间点尽量均匀。</p>
 <h1 id="redis主从复制">Redis主从复制</h1>
 <h2 id="概念-3">概念</h2>
-<p>主从复制，是指将一台Redis服务器的数据，复制到其他的Redis服务器。前者称为主节点（Master/Leader）,后者称为从节点（Slave/Follower）， 数据的复制是单向的！只能由主节点复制到从节点（主节点以写为主、从节点以读为主）。</p>
-<p>默认情况下，每台Redis服务器都是主节点，一个主节点可以有0个或者多个从节点，但每个从节点只能由一个主节点。</p>
-<h2 id="开启多个redis服务一主二从">开启多个redis服务（一主二从）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">主从复制，是指将一台Redis服务器的数据，复制到其他的Redis服务器。前者称为主节点（Master/Leader）,后者称为从节点（Slave/Follower）， 数据的复制是单向的！只能由主节点复制到从节点（主节点以写为主、从节点以读为主）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">默认情况下，每台Redis服务器都是主节点，一个主节点可以有0个或者多个从节点，但每个从节点只能由一个主节点。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="开启多个redis服务一主二从">开启多个redis服务（一主二从）</h2>
 <h3 id="1去阿里云添加安全组规则开放637963806381端口号开放linux防火墙端口号">1.去阿里云添加安全组规则，开放6379/6380/6381端口号，开放linux防火墙端口号</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
