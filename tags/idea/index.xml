@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDEA on chengtry</title>
+    <link>https://chengtry.github.io/tags/idea/</link>
+    <description>Recent content in IDEA on chengtry</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 28 Feb 2023 16:03:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDEA</title>
+      <link>https://chengtry.github.io/post/intellij-idea/</link>
+      <pubDate>Tue, 28 Feb 2023 16:03:37 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/intellij-idea/</guid>
+      <description>IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr</description>
+    </item>
+    
+  </channel>
+</rss>

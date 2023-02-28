@@ -16,14 +16,5 @@
       <description>nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少</description>
     </item>
     
-    <item>
-      <title>Redis</title>
-      <link>https://chengtry.github.io/post/redis/</link>
-      <pubDate>Tue, 14 Feb 2023 19:48:43 +0800</pubDate>
-      
-      <guid>https://chengtry.github.io/post/redis/</guid>
-      <description>Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进</description>
-    </item>
-    
   </channel>
 </rss>

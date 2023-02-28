@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IDEA - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/intellij-idea/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="IDEA" />
+<meta property="og:description" content="IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/intellij-idea/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-28T16:03:37+08:00" />
+<meta property="article:modified_time" content="2023-02-28T16:03:37+08:00" />
+
+<meta itemprop="name" content="IDEA">
+<meta itemprop="description" content="IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr"><meta itemprop="datePublished" content="2023-02-28T16:03:37+08:00" />
+<meta itemprop="dateModified" content="2023-02-28T16:03:37+08:00" />
+<meta itemprop="wordCount" content="3136">
+<meta itemprop="keywords" content="IDEA," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IDEA"/>
+<meta name="twitter:description" content="IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">IDEA</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-28 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            <a href="/categories/note/"> Note </a>
+            </div>
+          <span class="more-meta"> 约 3136 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#idea和eclipse的对比"><strong>IDEA</strong>和Eclipse的对比</a>
+      <ul>
+        <li><a href="#项目概念对比">项目概念对比</a></li>
+        <li><a href="#代码保存">代码保存</a></li>
+        <li><a href="#idea功能特点">IDEA功能特点</a></li>
+        <li><a href="#idea-debug打断点">IDEA Debug打断点</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea配置">IDEA配置</a>
+      <ul>
+        <li><a href="#jdk配置">JDK配置</a></li>
+        <li><a href="#tomcat配置">Tomcat配置</a></li>
+        <li><a href="#maven配置">Maven配置</a></li>
+        <li><a href="#idea中配置tomcatrun命令">IDEA中配置tomcat:run命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea打包">IDEA打包</a>
+      <ul>
+        <li><a href="#使用maven-plugins打jar包">使用maven plugins打jar包</a></li>
+        <li><a href="#打包成war包">打包成war包</a></li>
+        <li><a href="#idea手动打war包">IDEA手动打war包</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea集成">IDEA集成</a>
+      <ul>
+        <li><a href="#idea集成svn">IDEA集成SVN</a></li>
+        <li><a href="#idea集成git">IDEA集成Git</a></li>
+        <li><a href="#idea集成gitlab">IDEA集成GitLab</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea快捷键">IDEA快捷键</a>
+      <ul>
+        <li><a href="#常用快捷键">常用快捷键</a></li>
+        <li><a href="#自定义快捷键">自定义快捷键</a></li>
+        <li><a href="#修改成eclipse快捷键主题">修改成Eclipse快捷键主题</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea基本使用">IDEA基本使用</a>
+      <ul>
+        <li><a href="#idea自定义方法注释">IDEA自定义方法注释</a></li>
+        <li><a href="#idea更换主题">IDEA更换主题</a></li>
+        <li><a href="#idea更换背景图片">IDEA更换背景图片</a></li>
+        <li><a href="#idea修改字体大小和颜色">IDEA修改字体大小和颜色</a></li>
+        <li><a href="#idea显示使用内存情况">IDEA显示使用内存情况</a></li>
+        <li><a href="#idea修改内存大小">IDEA修改内存大小</a></li>
+        <li><a href="#idea显示svn提交人和提交时间">IDEA显示SVN提交人和提交时间</a></li>
+        <li><a href="#idea中terminal的配置">IDEA中Terminal的配置</a></li>
+        <li><a href="#idea使用lombok的data但是报找不到get和set方法">IDEA使用lombok的@Data，但是报找不到get和set方法</a></li>
+        <li><a href="#idea默认不加载srcmainjava下的xml代码">IDEA默认不加载src/main/java下的XML代码</a></li>
+        <li><a href="#idea-toolbar靠右显示">IDEA toolbar靠右显示</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="idea和eclipse的对比"><strong>IDEA</strong>和Eclipse的对比</h1>
+<h2 id="项目概念对比">项目概念对比</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">在</span> <span class="n">Eclipse</span> <span class="n">中有</span> <span class="n">workspace</span><span class="err">（</span><span class="n">工作空间</span><span class="err">）</span><span class="n">和</span> <span class="n">Project</span><span class="err">（</span><span class="n">工程</span><span class="err">）</span><span class="n">的概念</span>
+</span></span><span class="line"><span class="cl"><span class="n">在</span> <span class="n">IDEA</span> <span class="n">中只有</span> <span class="n">Project</span><span class="err">（</span><span class="n">工程</span><span class="err">）</span><span class="n">和</span> <span class="n">Module</span><span class="err">（</span><span class="n">模块</span><span class="err">）</span><span class="n">的概念</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Eclipse</span> <span class="n">中</span> <span class="n">workspace</span> <span class="n">相当于</span> <span class="n">IDEA</span> <span class="n">中的</span> <span class="n">Project</span>
+</span></span><span class="line"><span class="cl"><span class="n">Eclipse</span> <span class="n">中</span> <span class="n">Project</span> <span class="n">相当于</span> <span class="n">IDEA</span> <span class="n">中的</span> <span class="n">Module</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Intellij</span> <span class="n">IDEA</span><span class="err">：</span><span class="n">每个屏幕只能有一个项目</span>
+</span></span><span class="line"><span class="cl"><span class="n">Eclipse</span><span class="err">：</span><span class="n">可以有多个项目</span><span class="err">，</span><span class="n">自由度更大</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20210817144908961-16775712502167.png" alt=""></p>
+<h2 id="代码保存">代码保存</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">在</span> <span class="n">IDEA</span> <span class="n">里每次修改代码</span><span class="err">，</span><span class="n">不用点击保存</span><span class="err">。</span><span class="n">IDEA</span> <span class="n">会自动保存代码</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">在Eclipse中每次修改代码时</span><span class="err">，</span><span class="n">需要Ctrl</span> <span class="o">+</span> <span class="n">S保存</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="idea功能特点">IDEA功能特点</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IDEA优点</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">更好的调试</span><span class="err">、</span><span class="n">更高的开发效率</span><span class="err">、</span><span class="n">更智能的重构</span><span class="err">、</span><span class="n">目录分层少而清</span>
+</span></span><span class="line"><span class="cl"><span class="nl">https:</span><span class="c1">//www.jetbrains.com/zh-cn/idea/features/
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">IDEA缺点</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">吃内存</span><span class="err">、</span><span class="n">在同一页面中只支持单工程</span><span class="err">、</span><span class="n">资源消耗比较大</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="idea-debug打断点">IDEA Debug打断点</h2>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210817104811119-167757130184410.png" alt=""></p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210817105110508-167757132726113.png" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">调试按钮</span><span class="err">，</span><span class="n">从左到右依次是</span>
+</span></span><span class="line"><span class="cl"><span class="n">1</span><span class="o">.</span><span class="na">Show</span> <span class="n">Execution</span> <span class="n">Point</span> <span class="o">:</span> <span class="n">如果你的光标在其它行或其它页面</span><span class="err">，</span><span class="n">点击这个按钮可跳转到当前代码执行的地方</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">2</span><span class="o">.</span><span class="na">Step</span> <span class="n">Over</span> <span class="o">:</span> <span class="n">一行一行的往下执行代码</span><span class="err">，</span><span class="n">如果这一行上有方法不会进入方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">3</span><span class="o">.</span><span class="na">Step</span> <span class="n">Into</span> <span class="o">:</span> <span class="n">如果当前行有方法</span><span class="err">，</span><span class="n">可以进入方法内部</span><span class="err">，</span><span class="n">一般用于进入自定义方法内</span><span class="err">，</span><span class="n">不会进入官方类库的方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">4</span><span class="o">.</span><span class="na">Force</span> <span class="n">Step</span> <span class="n">Into</span> <span class="o">:</span> <span class="n">强制进入方法内部</span><span class="err">，</span><span class="n">能进入任何方法</span><span class="err">，</span><span class="n">查看底层源码的时候可以用这个进入官方类库的方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">5</span><span class="o">.</span><span class="na">Step</span> <span class="n">Out</span> <span class="o">:</span> <span class="n">退出方法</span><span class="err">，</span><span class="n">从进入的方法内退出到方法调用处</span><span class="err">，</span><span class="n">此时方法已执行完毕</span><span class="err">，</span><span class="n">只是还没有完成赋值</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">6</span><span class="o">.</span><span class="na">Drop</span> <span class="n">Frame</span> <span class="o">:</span> <span class="n">回退断点</span><span class="err">，</span><span class="n">很少用到</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">7</span><span class="o">.</span><span class="na">Run</span> <span class="n">to</span> <span class="n">Cursor</span> <span class="o">:</span> <span class="n">运行到光标处</span><span class="err">，</span><span class="n">你可以将光标定位到你需要查看的那一行</span><span class="err">，</span><span class="n">然后使用这个功能</span><span class="err">，</span><span class="n">代码会运行至光标行</span><span class="err">，</span><span class="n">而不需要打断点</span><span class="err">（</span><span class="n">前提是已经进入了</span> <span class="n">Debug</span> <span class="n">模式</span><span class="err">，</span><span class="n">也就是已经停在某个断点上了</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">8</span><span class="o">.</span><span class="na">Evaluate</span> <span class="n">Expression</span> <span class="o">:</span> <span class="n">计算表达式</span><span class="err">。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="idea配置">IDEA配置</h1>
+<p>官方网站下载：https://www.jetbrains.com/idea/</p>
+<h2 id="jdk配置">JDK配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">ProjectStructure</span><span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210727155028355.png" alt="image-20210727155028355"></p>
+<h2 id="tomcat配置">Tomcat配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">RUN</span> <span class="o">--&gt;</span> <span class="n">Edit</span> <span class="n">Configurations</span><span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210727155741480.png" alt="image-20210727155741480"></p>
+<h2 id="maven配置">Maven配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">搜索maven</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210727160233592.png" alt="image-20210727160233592"></p>
+<h2 id="idea中配置tomcatrun命令">IDEA中配置tomcat:run命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Run</span> <span class="o">--&gt;</span> <span class="n">Edit</span> <span class="n">Configurations</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">左上角</span><span class="o">+</span><span class="n">号</span> <span class="o">--&gt;</span> <span class="n">选择Maven</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210802153315794.png" alt="image-20210802153315794"></p>
+<h1 id="idea打包">IDEA打包</h1>
+<h2 id="使用maven-plugins打jar包">使用maven plugins打jar包</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">项目的pom文件中引入spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin插件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">build</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="n">plugins</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="n">plugin</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;/</span><span class="n">plugin</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;/</span><span class="n">plugins</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;/</span><span class="n">build</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729175651240.png" alt="image-20210729175651240"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">打包好的jar包启动</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729180258865.png" alt="image-20210729180258865"></p>
+<h2 id="打包成war包">打包成war包</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">修改pom文件打包方式</span><span class="err">，</span><span class="n">默认是jar包</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">packaging</span><span class="o">&gt;</span><span class="n">war</span><span class="o">&lt;/</span><span class="n">packaging</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729182738476.png" alt="image-20210729182738476"></p>
+<h2 id="idea手动打war包">IDEA手动打war包</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Project</span> <span class="n">Structure</span> <span class="o">--&gt;</span> <span class="n">Artifacts</span> <span class="o">--&gt;</span> <span class="o">+(</span><span class="n">add</span><span class="o">)</span> <span class="o">--&gt;</span> <span class="n">Web</span> <span class="n">Application</span><span class="o">:</span> <span class="n">Archive</span>
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span> <span class="n">Empty</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818102325285.png" alt="image-20210818102325285"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">Name:</span> <span class="n">打成war包名称</span>
+</span></span><span class="line"><span class="cl"><span class="n">Output</span> <span class="n">directory</span><span class="o">:</span> <span class="n">打包路径</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">在Output</span> <span class="n">Layout下边</span><span class="err">。</span><span class="n">点击</span> <span class="o">+</span> <span class="n">号</span><span class="err">，</span><span class="n">选择Directory</span> <span class="n">Content</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818102707720.png" alt="image-20210818102707720"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">选中项目中的webapp目录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818102922095.png" alt="image-20210818102922095"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">点击添加目录图标</span><span class="err">（</span><span class="n">Create</span> <span class="n">Directory</span><span class="err">），</span><span class="n">添加WEB</span><span class="o">-</span><span class="n">INF目录和classes子目录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818103124941.png" alt="image-20210818103124941"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">选中classes目录</span><span class="err">，</span><span class="n">点击</span> <span class="o">+</span> <span class="n">号</span><span class="err">，</span><span class="n">选择Module</span> <span class="n">Output</span><span class="err">，</span><span class="n">选择项目Module</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818103403278.png" alt="image-20210818103403278"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">在WEB</span><span class="o">-</span><span class="n">INF目录下创建lib目录</span><span class="err">，</span><span class="n">用来存放jar包</span>
+</span></span><span class="line"><span class="cl"><span class="n">点击</span> <span class="o">+</span> <span class="n">号</span><span class="err">，</span><span class="n">选中Library</span> <span class="n">Files</span><span class="err">，</span><span class="n">选中所有jar包</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818103720271.png" alt="image-20210818103720271"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">整体目录结构</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818104006917.png" alt="image-20210818104006917"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">项目打包</span><span class="err">：</span><span class="n">点击Build</span> <span class="o">--&gt;</span> <span class="n">Build</span> <span class="n">Artifacts</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818104038496.png" alt="image-20210818104038496"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">选择刚刚部署的项目名</span><span class="err">，</span><span class="n">点击Build即可</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="n">打包完的war包存放在之前指定的路径中</span><span class="err">，</span><span class="n">将war包放在tomcat中的webapps下即可</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210818104212482.png" alt="image-20210818104212482"></p>
+<h1 id="idea集成">IDEA集成</h1>
+<h2 id="idea集成svn">IDEA集成SVN</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">设置SVN路径</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729114305789.png" alt="image-20210729114305789"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">打开IDEA</span> <span class="o">--&gt;</span> <span class="n">点击</span> <span class="n">Get</span> <span class="n">from</span> <span class="n">Version</span> <span class="n">Control</span>
+</span></span><span class="line"><span class="cl"><span class="n">Version</span> <span class="n">control</span> <span class="n">选择</span><span class="err">：</span><span class="n">Subversion</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729113534927.png" alt="image-20210729113534927"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">Repositories:</span> <span class="n">点击</span> <span class="o">+</span> <span class="n">号</span>
+</span></span><span class="line"><span class="cl"><span class="n">输入项目地址</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729113802867.png" alt="image-20210729113802867"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">CheckOut</span> <span class="n">SVN代码</span> <span class="o">--&gt;</span> <span class="n">输入SVN账号密码</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729113911376.png" alt="image-20210729113911376"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729114111651.png" alt="image-20210729114111651"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">右键项目</span> <span class="o">--&gt;</span> <span class="n">找到Subversion</span> <span class="o">--&gt;</span> <span class="n">进行代码更新</span><span class="err">、</span><span class="n">代码提交</span><span class="err">、</span><span class="n">版本回退等</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://img-blog.csdn.net/20170430141036847?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzQxMjc5MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">显示历史版本</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729115732549.png" alt="image-20210729115732549"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">比较本地版本代码和服务器代码区别</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729121023020.png" alt="image-20210729121023020"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">修改SVN账号</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729123438723.png" alt="image-20210729123438723"></p>
+<h2 id="idea集成git">IDEA集成Git</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">配置Git好git的路径</span> <span class="o">--&gt;</span> <span class="n">点击Test</span> <span class="o">--&gt;</span> <span class="n">显示Git版本说明配置成功</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729171525978.png" alt="image-20210729171525978"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">登录github账号</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729172304289.png" alt="image-20210729172304289"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">github创建一个仓库</span>  <span class="o">--&gt;</span> <span class="n">具体百度</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729173003269.png" alt="image-20210729173003269"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">检出github项目</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729173314021.png" alt="image-20210729173314021"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">配置成功</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729173425348.png" alt="image-20210729173425348"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">向你的github提交代码</span> <span class="err">（</span><span class="n">git</span> <span class="n">add</span><span class="err">）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729174032980.png" alt="image-20210729174032980"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">提交代码到本地仓库</span>  <span class="o">(</span><span class="n">git</span> <span class="n">commit</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729174223832.png" alt="image-20210729174223832"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729174341280.png" alt="image-20210729174341280"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">提交到github远程仓库</span>  <span class="o">(</span><span class="n">git</span> <span class="n">push</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729174511519.png" alt="image-20210729174511519"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729174610448.png" alt="image-20210729174610448"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">git命令模式提交代码</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">在需要提交的文件目录下右键</span><span class="o">--&gt;</span><span class="n">Git</span> <span class="n">Bash</span> <span class="n">Here</span>
+</span></span><span class="line"><span class="cl"><span class="n">github生成LoginToken</span>                <span class="s">&#34;登录&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="o">.</span><span class="na">name</span>      <span class="s">&#34;你的github账号&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="o">.</span><span class="na">email</span>     <span class="s">&#34;你的github邮箱&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="o">.</span><span class="na">password</span>  <span class="s">&#34;你的github密码&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">add</span> <span class="n">exam</span><span class="o">/</span>                      <span class="s">&#34;添加需要提交的文件&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&#34;提交exam代码&#34;</span>        <span class="s">&#34;提交到本地仓库&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/412307724/exam.git 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s">&#34;将本地git 仓库与github远程仓库相关联&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>             <span class="s">&#34;推送至远程仓库(github)&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="idea集成gitlab">IDEA集成GitLab</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="err">）</span><span class="n">GitLab</span> <span class="n">访问地址</span><span class="err">：</span><span class="n">http</span><span class="o">:</span><span class="c1">//223.223.179.203:8929/ ，使用域用户登录；
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">2</span><span class="err">）</span><span class="n">Git使用说明地址</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nl">https:</span><span class="c1">//www.yuque.com/docs/share/87339187-7753-4a43-b519-c1336a22ef9c?#%20%E3%80%8AGit%20%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E3%80%8B
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">3</span><span class="err">）</span><span class="n">Git使用规范地址</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nl">https:</span><span class="c1">//www.yuque.com/docs/share/cb8a5c44-9a2a-4e67-b467-02693579a7bc?#%20%E3%80%8AGit%20%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83%E3%80%8B
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="idea快捷键">IDEA快捷键</h1>
+<h2 id="常用快捷键">常用快捷键</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//查找搜索快捷键
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Ctrl</span><span class="o">+</span><span class="n">F</span>           <span class="n">当前文件查找</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">F</span>     <span class="n">全局文件查找</span><span class="err">（</span><span class="n">易和windows自带的输入法的简繁体切换冲突</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">R</span>           <span class="n">当前文件替换</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">R</span>     <span class="n">全局文件替换</span>
+</span></span><span class="line"><span class="cl"><span class="n">Shift</span><span class="o">+</span><span class="n">Shift</span>      <span class="n">搜索所有文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//其他常用快捷键  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Ctrl</span><span class="o">+</span><span class="n">左键点击</span>           <span class="n">跳转到定义</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">Alt</span><span class="o">+</span><span class="n">L</span>       <span class="n">格式化代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">D</span>           <span class="n">复制当前行或选中块</span> 
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">Y</span>           <span class="n">删除当前行</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+/</span>           <span class="n">注释</span><span class="o">/</span><span class="n">取消注释当前行</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+/</span>     <span class="n">注释</span><span class="o">/</span><span class="n">取消注释</span><span class="o">(</span><span class="n">多行</span><span class="err">，</span><span class="n">注释时选中要注释的代码</span><span class="err">，</span><span class="n">取消注释时</span><span class="err">，</span><span class="n">光标在注释内任意位置即可</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Alt</span><span class="o">+</span><span class="n">Enter</span>        <span class="n">导入包</span><span class="o">,</span><span class="n">自动修正</span> 
+</span></span><span class="line"><span class="cl"><span class="n">Alt</span><span class="o">+/</span>            <span class="n">代码提示</span>
+</span></span><span class="line"><span class="cl"><span class="n">Alt</span><span class="o">+</span><span class="n">F1</span><span class="o">+</span><span class="n">1</span>         <span class="n">快速定位文件</span>   
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//IDEA快捷键汇总：https://blog.csdn.net/wei83523408/article/details/60472168
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="自定义快捷键">自定义快捷键</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Keymap</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">找到一个需要自定义快捷键的用途</span> <span class="o">--&gt;</span> <span class="n">右键</span> <span class="o">--&gt;</span> <span class="n">Add</span> <span class="n">Keyboard</span> <span class="n">Shortcut</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210817103950321.png" alt="image-20210817103950321"></p>
+<h2 id="修改成eclipse快捷键主题">修改成Eclipse快捷键主题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Keymap</span> <span class="o">--&gt;</span> <span class="n">Eclipse</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210817105732962.png" alt="image-20210817105732962"></p>
+<h1 id="idea基本使用">IDEA基本使用</h1>
+<h2 id="idea自定义方法注释">IDEA自定义方法注释</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Editor</span> <span class="o">--&gt;</span> <span class="n">Live</span> <span class="n">Templates</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//自定义模板
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@author</span> <span class="n">yangcheng</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@date</span> <span class="n">$date$</span> <span class="n">$time$</span>                            <span class="n">date表达式选择</span> <span class="nf">date</span><span class="o">()</span> <span class="n">time表达式选择</span> <span class="nf">time</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@param</span> <span class="n">$param$</span>                                        <span class="n">params表达式选择</span> <span class="nf">methodParameters</span><span class="o">()</span>    
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@return</span> <span class="n">$return$</span>                                    <span class="n">return表达式选择</span> <span class="nf">methodReturnType</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"> <span class="o">**/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">**</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@author</span> <span class="n">yangcheng</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@date</span> <span class="n">$date$</span> <span class="n">$time$</span>
+</span></span><span class="line"><span class="cl"><span class="n">$param$</span>
+</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="nd">@return</span> 
+</span></span><span class="line"><span class="cl"> <span class="o">**/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">$param$设置</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">groovyScript</span><span class="o">(</span><span class="s">&#34;def result=&#39;&#39;; def params=\&#34;${_1}\&#34;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i = 0; i &lt; params.size(); i++) {result+=&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39; : &#39;&#39;)}; return result&#34;</span><span class="o">,</span> <span class="n">methodParameters</span><span class="o">())</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210728195029211-16532984612071.png" alt="image-20210728195029211"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210730095154767.png" alt="image-20210730095154767"></p>
+<h2 id="idea更换主题">IDEA更换主题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//更换主题：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Appearance</span> <span class="o">&amp;</span> <span class="n">Behavior</span> <span class="o">--&gt;</span> <span class="n">Appearance</span> <span class="o">--&gt;</span> <span class="n">Theme</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//下载主题：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Plugins</span> <span class="o">--&gt;</span> <span class="n">搜索Scheme</span><span class="err">（</span><span class="n">或者百度自己喜欢的主题再搜索</span><span class="err">）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729095525551.png" alt="image-20210729095525551"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729095720212-16532984752822.png" alt="image-20210729095720212"></p>
+<h2 id="idea更换背景图片">IDEA更换背景图片</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Help</span> <span class="o">--&gt;</span> <span class="n">Find</span> <span class="n">Action</span> <span class="o">...</span> <span class="o">--&gt;</span> <span class="n">搜索</span> <span class="n">Set</span> <span class="n">Background</span> <span class="n">Image</span>
+</span></span><span class="line"><span class="cl"><span class="n">或者使用快捷键</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ctrl</span> <span class="o">+</span> <span class="n">Shift</span> <span class="o">+</span> <span class="n">A</span> <span class="o">--&gt;</span> <span class="n">搜索</span> <span class="n">Set</span> <span class="n">Background</span> <span class="n">Image</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729094927628.png" alt="image-20210729094927628"></p>
+<h2 id="idea修改字体大小和颜色">IDEA修改字体大小和颜色</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//修改字体大小：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Editor</span> <span class="o">--&gt;</span> <span class="n">Font</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//Ctrl + 鼠标滚动控制字体大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Editor</span> <span class="o">--&gt;</span> <span class="n">General</span> <span class="o">--&gt;</span> <span class="n">勾选Change</span> <span class="n">font</span> <span class="n">size</span> <span class="n">with</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">Mouse</span> <span class="n">Wheel</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//修改颜色
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Editor</span> <span class="o">--&gt;</span> <span class="n">Color</span> <span class="n">Scheme</span> <span class="o">--&gt;</span>  <span class="n">Language</span> <span class="n">Defaults</span> <span class="o">/</span> <span class="n">Java</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729100535548.png" alt="image-20210729100535548"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729101530613.png" alt="image-20210729101530613"></p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729101139320.png" alt="image-20210729101139320"></p>
+<h2 id="idea显示使用内存情况">IDEA显示使用内存情况</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Appearance</span> <span class="o">&amp;</span> <span class="n">Behavior</span> <span class="o">--&gt;</span> <span class="n">Appearance</span> 
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span> <span class="n">将Show</span> <span class="n">memory</span> <span class="n">indicator勾选上</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">或者</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Shift</span><span class="o">+</span><span class="n">Shift</span> <span class="o">--&gt;</span> <span class="n">点击OFF转换为ON</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729105741852.png" alt="image-20210729105741852"></p>
+<h2 id="idea修改内存大小">IDEA修改内存大小</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Help</span> <span class="o">--&gt;</span> <span class="n">Edit</span> <span class="n">Custom</span> <span class="n">VM</span> <span class="n">Options</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">修改如下参数配置</span> <span class="o">--&gt;</span> <span class="n">重启IDEA</span>
+</span></span><span class="line"><span class="cl"><span class="n">或者找到自己idea64</span><span class="o">.</span><span class="na">exe</span><span class="o">.</span><span class="na">vmoptions所在位置</span><span class="err">，</span><span class="n">修改如下参数配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">Xms1024m</span>                                                                <span class="n">最小内存</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">Xmx2048m</span>                                                                <span class="n">最大内存</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">XX</span><span class="o">:</span><span class="n">ReservedCodeCacheSize</span><span class="o">=</span><span class="n">512m</span>                    <span class="n">预留代码缓存大小</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210729112507509.png" alt="image-20210729112507509"></p>
+<h2 id="idea显示svn提交人和提交时间">IDEA显示SVN提交人和提交时间</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Plugins</span> <span class="o">--&gt;</span> <span class="n">搜索SVNLabel下载</span>  <span class="o">--&gt;</span> <span class="n">重启IDEA</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210803142551319.png" alt="image-20210803142551319"></p>
+<h2 id="idea中terminal的配置">IDEA中Terminal的配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">File</span> <span class="o">--&gt;</span> <span class="n">Settings</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">Tools</span> <span class="o">--&gt;</span> <span class="n">Terminal</span> <span class="o">--&gt;</span> <span class="n">Shell</span> <span class="n">path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">本地控制台</span><span class="err">：</span><span class="n">cmd</span><span class="o">.</span><span class="na">exe</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210804161119237.png" alt="image-20210804161119237"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">git操作界面</span><span class="err">：</span><span class="n">指定本地git目录下的bash</span><span class="o">.</span><span class="na">exe文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20210804160929016.png" alt="image-20210804160929016"></p>
+<h2 id="idea使用lombok的data但是报找不到get和set方法">IDEA使用lombok的@Data，但是报找不到get和set方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 使用lombok前一定要先安装lombok插件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">原因</span><span class="err">：</span><span class="n">未安装Lombok插件</span>
+</span></span><span class="line"><span class="cl"><span class="n">解决</span><span class="err">：</span><span class="n">在IDEA中安装Lombok插件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="idea默认不加载srcmainjava下的xml代码">IDEA默认不加载src/main/java下的XML代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">*  ：匹配零个或者多个字符  aa* 可以匹配 aa1 aab  aa aaa
+</span></span><span class="line"><span class="cl">** ：匹配任意个路径 aa/**/bb  可以匹配aa/b/c/bb   aa/bb
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--IDEA默认不加载src/main/java下的XML代码，加上如下代码即可--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;resources&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">&lt;resource&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;directory&gt;</span>src/main/java<span class="nt">&lt;/directory&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;includes&gt;</span>
+</span></span><span class="line"><span class="cl">           <span class="nt">&lt;include&gt;</span>**/*.xml<span class="nt">&lt;/include&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/includes&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">&lt;/resource&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/resources&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="idea-toolbar靠右显示">IDEA toolbar靠右显示</h2>
+<p>但是我并不喜欢靠右，没有与当前版本比较的按钮。</p>
+<p><img src="E:%5Csoft%5CTypora%5Cimages%5Cimage-20220113092702127.png" alt="image-20220113092702127"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-02-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/idea/">IDEA</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/nginx/">
+            <span class="next-text nav-default">Nginx</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

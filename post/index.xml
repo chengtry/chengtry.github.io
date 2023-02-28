@@ -6,7 +6,16 @@
     <description>Recent content in Posts on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 22 Feb 2023 20:22:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 16:03:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDEA</title>
+      <link>https://chengtry.github.io/post/intellij-idea/</link>
+      <pubDate>Tue, 28 Feb 2023 16:03:37 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/intellij-idea/</guid>
+      <description>IDEA和Eclipse的对比 项目概念对比 1 2 3 4 5 6 7 8 在 Eclipse 中有 workspace（工作空间）和 Project（工程）的概念 在 IDEA 中只有 Pr</description>
+    </item>
+    
     <item>
       <title>Nginx</title>
       <link>https://chengtry.github.io/post/nginx/</link>
