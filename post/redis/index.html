@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.scss" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -144,185 +144,173 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#redis基础">Redis基础</a>
+    <li><a href="#redis的安装">Redis的安装：</a>
       <ul>
-        <li><a href="#redis的安装">Redis的安装：</a>
-          <ul>
-            <li><a href="#安装redis">安装redis</a></li>
-            <li><a href="#安装过程中出现的问题">安装过程中出现的问题</a></li>
-          </ul>
-        </li>
-        <li><a href="#redis中文乱码">Redis中文乱码：</a>
-          <ul>
-            <li><a href="#解决方案启动时加上--raw">解决方案：启动时加上&ndash;raw</a></li>
-          </ul>
-        </li>
-        <li><a href="#查看redis安装目录">查看Redis安装目录：</a>
-          <ul>
-            <li><a href="#用whereis和which命令找不到安装目录可以使用以下方法">用whereis和which命令找不到安装目录可以使用以下方法：</a></li>
-          </ul>
-        </li>
-        <li><a href="#查看redis版本号">查看Redis版本号：</a>
-          <ul>
-            <li><a href="#1-redis-server---version">1. redis-server &ndash;version</a></li>
-            <li><a href="#2-redis-cli--v">2. redis-cli -v</a></li>
-            <li><a href="#3-启动redis后用info命令">3. 启动redis后，用info命令</a></li>
-          </ul>
-        </li>
-        <li><a href="#redis启动停止重启设置密码进入">Redis启动、停止、重启、设置密码、进入</a>
-          <ul>
-            <li><a href="#redis启动">Redis启动:</a></li>
-            <li><a href="#redis关闭">Redis关闭：</a></li>
-            <li><a href="#redis重启">Redis重启：</a></li>
-            <li><a href="#redis设置密码">Redis设置密码：</a></li>
-            <li><a href="#redis进入">Redis进入</a></li>
-          </ul>
-        </li>
-        <li><a href="#为什么-redis-是单线程还这么快">为什么 Redis 是单线程还这么快？</a></li>
+        <li><a href="#安装redis">安装redis</a></li>
+        <li><a href="#安装过程中出现的问题">安装过程中出现的问题</a></li>
       </ul>
     </li>
-    <li><a href="#五种基本类型">五种基本类型</a>
+    <li><a href="#redis中文乱码">Redis中文乱码：</a>
       <ul>
-        <li><a href="#string类型">String类型</a>
-          <ul>
-            <li><a href="#常见命令">常见命令：</a></li>
-            <li><a href="#ttl命令">TTL命令：</a></li>
-            <li><a href="#设置和取消过期时间">设置和取消过期时间</a></li>
-            <li><a href="#rename-和-renamex-命令">rename 和 renamex 命令：</a></li>
-            <li><a href="#命令代码">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#list类型">List类型</a>
-          <ul>
-            <li><a href="#命令代码-1">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#set类型">Set类型</a>
-          <ul>
-            <li><a href="#命令代码-2">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#hash类型">Hash类型</a>
-          <ul>
-            <li><a href="#命令代码-3">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#zset类型">Zset类型</a>
-          <ul>
-            <li><a href="#命令代码-4">命令代码:</a></li>
-          </ul>
-        </li>
+        <li><a href="#解决方案启动时加上--raw">解决方案：启动时加上&ndash;raw</a></li>
       </ul>
     </li>
-    <li><a href="#三种特殊类型">三种特殊类型</a>
+    <li><a href="#查看redis安装目录">查看Redis安装目录：</a>
       <ul>
-        <li><a href="#geospatial地理位置">Geospatial(地理位置)</a>
-          <ul>
-            <li><a href="#命令代码-5">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#hyperloglog基数统计">Hyperloglog(基数统计)</a>
-          <ul>
-            <li><a href="#命令代码-6">命令代码：</a></li>
-          </ul>
-        </li>
-        <li><a href="#bitmap位图">BitMap(位图)</a>
-          <ul>
-            <li><a href="#命令代码-7">命令代码：</a></li>
-          </ul>
-        </li>
+        <li><a href="#用whereis和which命令找不到安装目录可以使用以下方法">用whereis和which命令找不到安装目录可以使用以下方法：</a></li>
       </ul>
     </li>
-    <li><a href="#redis事务">Redis事务</a>
+    <li><a href="#查看redis版本号">查看Redis版本号：</a>
       <ul>
-        <li><a href="#事务">事务：</a></li>
-        <li><a href="#redis事务过程">Redis事务过程：</a></li>
-        <li><a href="#取消事务discard">取消事务(DISCARD)：</a></li>
-        <li><a href="#事务错误">事务错误</a>
-          <ul>
-            <li><a href="#1代码语法错误编译时异常所有的命令都不执行">1.代码语法错误（编译时异常）所有的命令都不执行</a></li>
-            <li><a href="#2代码逻辑错误-运行时异常-其他命令可以正常执行---所以不保证事务原子性">2.代码逻辑错误 (运行时异常) **其他命令可以正常执行 ** &raquo;&gt; 所以不保证事务原子性</a></li>
-          </ul>
-        </li>
+        <li><a href="#1-redis-server---version">1. redis-server &ndash;version</a></li>
+        <li><a href="#2-redis-cli--v">2. redis-cli -v</a></li>
+        <li><a href="#3-启动redis后用info命令">3. 启动redis后，用info命令</a></li>
       </ul>
     </li>
-    <li><a href="#监控">监控</a>
+    <li><a href="#redis启动停止重启设置密码进入">Redis启动、停止、重启、设置密码、进入</a>
       <ul>
-        <li><a href="#乐观锁">乐观锁：</a>
-          <ul>
-            <li><a href="#1-正常执行">1. 正常执行</a></li>
-            <li><a href="#2多线程测试">2.多线程测试</a></li>
-          </ul>
-        </li>
+        <li><a href="#redis启动">Redis启动:</a></li>
+        <li><a href="#redis关闭">Redis关闭：</a></li>
+        <li><a href="#redis重启">Redis重启：</a></li>
+        <li><a href="#redis设置密码">Redis设置密码：</a></li>
+        <li><a href="#redis进入">Redis进入</a></li>
       </ul>
     </li>
-    <li><a href="#缓存穿透缓存击穿缓存雪崩">缓存穿透、缓存击穿、缓存雪崩</a>
+    <li><a href="#为什么-redis-是单线程还这么快">为什么 Redis 是单线程还这么快？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#string类型">String类型</a>
       <ul>
-        <li><a href="#缓存穿透">缓存穿透</a>
-          <ul>
-            <li><a href="#概念">概念：</a></li>
-            <li><a href="#解决方案">解决方案：</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓存击穿">缓存击穿</a>
-          <ul>
-            <li><a href="#概念-1">概念：</a></li>
-            <li><a href="#解决方案-1">解决方案：</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓存雪崩">缓存雪崩</a>
-          <ul>
-            <li><a href="#概念-2">概念：</a></li>
-            <li><a href="#解决方案-2">解决方案：</a></li>
-          </ul>
-        </li>
+        <li><a href="#常见命令">常见命令：</a></li>
+        <li><a href="#ttl命令">TTL命令：</a></li>
+        <li><a href="#设置和取消过期时间">设置和取消过期时间</a></li>
+        <li><a href="#rename-和-renamex-命令">rename 和 renamex 命令：</a></li>
+        <li><a href="#命令代码">命令代码：</a></li>
       </ul>
     </li>
-    <li><a href="#redis主从复制">Redis主从复制</a>
+    <li><a href="#list类型">List类型</a>
       <ul>
-        <li><a href="#概念-3">概念</a></li>
-        <li><a href="#开启多个redis服务一主二从">开启多个redis服务（一主二从）</a>
-          <ul>
-            <li><a href="#1去阿里云添加安全组规则开放637963806381端口号开放linux防火墙端口号">1.去阿里云添加安全组规则，开放6379/6380/6381端口号，开放linux防火墙端口号</a></li>
-            <li><a href="#2复制redisconf-到-redis-6380confredis-6381conf">2.复制redis.conf 到 redis-6380.conf，redis-6381.conf</a></li>
-            <li><a href="#3修改-redis-6380confredis-6381conf信息主要三个信息">3.修改 redis-6380.conf，redis-6381.conf信息（主要三个信息）</a></li>
-            <li><a href="#4启动redis服务三个端口号">4.启动redis服务（三个端口号）</a></li>
-            <li><a href="#5查看信息">5.查看信息</a></li>
-            <li><a href="#6遇到master_link_status为down情况">6.遇到master_link_status为down情况</a></li>
-          </ul>
-        </li>
+        <li><a href="#命令代码-1">命令代码：</a></li>
       </ul>
     </li>
-    <li><a href="#redis哨兵模式">Redis哨兵模式</a>
+    <li><a href="#set类型">Set类型</a>
       <ul>
-        <li><a href="#复制sentinelconf到自己目录下">复制sentinel.conf到自己目录下</a>
-          <ul>
-            <li><a href="#安装好的redis源码默认含有redisconf文件和sentinelconf文件">安装好的redis源码默认含有redis.conf文件和sentinel.conf文件</a></li>
-          </ul>
-        </li>
-        <li><a href="#复制sentinelconf到sentinel-26380confsentinel-23681conf">复制sentinel.conf到sentinel-26380.conf，sentinel-23681.conf</a></li>
-        <li><a href="#修改sentinelconf配置文件主要修改5处其他redis默认的一般不修改">修改sentinel.conf配置文件（主要修改5处，其他redis默认的一般不修改）</a></li>
-        <li><a href="#启动redis哨兵服务">启动redis哨兵服务</a></li>
-        <li><a href="#查看哨兵信息">查看哨兵信息</a></li>
-        <li><a href="#测试哨兵模式">测试哨兵模式</a></li>
-        <li><a href="#遇到的问题">遇到的问题</a>
-          <ul>
-            <li><a href="#启动sentinelconf报错">启动sentinel.conf报错</a></li>
-            <li><a href="#主机杀死重连后master_link_statusdown">主机杀死重连后，master_link_status:down</a></li>
-            <li><a href="#sentinel监视redismaster节点挂了不自动选举的问题next-failover-delay-i-will-not-start-a-failover-before-sat-mar-19-003923-2022">sentinel监视redis，master节点挂了不自动选举的问题，Next failover delay: I will not start a failover before Sat Mar 19 00:39:23 2022</a></li>
-          </ul>
-        </li>
+        <li><a href="#命令代码-2">命令代码：</a></li>
       </ul>
     </li>
-    <li><a href="#spirngboot集成redis">SpirngBoot集成Redis</a>
+    <li><a href="#hash类型">Hash类型</a>
       <ul>
-        <li><a href="#1添加依赖">1.添加依赖</a></li>
-        <li><a href="#2yml配置">2.yml配置</a></li>
-        <li><a href="#4遇到的问题">4.遇到的问题</a>
-          <ul>
-            <li><a href="#41-启动项目显示unable-to-connect-to-81401396381">4.1 启动项目显示Unable to connect to 8.140.1.39:6381</a></li>
-          </ul>
-        </li>
+        <li><a href="#命令代码-3">命令代码：</a></li>
+      </ul>
+    </li>
+    <li><a href="#zset类型">Zset类型</a>
+      <ul>
+        <li><a href="#命令代码-4">命令代码:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#geospatial地理位置">Geospatial(地理位置)</a>
+      <ul>
+        <li><a href="#命令代码-5">命令代码：</a></li>
+      </ul>
+    </li>
+    <li><a href="#hyperloglog基数统计">Hyperloglog(基数统计)</a>
+      <ul>
+        <li><a href="#命令代码-6">命令代码：</a></li>
+      </ul>
+    </li>
+    <li><a href="#bitmap位图">BitMap(位图)</a>
+      <ul>
+        <li><a href="#命令代码-7">命令代码：</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#事务">事务：</a></li>
+    <li><a href="#redis事务过程">Redis事务过程：</a></li>
+    <li><a href="#取消事务discard">取消事务(DISCARD)：</a></li>
+    <li><a href="#事务错误">事务错误</a>
+      <ul>
+        <li><a href="#1代码语法错误编译时异常所有的命令都不执行">1.代码语法错误（编译时异常）所有的命令都不执行</a></li>
+        <li><a href="#2代码逻辑错误-运行时异常-其他命令可以正常执行---所以不保证事务原子性">2.代码逻辑错误 (运行时异常) **其他命令可以正常执行 ** &raquo;&gt; 所以不保证事务原子性</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#乐观锁">乐观锁：</a>
+      <ul>
+        <li><a href="#1-正常执行">1. 正常执行</a></li>
+        <li><a href="#2多线程测试">2.多线程测试</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#缓存穿透">缓存穿透</a>
+      <ul>
+        <li><a href="#概念">概念：</a></li>
+        <li><a href="#解决方案">解决方案：</a></li>
+      </ul>
+    </li>
+    <li><a href="#缓存击穿">缓存击穿</a>
+      <ul>
+        <li><a href="#概念-1">概念：</a></li>
+        <li><a href="#解决方案-1">解决方案：</a></li>
+      </ul>
+    </li>
+    <li><a href="#缓存雪崩">缓存雪崩</a>
+      <ul>
+        <li><a href="#概念-2">概念：</a></li>
+        <li><a href="#解决方案-2">解决方案：</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#概念-3">概念</a></li>
+    <li><a href="#开启多个redis服务一主二从">开启多个redis服务（一主二从）</a>
+      <ul>
+        <li><a href="#1去阿里云添加安全组规则开放637963806381端口号开放linux防火墙端口号">1.去阿里云添加安全组规则，开放6379/6380/6381端口号，开放linux防火墙端口号</a></li>
+        <li><a href="#2复制redisconf-到-redis-6380confredis-6381conf">2.复制redis.conf 到 redis-6380.conf，redis-6381.conf</a></li>
+        <li><a href="#3修改-redis-6380confredis-6381conf信息主要三个信息">3.修改 redis-6380.conf，redis-6381.conf信息（主要三个信息）</a></li>
+        <li><a href="#4启动redis服务三个端口号">4.启动redis服务（三个端口号）</a></li>
+        <li><a href="#5查看信息">5.查看信息</a></li>
+        <li><a href="#6遇到master_link_status为down情况">6.遇到master_link_status为down情况</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#复制sentinelconf到自己目录下">复制sentinel.conf到自己目录下</a>
+      <ul>
+        <li><a href="#安装好的redis源码默认含有redisconf文件和sentinelconf文件">安装好的redis源码默认含有redis.conf文件和sentinel.conf文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#复制sentinelconf到sentinel-26380confsentinel-23681conf">复制sentinel.conf到sentinel-26380.conf，sentinel-23681.conf</a></li>
+    <li><a href="#修改sentinelconf配置文件主要修改5处其他redis默认的一般不修改">修改sentinel.conf配置文件（主要修改5处，其他redis默认的一般不修改）</a></li>
+    <li><a href="#启动redis哨兵服务">启动redis哨兵服务</a></li>
+    <li><a href="#查看哨兵信息">查看哨兵信息</a></li>
+    <li><a href="#测试哨兵模式">测试哨兵模式</a></li>
+    <li><a href="#遇到的问题">遇到的问题</a>
+      <ul>
+        <li><a href="#启动sentinelconf报错">启动sentinel.conf报错</a></li>
+        <li><a href="#主机杀死重连后master_link_statusdown">主机杀死重连后，master_link_status:down</a></li>
+        <li><a href="#sentinel监视redismaster节点挂了不自动选举的问题next-failover-delay-i-will-not-start-a-failover-before-sat-mar-19-003923-2022">sentinel监视redis，master节点挂了不自动选举的问题，Next failover delay: I will not start a failover before Sat Mar 19 00:39:23 2022</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1添加依赖">1.添加依赖</a></li>
+    <li><a href="#2yml配置">2.yml配置</a></li>
+    <li><a href="#4遇到的问题">4.遇到的问题</a>
+      <ul>
+        <li><a href="#41-启动项目显示unable-to-connect-to-81401396381">4.1 启动项目显示Unable to connect to 8.140.1.39:6381</a></li>
       </ul>
     </li>
   </ul>

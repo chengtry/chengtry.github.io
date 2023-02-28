@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.scss" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -143,84 +143,75 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#nginx">nginx</a>
+    <li><a href="#简介">简介</a>
       <ul>
-        <li><a href="#简介">简介</a>
-          <ul>
-            <li><a href="#1nginx是什么">1.nginx是什么</a></li>
-            <li><a href="#2nginx作用">2.nginx作用</a></li>
-          </ul>
-        </li>
-        <li><a href="#nginx安装">nginx安装</a>
-          <ul>
-            <li><a href="#第一步安装-pcre">第一步，安装 pcre</a></li>
-            <li><a href="#第二步安装所需其他依赖">第二步：安装所需其他依赖</a></li>
-            <li><a href="#第三步安装nginx">第三步：安装nginx</a></li>
-          </ul>
-        </li>
-        <li><a href="#nginx解压安装">nginx解压安装</a>
-          <ul>
-            <li><a href="#第四步测试">第四步：测试</a></li>
-          </ul>
-        </li>
-        <li><a href="#nginx常用命令">nginx常用命令</a>
-          <ul>
-            <li><a href="#1启动命令">1.启动命令</a></li>
-            <li><a href="#2关闭命令">2.关闭命令</a></li>
-            <li><a href="#3重新加载命令">3.重新加载命令</a></li>
-          </ul>
-        </li>
-        <li><a href="#4指定配置文件">4.指定配置文件</a></li>
+        <li><a href="#1nginx是什么">1.nginx是什么</a></li>
+        <li><a href="#2nginx作用">2.nginx作用</a></li>
       </ul>
     </li>
-    <li><a href="#测试nginx反向代理">测试nginx反向代理</a>
+    <li><a href="#nginx安装">nginx安装</a>
       <ul>
-        <li><a href="#通过-wwwyccom访问-tomcat-初始界面">通过 <a href="http://www.yc.com">www.yc.com</a>访问 Tomcat 初始界面</a>
-          <ul>
-            <li><a href="#启动tomcat">启动tomcat</a></li>
-            <li><a href="#本机-host-文件配置">本机 host 文件配置</a></li>
-            <li><a href="#在-nginx-中进行请求转发配置反向代理配置">在 nginx 中进行请求转发配置(反向代理配置)</a></li>
-          </ul>
-        </li>
+        <li><a href="#第一步安装-pcre">第一步，安装 pcre</a></li>
+        <li><a href="#第二步安装所需其他依赖">第二步：安装所需其他依赖</a></li>
+        <li><a href="#第三步安装nginx">第三步：安装nginx</a></li>
       </ul>
     </li>
-    <li><a href="#负载均衡的几种常用方式">负载均衡的几种常用方式</a>
+    <li><a href="#nginx解压安装">nginx解压安装</a>
       <ul>
-        <li><a href="#1轮询默认">1.轮询(默认)</a></li>
-        <li><a href="#2weight">2.weight</a></li>
-        <li><a href="#3ip_hash">3.ip_hash</a></li>
-        <li><a href="#4fair第三方">4.fair(第三方)</a></li>
-        <li><a href="#5url_hash第三方">5.url_hash(第三方)</a></li>
+        <li><a href="#第四步测试">第四步：测试</a></li>
       </ul>
     </li>
-    <li><a href="#nginx路径配置信息">nginx路径配置信息</a>
+    <li><a href="#nginx常用命令">nginx常用命令</a>
       <ul>
-        <li><a href="#a实际访问的端口服务http1270018080apiabc">A：实际访问的端口服务：http://127.0.0.1:8080/api/abc</a></li>
-        <li><a href="#b实际访问的端口服务http1270018080apiabc">B：实际访问的端口服务：http://127.0.0.1:8080//api/abc</a></li>
-        <li><a href="#c实际访问的端口服务http1270018080day06apiapiabc">C：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
-        <li><a href="#d实际访问的端口服务http1270018080day06apiapiabc">D：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
-        <li><a href="#e实际访问的端口服务http1270018080serverapiabc">E：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
-        <li><a href="#f实际访问的端口服务http1270018080serverapiabc">F：实际访问的端口服务：http://127.0.0.1:8080/server//api/abc</a></li>
-        <li><a href="#g实际访问的端口服务http1270018080serverapiabc">G：实际访问的端口服务：http://127.0.0.1:8080/serverapi/abc</a></li>
-        <li><a href="#h实际访问的端口服务http1270018080serverapiabc">H：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
+        <li><a href="#1启动命令">1.启动命令</a></li>
+        <li><a href="#2关闭命令">2.关闭命令</a></li>
+        <li><a href="#3重新加载命令">3.重新加载命令</a></li>
       </ul>
     </li>
-    <li><a href="#遇到的问题">遇到的问题</a>
+    <li><a href="#4指定配置文件">4.指定配置文件</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#通过-wwwyccom访问-tomcat-初始界面">通过 <a href="http://www.yc.com">www.yc.com</a>访问 Tomcat 初始界面</a>
       <ul>
-        <li><a href="#一个springboot文件上传程序用nginx代理访问报错404">一个SpringBoot文件上传程序用nginx代理，访问报错404</a></li>
-        <li><a href="#nginx代理静态资源404问题">nginx代理静态资源404问题</a></li>
-        <li><a href="#nginx实际开发环境配置信息">nginx实际开发环境配置信息</a></li>
-        <li><a href="#文件上传遇到413-request-entity-too-large请求实体太大">文件上传遇到413 Request Entity Too Large（请求实体太大）</a></li>
-        <li><a href="#nignx代理前端文件重定向后端口变了">nignx代理前端文件重定向后，端口变了</a></li>
+        <li><a href="#启动tomcat">启动tomcat</a></li>
+        <li><a href="#本机-host-文件配置">本机 host 文件配置</a></li>
+        <li><a href="#在-nginx-中进行请求转发配置反向代理配置">在 nginx 中进行请求转发配置(反向代理配置)</a></li>
       </ul>
     </li>
-    <li><a href="#安装keepalived">安装keepalived</a>
-      <ul>
-        <li><a href="#下载安装">下载安装</a></li>
-        <li><a href="#启动停止">启动停止</a></li>
-        <li><a href="#配置systemctl">配置systemctl</a></li>
-      </ul>
-    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1轮询默认">1.轮询(默认)</a></li>
+    <li><a href="#2weight">2.weight</a></li>
+    <li><a href="#3ip_hash">3.ip_hash</a></li>
+    <li><a href="#4fair第三方">4.fair(第三方)</a></li>
+    <li><a href="#5url_hash第三方">5.url_hash(第三方)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#a实际访问的端口服务http1270018080apiabc">A：实际访问的端口服务：http://127.0.0.1:8080/api/abc</a></li>
+    <li><a href="#b实际访问的端口服务http1270018080apiabc">B：实际访问的端口服务：http://127.0.0.1:8080//api/abc</a></li>
+    <li><a href="#c实际访问的端口服务http1270018080day06apiapiabc">C：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
+    <li><a href="#d实际访问的端口服务http1270018080day06apiapiabc">D：实际访问的端口服务：http://127.0.0.1:8080/day06api/api/abc</a></li>
+    <li><a href="#e实际访问的端口服务http1270018080serverapiabc">E：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
+    <li><a href="#f实际访问的端口服务http1270018080serverapiabc">F：实际访问的端口服务：http://127.0.0.1:8080/server//api/abc</a></li>
+    <li><a href="#g实际访问的端口服务http1270018080serverapiabc">G：实际访问的端口服务：http://127.0.0.1:8080/serverapi/abc</a></li>
+    <li><a href="#h实际访问的端口服务http1270018080serverapiabc">H：实际访问的端口服务：http://127.0.0.1:8080/server/api/abc</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#一个springboot文件上传程序用nginx代理访问报错404">一个SpringBoot文件上传程序用nginx代理，访问报错404</a></li>
+    <li><a href="#nginx代理静态资源404问题">nginx代理静态资源404问题</a></li>
+    <li><a href="#nginx实际开发环境配置信息">nginx实际开发环境配置信息</a></li>
+    <li><a href="#文件上传遇到413-request-entity-too-large请求实体太大">文件上传遇到413 Request Entity Too Large（请求实体太大）</a></li>
+    <li><a href="#nignx代理前端文件重定向后端口变了">nignx代理前端文件重定向后，端口变了</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#下载安装">下载安装</a></li>
+    <li><a href="#启动停止">启动停止</a></li>
+    <li><a href="#配置systemctl">配置systemctl</a></li>
   </ul>
 </nav>
   </div>

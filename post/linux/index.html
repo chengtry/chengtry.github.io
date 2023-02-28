@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.scss" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -143,115 +143,107 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#linux命令">Linux命令</a>
+    <li><a href="#基础命令">基础命令：</a>
       <ul>
-        <li><a href="#基础命令">基础命令：</a>
-          <ul>
-            <li><a href="#tar解压命令">tar解压命令：</a></li>
-            <li><a href="#gunzip解压命令">gunzip解压命令：</a></li>
-            <li><a href="#unzip解压命令">unzip解压命令：</a></li>
-            <li><a href="#tar打压缩命令">tar打压缩命令：</a></li>
-            <li><a href="#gzip打压缩命令">gzip打压缩命令：</a></li>
-            <li><a href="#zip打压缩命令">zip打压缩命令：</a></li>
-            <li><a href="#ps命令与grep命令">ps命令与grep命令</a></li>
-            <li><a href="#移动当前目录下的文件到另一个目录中">移动当前目录下的文件到另一个目录中</a></li>
-            <li><a href="#启动tomcat">启动tomcat</a></li>
-            <li><a href="#查看用户名和其他信息">查看用户名和其他信息</a></li>
-            <li><a href="#查看ip信息">查看ip信息</a></li>
-            <li><a href="#find命令">find命令</a></li>
-            <li><a href="#curl命令">curl命令</a></li>
-            <li><a href="#linux查看内网ip和公网ip">Linux查看内网IP和公网IP</a></li>
-            <li><a href="#修改文件名称">修改文件名称</a></li>
-            <li><a href="#df命令">df命令</a></li>
-            <li><a href="#which和whereis的区别">which和whereis的区别</a></li>
-            <li><a href="#查看cpu使用情况">查看cpu使用情况</a></li>
-            <li><a href="#用户相关命令">用户相关命令</a></li>
-            <li><a href="#查看文件文件夹大小">查看文件/文件夹大小</a></li>
-            <li><a href="#查看用户密码加密解密">查看用户密码（加密/解密）</a></li>
-            <li><a href="#sudo命令">sudo命令</a></li>
-            <li><a href="#查看端口详情">查看端口详情</a></li>
-            <li><a href="#netstat--anp命令">netstat -anp命令</a></li>
-            <li><a href="#根据进程号查询对应应用的位置">根据进程号查询对应应用的位置</a></li>
-            <li><a href="#查看已经启动的端口号信息">查看已经启动的端口号信息</a></li>
-            <li><a href="#jps命令">jps命令</a></li>
-            <li><a href="#查看linux版本信息">查看linux版本信息</a></li>
-            <li><a href="#scp命令">scp命令</a></li>
-            <li><a href="#查看使用最多的命令">查看使用最多的命令</a></li>
-            <li><a href="#vim进入文件显示序号">VIM进入文件显示序号</a></li>
-            <li><a href="#vi模式定位最后一行">vi模式定位最后一行</a></li>
-          </ul>
-        </li>
-        <li><a href="#在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</a></li>
-        <li><a href="#rpm方式安装jdk不需要配置环境变量">rpm方式安装JDK(不需要配置环境变量)</a>
-          <ul>
-            <li><a href="#1下载rpm安装包并安装">1.下载rpm安装包并安装</a></li>
-            <li><a href="#2查看jdk版本号">2.查看jdk版本号</a></li>
-          </ul>
-        </li>
-        <li><a href="#永久修改linux主机名">永久修改Linux主机名</a>
-          <ul>
-            <li><a href="#1查看主机名">1.查看主机名</a></li>
-            <li><a href="#2修改两个配置文件">2.修改两个配置文件</a></li>
-            <li><a href="#3重启生效">3.重启生效</a></li>
-          </ul>
-        </li>
-        <li><a href="#linux查看服务器是几核">Linux查看服务器是几核</a></li>
-        <li><a href="#linux安装telnet命令">Linux安装telnet命令</a></li>
-        <li><a href="#linux安装git命令">Linux安装git命令</a></li>
-        <li><a href="#linux安装ripgrepcentos-7-">Linux安装ripgrep（CentOS 7 ）</a></li>
-        <li><a href="#linux测试端口连通性">Linux测试端口连通性</a></li>
-        <li><a href="#linux定时任务相关">Linux定时任务相关</a></li>
-        <li><a href="#lsattr命令和chattr命令">lsattr命令和chattr命令</a></li>
-        <li><a href="#列出10个cpu使用前10的process">列出10个CPU使用前10的process</a></li>
-        <li><a href="#清理linux下的tmp目录规则">清理Linux下的tmp目录规则</a></li>
-        <li><a href="#liunx查看设备挂载情况">Liunx查看设备挂载情况</a></li>
-        <li><a href="#linux清空一个文件的所有内容而不删除文件">Linux清空一个文件的所有内容而不删除文件</a></li>
-        <li><a href="#查看网卡信息">查看网卡信息</a></li>
-        <li><a href="#修改文件所属组">修改文件所属组</a></li>
-        <li><a href="#内网linux安装windows字体">内网Linux安装windows字体</a></li>
-        <li><a href="#查看服务器有几个cpu">查看服务器有几个CPU</a></li>
-        <li><a href="#linux通过df和du查看磁盘使用的大小不一致问题">Linux通过df和du查看磁盘使用的大小不一致问题</a></li>
+        <li><a href="#tar解压命令">tar解压命令：</a></li>
+        <li><a href="#gunzip解压命令">gunzip解压命令：</a></li>
+        <li><a href="#unzip解压命令">unzip解压命令：</a></li>
+        <li><a href="#tar打压缩命令">tar打压缩命令：</a></li>
+        <li><a href="#gzip打压缩命令">gzip打压缩命令：</a></li>
+        <li><a href="#zip打压缩命令">zip打压缩命令：</a></li>
+        <li><a href="#ps命令与grep命令">ps命令与grep命令</a></li>
+        <li><a href="#移动当前目录下的文件到另一个目录中">移动当前目录下的文件到另一个目录中</a></li>
+        <li><a href="#启动tomcat">启动tomcat</a></li>
+        <li><a href="#查看用户名和其他信息">查看用户名和其他信息</a></li>
+        <li><a href="#查看ip信息">查看ip信息</a></li>
+        <li><a href="#find命令">find命令</a></li>
+        <li><a href="#curl命令">curl命令</a></li>
+        <li><a href="#linux查看内网ip和公网ip">Linux查看内网IP和公网IP</a></li>
+        <li><a href="#修改文件名称">修改文件名称</a></li>
+        <li><a href="#df命令">df命令</a></li>
+        <li><a href="#which和whereis的区别">which和whereis的区别</a></li>
+        <li><a href="#查看cpu使用情况">查看cpu使用情况</a></li>
+        <li><a href="#用户相关命令">用户相关命令</a></li>
+        <li><a href="#查看文件文件夹大小">查看文件/文件夹大小</a></li>
+        <li><a href="#查看用户密码加密解密">查看用户密码（加密/解密）</a></li>
+        <li><a href="#sudo命令">sudo命令</a></li>
+        <li><a href="#查看端口详情">查看端口详情</a></li>
+        <li><a href="#netstat--anp命令">netstat -anp命令</a></li>
+        <li><a href="#根据进程号查询对应应用的位置">根据进程号查询对应应用的位置</a></li>
+        <li><a href="#查看已经启动的端口号信息">查看已经启动的端口号信息</a></li>
+        <li><a href="#jps命令">jps命令</a></li>
+        <li><a href="#查看linux版本信息">查看linux版本信息</a></li>
+        <li><a href="#scp命令">scp命令</a></li>
+        <li><a href="#查看使用最多的命令">查看使用最多的命令</a></li>
+        <li><a href="#vim进入文件显示序号">VIM进入文件显示序号</a></li>
+        <li><a href="#vi模式定位最后一行">vi模式定位最后一行</a></li>
       </ul>
     </li>
-    <li><a href="#linux防火墙问题">Linux防火墙问题</a>
+    <li><a href="#在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</a></li>
+    <li><a href="#rpm方式安装jdk不需要配置环境变量">rpm方式安装JDK(不需要配置环境变量)</a>
       <ul>
-        <li><a href="#1查看firewall服务状态">1、查看firewall服务状态</a></li>
-        <li><a href="#2查看firewall的状态">2、查看firewall的状态</a></li>
-        <li><a href="#3开启重启关闭firewalldservice服务">3、开启、重启、关闭、firewalld.service服务</a></li>
-        <li><a href="#4查看防火墙规则">4、查看防火墙规则</a></li>
-        <li><a href="#5查询开放关闭端口号">5、查询、开放、关闭端口号</a></li>
+        <li><a href="#1下载rpm安装包并安装">1.下载rpm安装包并安装</a></li>
+        <li><a href="#2查看jdk版本号">2.查看jdk版本号</a></li>
       </ul>
     </li>
-    <li><a href="#linux下运行项目">Linux下运行项目</a>
+    <li><a href="#永久修改linux主机名">永久修改Linux主机名</a>
       <ul>
-        <li><a href="#以后台方式启动springboot项目打印日志">以后台方式启动SpringBoot项目（打印日志）</a></li>
-        <li><a href="#查看springboot项目进程号">查看SpringBoot项目进程号</a></li>
-        <li><a href="#linux未给静态前端文件授权访问不了">Linux未给静态前端文件授权，访问不了</a></li>
+        <li><a href="#1查看主机名">1.查看主机名</a></li>
+        <li><a href="#2修改两个配置文件">2.修改两个配置文件</a></li>
+        <li><a href="#3重启生效">3.重启生效</a></li>
       </ul>
     </li>
-    <li><a href="#linux下安装mysql">Linux下安装MySQL</a>
-      <ul>
-        <li><a href="#mysql启动报错mysqlcommand-not-found">MySQL启动报错：mysql:command not found</a></li>
-        <li><a href="#启动mysql">启动MySQL</a></li>
-        <li><a href="#mysql启动报错">MySQL启动报错：</a></li>
-        <li><a href="#service-mysqld-start-报错">service mysqld start 报错：</a></li>
-        <li><a href="#mysql启动报错the-server-quit-without-updating-pid-file">mysql启动报错:The server quit without updating PID file</a></li>
-        <li><a href="#mysql忘记密码修改mysql密码">MySQL忘记密码，修改MySQL密码</a></li>
-        <li><a href="#mysql查看所有数据库">MySQL查看所有数据库</a></li>
-        <li><a href="#mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</a></li>
-        <li><a href="#mysql命令行出错退出此次命令">MySQL命令行出错退出此次命令</a></li>
-        <li><a href="#mysql修改某个字段字符集">MySQL修改某个字段字符集</a></li>
-        <li><a href="#mysql查看数据库编码">MySQL查看数据库编码</a></li>
-        <li><a href="#mysql中文显示乱码">MySQL中文显示乱码</a></li>
-        <li><a href="#查看mysql端口号">查看MySQL端口号</a></li>
-        <li><a href="#navicat连接linux下的mysql报错">Navicat连接Linux下的MySQL报错</a></li>
-        <li><a href="#linux中的mysql命令模式清屏">Linux中的MySQL命令模式清屏</a></li>
-        <li><a href="#linux下mysql表名区分大小写怎么解决">Linux下MySQL表名区分大小写怎么解决</a></li>
-        <li><a href="#mysql查看某张表的索引">MySQL查看某张表的索引</a></li>
-        <li><a href="#mysql没有root用户">MySQL没有root用户</a></li>
-      </ul>
-    </li>
-    <li><a href="#windows使用vscode实现remote-ssh免密登录">Windows使用vscode实现remote ssh免密登录</a></li>
+    <li><a href="#linux查看服务器是几核">Linux查看服务器是几核</a></li>
+    <li><a href="#linux安装telnet命令">Linux安装telnet命令</a></li>
+    <li><a href="#linux安装git命令">Linux安装git命令</a></li>
+    <li><a href="#linux安装ripgrepcentos-7-">Linux安装ripgrep（CentOS 7 ）</a></li>
+    <li><a href="#linux测试端口连通性">Linux测试端口连通性</a></li>
+    <li><a href="#linux定时任务相关">Linux定时任务相关</a></li>
+    <li><a href="#lsattr命令和chattr命令">lsattr命令和chattr命令</a></li>
+    <li><a href="#列出10个cpu使用前10的process">列出10个CPU使用前10的process</a></li>
+    <li><a href="#清理linux下的tmp目录规则">清理Linux下的tmp目录规则</a></li>
+    <li><a href="#liunx查看设备挂载情况">Liunx查看设备挂载情况</a></li>
+    <li><a href="#linux清空一个文件的所有内容而不删除文件">Linux清空一个文件的所有内容而不删除文件</a></li>
+    <li><a href="#查看网卡信息">查看网卡信息</a></li>
+    <li><a href="#修改文件所属组">修改文件所属组</a></li>
+    <li><a href="#内网linux安装windows字体">内网Linux安装windows字体</a></li>
+    <li><a href="#查看服务器有几个cpu">查看服务器有几个CPU</a></li>
+    <li><a href="#linux通过df和du查看磁盘使用的大小不一致问题">Linux通过df和du查看磁盘使用的大小不一致问题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1查看firewall服务状态">1、查看firewall服务状态</a></li>
+    <li><a href="#2查看firewall的状态">2、查看firewall的状态</a></li>
+    <li><a href="#3开启重启关闭firewalldservice服务">3、开启、重启、关闭、firewalld.service服务</a></li>
+    <li><a href="#4查看防火墙规则">4、查看防火墙规则</a></li>
+    <li><a href="#5查询开放关闭端口号">5、查询、开放、关闭端口号</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#以后台方式启动springboot项目打印日志">以后台方式启动SpringBoot项目（打印日志）</a></li>
+    <li><a href="#查看springboot项目进程号">查看SpringBoot项目进程号</a></li>
+    <li><a href="#linux未给静态前端文件授权访问不了">Linux未给静态前端文件授权，访问不了</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#mysql启动报错mysqlcommand-not-found">MySQL启动报错：mysql:command not found</a></li>
+    <li><a href="#启动mysql">启动MySQL</a></li>
+    <li><a href="#mysql启动报错">MySQL启动报错：</a></li>
+    <li><a href="#service-mysqld-start-报错">service mysqld start 报错：</a></li>
+    <li><a href="#mysql启动报错the-server-quit-without-updating-pid-file">mysql启动报错:The server quit without updating PID file</a></li>
+    <li><a href="#mysql忘记密码修改mysql密码">MySQL忘记密码，修改MySQL密码</a></li>
+    <li><a href="#mysql查看所有数据库">MySQL查看所有数据库</a></li>
+    <li><a href="#mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</a></li>
+    <li><a href="#mysql命令行出错退出此次命令">MySQL命令行出错退出此次命令</a></li>
+    <li><a href="#mysql修改某个字段字符集">MySQL修改某个字段字符集</a></li>
+    <li><a href="#mysql查看数据库编码">MySQL查看数据库编码</a></li>
+    <li><a href="#mysql中文显示乱码">MySQL中文显示乱码</a></li>
+    <li><a href="#查看mysql端口号">查看MySQL端口号</a></li>
+    <li><a href="#navicat连接linux下的mysql报错">Navicat连接Linux下的MySQL报错</a></li>
+    <li><a href="#linux中的mysql命令模式清屏">Linux中的MySQL命令模式清屏</a></li>
+    <li><a href="#linux下mysql表名区分大小写怎么解决">Linux下MySQL表名区分大小写怎么解决</a></li>
+    <li><a href="#mysql查看某张表的索引">MySQL查看某张表的索引</a></li>
+    <li><a href="#mysql没有root用户">MySQL没有root用户</a></li>
   </ul>
 </nav>
   </div>

@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.scss" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -143,84 +143,76 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#docker基础">Docker基础</a>
+    <li><a href="#走进docker">走进Docker</a></li>
+    <li><a href="#docker安装">Docker安装</a></li>
+    <li><a href="#docker架构">Docker架构</a>
       <ul>
-        <li><a href="#走进docker">走进Docker</a></li>
-        <li><a href="#docker安装">Docker安装</a></li>
-        <li><a href="#docker架构">Docker架构</a>
-          <ul>
-            <li><a href="#docker-daemondocker守护进程"><strong>Docker daemon（Docker守护进程）</strong></a></li>
-            <li><a href="#client-docker客户端"><strong>Client</strong>（ <strong>Docker</strong>客户端）</a></li>
-            <li><a href="#images镜像"><strong>Images（镜像）</strong></a></li>
-            <li><a href="#container容器"><strong>Container</strong>（容器）</a></li>
-            <li><a href="#repository仓库">Repository（仓库）</a></li>
-            <li><a href="#registry服务器"><strong>Registry</strong>（服务器）</a></li>
-          </ul>
-        </li>
-        <li><a href="#docker常用命令">Docker常用命令</a>
-          <ul>
-            <li><a href="#镜像相关命令">**镜像相关命令</a></li>
-            <li><a href="#容器相关命令"><strong>容器相关命令</strong></a></li>
-            <li><a href="#docker命令">Docker命令</a></li>
-          </ul>
-        </li>
-        <li><a href="#docker常见问题">Docker常见问题</a>
-          <ul>
-            <li><a href="#docker一启动就退出">Docker一启动就退出：</a></li>
-          </ul>
-        </li>
-        <li><a href="#docker容器时间与宿主机时间不一致">docker容器时间与宿主机时间不一致</a></li>
-        <li><a href="#docker无视防火墙firewalld映射端口穿透内置防护墙">Docker无视防火墙firewalld（映射端口穿透内置防护墙）</a></li>
-        <li><a href="#docker日志太大占满空间">Docker日志太大占满空间</a></li>
+        <li><a href="#docker-daemondocker守护进程"><strong>Docker daemon（Docker守护进程）</strong></a></li>
+        <li><a href="#client-docker客户端"><strong>Client</strong>（ <strong>Docker</strong>客户端）</a></li>
+        <li><a href="#images镜像"><strong>Images（镜像）</strong></a></li>
+        <li><a href="#container容器"><strong>Container</strong>（容器）</a></li>
+        <li><a href="#repository仓库">Repository（仓库）</a></li>
+        <li><a href="#registry服务器"><strong>Registry</strong>（服务器）</a></li>
       </ul>
     </li>
-    <li><a href="#dokcer进阶">Dokcer进阶</a>
+    <li><a href="#docker常用命令">Docker常用命令</a>
       <ul>
-        <li><a href="#docker-compose">Docker Compose</a>
-          <ul>
-            <li><a href="#安装">安装</a></li>
-            <li><a href="#体验入门">体验入门</a></li>
-            <li><a href="#docker-compose命令">docker-compose命令</a></li>
-            <li><a href="#docker小结">Docker小结</a></li>
-          </ul>
-        </li>
-        <li><a href="#docker制作自己的镜像">Docker制作自己的镜像</a></li>
+        <li><a href="#镜像相关命令">**镜像相关命令</a></li>
+        <li><a href="#容器相关命令"><strong>容器相关命令</strong></a></li>
+        <li><a href="#docker命令">Docker命令</a></li>
       </ul>
     </li>
-    <li><a href="#docker中使用mysql">Docker中使用MySQL</a>
+    <li><a href="#docker常见问题">Docker常见问题</a>
       <ul>
-        <li><a href="#1拉取mysql57镜像">1.拉取MySQL5.7镜像</a></li>
-        <li><a href="#2启动mysql">2.启动MySQL</a></li>
-        <li><a href="#3进入mysql命令窗口">3.进入MySQL命令窗口</a></li>
-        <li><a href="#mysql查看所有数据库">MySQL查看所有数据库</a></li>
-        <li><a href="#mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</a></li>
-        <li><a href="#mysql命令行出错退出此次命令">MySQL命令行出错退出此次命令</a></li>
-        <li><a href="#mysql修改某个字段字符集">MySQL修改某个字段字符集</a></li>
-        <li><a href="#mysql查看数据库编码">MySQL查看数据库编码</a></li>
-        <li><a href="#mysql中文显示乱码">MySQL中文显示乱码</a></li>
-        <li><a href="#docker启动已经停止的mysql容器">Docker启动已经停止的MySQL容器</a></li>
-        <li><a href="#docker启动mysql秒退">Docker启动mysql秒退</a></li>
-        <li><a href="#docker镜像很多没有打包ps命令">Docker镜像很多没有打包ps命令</a></li>
-        <li><a href="#docker中mysql容器时间与系统时间不一致">Docker中MySQL容器时间与系统时间不一致</a></li>
-        <li><a href="#linux查看端口号使用情况">linux查看端口号使用情况</a></li>
+        <li><a href="#docker一启动就退出">Docker一启动就退出：</a></li>
       </ul>
     </li>
-    <li><a href="#docker安装elasticsearch和kibana">Docker安装ElasticSearch和Kibana</a>
+    <li><a href="#docker容器时间与宿主机时间不一致">docker容器时间与宿主机时间不一致</a></li>
+    <li><a href="#docker无视防火墙firewalld映射端口穿透内置防护墙">Docker无视防火墙firewalld（映射端口穿透内置防护墙）</a></li>
+    <li><a href="#docker日志太大占满空间">Docker日志太大占满空间</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#docker-compose">Docker Compose</a>
       <ul>
-        <li><a href="#拉取es镜像和kibana镜像版本762">拉取ES镜像和Kibana镜像(版本：7.6.2)</a></li>
-        <li><a href="#启动elasticsearch">启动elasticsearch</a></li>
-        <li><a href="#启动elasticsearch遇到的报错">启动elasticsearch遇到的报错</a></li>
-        <li><a href="#启动kibana">启动Kibana</a></li>
-        <li><a href="#启动kibana报错kibana-server-is-not-ready-yet">启动Kibana报错：Kibana server is not ready yet</a></li>
-        <li><a href="#docker修改已经停止容器里的文件内容">Docker修改已经停止容器里的文件内容</a></li>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#体验入门">体验入门</a></li>
+        <li><a href="#docker-compose命令">docker-compose命令</a></li>
+        <li><a href="#docker小结">Docker小结</a></li>
       </ul>
     </li>
-    <li><a href="#docker可视化uiportainer">Docker可视化UI：Portainer</a>
-      <ul>
-        <li><a href="#1安装">1.安装</a></li>
-        <li><a href="#2升级portainer">2.升级Portainer</a></li>
-      </ul>
-    </li>
+    <li><a href="#docker制作自己的镜像">Docker制作自己的镜像</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1拉取mysql57镜像">1.拉取MySQL5.7镜像</a></li>
+    <li><a href="#2启动mysql">2.启动MySQL</a></li>
+    <li><a href="#3进入mysql命令窗口">3.进入MySQL命令窗口</a></li>
+    <li><a href="#mysql查看所有数据库">MySQL查看所有数据库</a></li>
+    <li><a href="#mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</a></li>
+    <li><a href="#mysql命令行出错退出此次命令">MySQL命令行出错退出此次命令</a></li>
+    <li><a href="#mysql修改某个字段字符集">MySQL修改某个字段字符集</a></li>
+    <li><a href="#mysql查看数据库编码">MySQL查看数据库编码</a></li>
+    <li><a href="#mysql中文显示乱码">MySQL中文显示乱码</a></li>
+    <li><a href="#docker启动已经停止的mysql容器">Docker启动已经停止的MySQL容器</a></li>
+    <li><a href="#docker启动mysql秒退">Docker启动mysql秒退</a></li>
+    <li><a href="#docker镜像很多没有打包ps命令">Docker镜像很多没有打包ps命令</a></li>
+    <li><a href="#docker中mysql容器时间与系统时间不一致">Docker中MySQL容器时间与系统时间不一致</a></li>
+    <li><a href="#linux查看端口号使用情况">linux查看端口号使用情况</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#拉取es镜像和kibana镜像版本762">拉取ES镜像和Kibana镜像(版本：7.6.2)</a></li>
+    <li><a href="#启动elasticsearch">启动elasticsearch</a></li>
+    <li><a href="#启动elasticsearch遇到的报错">启动elasticsearch遇到的报错</a></li>
+    <li><a href="#启动kibana">启动Kibana</a></li>
+    <li><a href="#启动kibana报错kibana-server-is-not-ready-yet">启动Kibana报错：Kibana server is not ready yet</a></li>
+    <li><a href="#docker修改已经停止容器里的文件内容">Docker修改已经停止容器里的文件内容</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1安装">1.安装</a></li>
+    <li><a href="#2升级portainer">2.升级Portainer</a></li>
   </ul>
 </nav>
   </div>

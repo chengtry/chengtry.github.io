@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.scss" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -144,58 +144,49 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#idea和eclipse的对比"><strong>IDEA</strong>和Eclipse的对比</a>
-      <ul>
-        <li><a href="#项目概念对比">项目概念对比</a></li>
-        <li><a href="#代码保存">代码保存</a></li>
-        <li><a href="#idea功能特点">IDEA功能特点</a></li>
-        <li><a href="#idea-debug打断点">IDEA Debug打断点</a></li>
-      </ul>
-    </li>
-    <li><a href="#idea配置">IDEA配置</a>
-      <ul>
-        <li><a href="#jdk配置">JDK配置</a></li>
-        <li><a href="#tomcat配置">Tomcat配置</a></li>
-        <li><a href="#maven配置">Maven配置</a></li>
-        <li><a href="#idea中配置tomcatrun命令">IDEA中配置tomcat:run命令</a></li>
-      </ul>
-    </li>
-    <li><a href="#idea打包">IDEA打包</a>
-      <ul>
-        <li><a href="#使用maven-plugins打jar包">使用maven plugins打jar包</a></li>
-        <li><a href="#打包成war包">打包成war包</a></li>
-        <li><a href="#idea手动打war包">IDEA手动打war包</a></li>
-      </ul>
-    </li>
-    <li><a href="#idea集成">IDEA集成</a>
-      <ul>
-        <li><a href="#idea集成svn">IDEA集成SVN</a></li>
-        <li><a href="#idea集成git">IDEA集成Git</a></li>
-        <li><a href="#idea集成gitlab">IDEA集成GitLab</a></li>
-      </ul>
-    </li>
-    <li><a href="#idea快捷键">IDEA快捷键</a>
-      <ul>
-        <li><a href="#常用快捷键">常用快捷键</a></li>
-        <li><a href="#自定义快捷键">自定义快捷键</a></li>
-        <li><a href="#修改成eclipse快捷键主题">修改成Eclipse快捷键主题</a></li>
-      </ul>
-    </li>
-    <li><a href="#idea基本使用">IDEA基本使用</a>
-      <ul>
-        <li><a href="#idea自定义方法注释">IDEA自定义方法注释</a></li>
-        <li><a href="#idea更换主题">IDEA更换主题</a></li>
-        <li><a href="#idea更换背景图片">IDEA更换背景图片</a></li>
-        <li><a href="#idea修改字体大小和颜色">IDEA修改字体大小和颜色</a></li>
-        <li><a href="#idea显示使用内存情况">IDEA显示使用内存情况</a></li>
-        <li><a href="#idea修改内存大小">IDEA修改内存大小</a></li>
-        <li><a href="#idea显示svn提交人和提交时间">IDEA显示SVN提交人和提交时间</a></li>
-        <li><a href="#idea中terminal的配置">IDEA中Terminal的配置</a></li>
-        <li><a href="#idea使用lombok的data但是报找不到get和set方法">IDEA使用lombok的@Data，但是报找不到get和set方法</a></li>
-        <li><a href="#idea默认不加载srcmainjava下的xml代码">IDEA默认不加载src/main/java下的XML代码</a></li>
-        <li><a href="#idea-toolbar靠右显示">IDEA toolbar靠右显示</a></li>
-      </ul>
-    </li>
+    <li><a href="#项目概念对比">项目概念对比</a></li>
+    <li><a href="#代码保存">代码保存</a></li>
+    <li><a href="#idea功能特点">IDEA功能特点</a></li>
+    <li><a href="#idea-debug打断点">IDEA Debug打断点</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#jdk配置">JDK配置</a></li>
+    <li><a href="#tomcat配置">Tomcat配置</a></li>
+    <li><a href="#maven配置">Maven配置</a></li>
+    <li><a href="#idea中配置tomcatrun命令">IDEA中配置tomcat:run命令</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#使用maven-plugins打jar包">使用maven plugins打jar包</a></li>
+    <li><a href="#打包成war包">打包成war包</a></li>
+    <li><a href="#idea手动打war包">IDEA手动打war包</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#idea集成svn">IDEA集成SVN</a></li>
+    <li><a href="#idea集成git">IDEA集成Git</a></li>
+    <li><a href="#idea集成gitlab">IDEA集成GitLab</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#常用快捷键">常用快捷键</a></li>
+    <li><a href="#自定义快捷键">自定义快捷键</a></li>
+    <li><a href="#修改成eclipse快捷键主题">修改成Eclipse快捷键主题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#idea自定义方法注释">IDEA自定义方法注释</a></li>
+    <li><a href="#idea更换主题">IDEA更换主题</a></li>
+    <li><a href="#idea更换背景图片">IDEA更换背景图片</a></li>
+    <li><a href="#idea修改字体大小和颜色">IDEA修改字体大小和颜色</a></li>
+    <li><a href="#idea显示使用内存情况">IDEA显示使用内存情况</a></li>
+    <li><a href="#idea修改内存大小">IDEA修改内存大小</a></li>
+    <li><a href="#idea显示svn提交人和提交时间">IDEA显示SVN提交人和提交时间</a></li>
+    <li><a href="#idea中terminal的配置">IDEA中Terminal的配置</a></li>
+    <li><a href="#idea使用lombok的data但是报找不到get和set方法">IDEA使用lombok的@Data，但是报找不到get和set方法</a></li>
+    <li><a href="#idea默认不加载srcmainjava下的xml代码">IDEA默认不加载src/main/java下的XML代码</a></li>
+    <li><a href="#idea-toolbar靠右显示">IDEA toolbar靠右显示</a></li>
   </ul>
 </nav>
   </div>
