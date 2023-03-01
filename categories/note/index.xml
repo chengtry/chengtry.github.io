@@ -6,7 +6,16 @@
     <description>Recent content in Note on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Feb 2023 16:03:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 19:28:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue</title>
+      <link>https://chengtry.github.io/post/vue/</link>
+      <pubDate>Wed, 01 Mar 2023 19:28:37 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/vue/</guid>
+      <description>ES6 为什么学习ES6 1 2 3 4 5 6 7 ES：ECMAScript ES6版本变动最多，具有里程碑意义 ES6加入许多新的语法特性，编程实现更简单、高效</description>
+    </item>
+    
     <item>
       <title>IDEA</title>
       <link>https://chengtry.github.io/post/intellij-idea/</link>
