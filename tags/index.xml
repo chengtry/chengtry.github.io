@@ -6,7 +6,25 @@
     <description>Recent content in Tags on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Mar 2023 19:28:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 19:43:17 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL</title>
+      <link>https://chengtry.github.io/tags/mysql/</link>
+      <pubDate>Mon, 06 Mar 2023 19:43:17 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据库</title>
+      <link>https://chengtry.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 06 Mar 2023 19:43:17 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>NodeJs</title>
       <link>https://chengtry.github.io/tags/nodejs/</link>

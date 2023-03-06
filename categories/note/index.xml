@@ -6,7 +6,16 @@
     <description>Recent content in Note on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Mar 2023 19:28:37 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 19:43:17 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL</title>
+      <link>https://chengtry.github.io/post/mysql/</link>
+      <pubDate>Mon, 06 Mar 2023 19:43:17 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/mysql/</guid>
+      <description>MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA</description>
+    </item>
+    
     <item>
       <title>Vue</title>
       <link>https://chengtry.github.io/post/vue/</link>
