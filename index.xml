@@ -6,7 +6,16 @@
     <description>Recent content on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Mar 2023 19:43:17 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Mar 2023 20:24:34 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>@Transactional注解相关</title>
+      <link>https://chengtry.github.io/post/transactional%E6%B3%A8%E8%A7%A3%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Thu, 09 Mar 2023 20:24:34 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/transactional%E6%B3%A8%E8%A7%A3%E7%9B%B8%E5%85%B3/</guid>
+      <description>同一个类中方法调用@Transactional失效的问题 1 2 3 4 5 6 // Controller层 @GetMapping(&amp;#34;/test&amp;#34;) public void test(){ testService.testA(); } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
+    </item>
+    
     <item>
       <title>MySQL</title>
       <link>https://chengtry.github.io/post/mysql/</link>
