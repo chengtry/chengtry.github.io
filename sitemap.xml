@@ -2,49 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chengtry.github.io/post/transactional%E6%B3%A8%E8%A7%A3%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/git/</loc>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/git/</loc>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/categories/note/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/categories/study/</loc>
-    <lastmod>2023-03-09T20:24:34+08:00</lastmod>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/tags/</loc>
+    <lastmod>2023-03-10T18:37:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/transactional%E6%B3%A8%E8%A7%A3%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2023-03-09T20:24:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

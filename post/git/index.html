@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/git/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.22af978d32806c567f310f3d6bdb8f737f1461161aa436311b0442d4a485b68c.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Git" />
+<meta property="og:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/git/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-10T18:37:15+08:00" />
+<meta property="article:modified_time" content="2023-03-10T18:37:15+08:00" />
+
+<meta itemprop="name" content="Git">
+<meta itemprop="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式"><meta itemprop="datePublished" content="2023-03-10T18:37:15+08:00" />
+<meta itemprop="dateModified" content="2023-03-10T18:37:15+08:00" />
+<meta itemprop="wordCount" content="3383">
+<meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git"/>
+<meta name="twitter:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Git</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-03-10 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            <a href="/categories/note/"> Note </a>
+            </div>
+          <span class="more-meta"> 约 3383 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git">Git</a>
+      <ul>
+        <li><a href="#git与svn的区别">Git与SVN的区别</a></li>
+        <li><a href="#启动git">启动Git</a></li>
+        <li><a href="#常用命令">常用命令</a>
+          <ul>
+            <li><a href="#查看历史命令">查看历史命令</a></li>
+            <li><a href="#查看所有配置">查看所有配置</a></li>
+            <li><a href="#配置用户名和邮箱">配置用户名和邮箱</a></li>
+            <li><a href="#查看用户名和邮箱">查看用户名和邮箱</a></li>
+            <li><a href="#创建本地仓库的两种方式">创建本地仓库的两种方式</a></li>
+            <li><a href="#修改密码">修改密码</a></li>
+          </ul>
+        </li>
+        <li><a href="#git-clone出错遇到的问题">git clone出错遇到的问题</a>
+          <ul>
+            <li><a href="#1将https-改为-git">1.将https 改为 git</a></li>
+            <li><a href="#2-git路径出错">2. Git路径出错</a></li>
+          </ul>
+        </li>
+        <li><a href="#git文件操作">Git文件操作</a>
+          <ul>
+            <li><a href="#文件4种状态">文件4种状态</a></li>
+            <li><a href="#查看文件状态">查看文件状态</a></li>
+            <li><a href="#流程">流程</a></li>
+            <li><a href="#回滚">回滚</a></li>
+          </ul>
+        </li>
+        <li><a href="#git分支常用命令">Git分支常用命令</a>
+          <ul>
+            <li><a href="#列出本地所有本地分支">列出本地所有本地分支</a></li>
+            <li><a href="#列出所有远程分支">列出所有远程分支</a></li>
+            <li><a href="#新建一个分支但依然停留在当前分支">新建一个分支，但依然停留在当前分支</a></li>
+            <li><a href="#新建一个分支并切换到该分支">新建一个分支，并切换到该分支</a></li>
+            <li><a href="#合并指定分支到当前分支">合并指定分支到当前分支</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
+            <li><a href="#删除远程分支">删除远程分支</a></li>
+            <li><a href="#切换分支">切换分支</a></li>
+            <li><a href="#常用命令-1">常用命令</a></li>
+            <li><a href="#删除git-config中某一项配置">删除git config中某一项配置</a></li>
+            <li><a href="#切换换行操作">切换换行操作</a></li>
+            <li><a href="#撤销提交到暂存区的的修改">撤销提交到暂存区的的修改</a></li>
+          </ul>
+        </li>
+        <li><a href="#git提交">Git提交</a></li>
+        <li><a href="#删除gitlab中的文件夹">删除gitlab中的文件夹</a></li>
+        <li><a href="#查看远程仓库">查看远程仓库</a></li>
+        <li><a href="#hexo更新文件">Hexo更新文件</a></li>
+        <li><a href="#hugo更新部署">hugo更新部署</a></li>
+      </ul>
+    </li>
+    <li><a href="#github">Github</a>
+      <ul>
+        <li><a href="#查找小技巧">查找小技巧</a></li>
+        <li><a href="#取消github主分支保护请求">取消github主分支保护请求</a></li>
+      </ul>
+    </li>
+    <li><a href="#git使用问题">Git使用问题</a>
+      <ul>
+        <li><a href="#idea中git-pull拉取代码报错cannot-pull-with-rebase-you-have-unstaged-changes-please-commit-or-stash-them">IDEA中Git Pull拉取代码报错：cannot pull with rebase: You have unstaged changes. please commit or stash them.</a></li>
+        <li><a href="#git-fetch-和-git-pull">git fetch 和 git pull</a></li>
+        <li><a href="#git更新代码产生冲突解决">Git更新代码产生冲突解决</a></li>
+        <li><a href="#git报错-refusing-to-merge-unrelated-histories">Git报错-refusing to merge unrelated histories</a></li>
+        <li><a href="#git-push-出现-the-current-branch-dev-has-no-upstream-branch的问题">git push 出现 The current branch dev has no upstream branch.的问题</a></li>
+        <li><a href="#git-push出现updates-were-rejected-because-the-tip-of-your-current-branch-is-behind">git push出现Updates were rejected because the tip of your current branch is behind</a></li>
+        <li><a href="#git合并分支">git合并分支</a></li>
+        <li><a href="#git-commit了但是未push怎么退回">git commit了但是未push怎么退回</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="git">Git</h1>
+<p>分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。</p>
+<p>配置环境变量只是为了能在电脑任意位置使用。</p>
+<h2 id="git与svn的区别">Git与SVN的区别</h2>
+<ul>
+<li>
+<p>Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版本都在自己的电脑上。Git可以直接看到更新了哪些代码和文件。</p>
+</li>
+<li>
+<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器中，工作时候需要用自己电脑从中央服务器下载得到最新的版本，提交代码需要自己提交到中央服务器。SVN必须联网才能工作，对网络带宽要求较高。</p>
+</li>
+</ul>
+<h2 id="启动git">启动Git</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Git Bash: Unix与Linux风格的命令行，使用最多，建议使用
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Git CMD:  windows风格的命令行
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Git GUI: 图形界面的Git，不建议初学者使用
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常用命令">常用命令</h2>
+<h3 id="查看历史命令">查看历史命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">history</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查看所有配置">查看所有配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置用户名和邮箱">配置用户名和邮箱</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;yangcheng&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;yangcheng@internal.ths.com.cn&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改密码</span>
+</span></span><span class="line"><span class="cl">git config --global user.password <span class="s2">&#34;Wo412307724@&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查看用户名和邮箱">查看用户名和邮箱</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建本地仓库的两种方式">创建本地仓库的两种方式</h3>
+<ol>
+<li>创建全新的仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>克隆远程仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone <span class="o">[</span>url<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>删除配置错误的邮箱</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#git config --global --unset命令</span>
+</span></span><span class="line"><span class="cl">git config --global --unset user.enail <span class="s2">&#34;yangcheng@internal.com.cn&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改密码">修改密码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 修改密码</span>
+</span></span><span class="line"><span class="cl">git config --global user.password <span class="s2">&#34;yang1999916&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有配置信息</span>
+</span></span><span class="line"><span class="cl">git config --list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新登录命令</span>
+</span></span><span class="line"><span class="cl">git config --system --unset credential.helper 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git-clone出错遇到的问题">git clone出错遇到的问题</h2>
+<h3 id="1将https-改为-git">1.将https 改为 git</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">例如克隆这个远程仓库：https://gitee.com/didispace/SpringBoot-Learning.git
+</span></span><span class="line"><span class="cl">git clone git://gitee.com/didispace/SpringBoot-Learning.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-git路径出错">2. Git路径出错</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">找到并打开配置文件：E:<span class="se">\g</span>it<span class="se">\e</span>tc<span class="se">\g</span>itconfig
+</span></span><span class="line"><span class="cl">将http.sslcainfo改为对应的路径（之前是Git安装在C盘，现在改为E盘，这个路径没有变）
+</span></span><span class="line"><span class="cl">http.sslcainfo<span class="o">=</span>E:/git/mingw64/ssl/certs/ca-bundle.crt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git文件操作">Git文件操作</h2>
+<h3 id="文件4种状态">文件4种状态</h3>
+<ol>
+<li>Untracked：未跟踪</li>
+<li>Unmodify：文件已入库，未修改</li>
+<li>Modified：文件已修改，但仅仅是修改没有其他操作</li>
+<li>Staged：暂存状态</li>
+</ol>
+<h3 id="查看文件状态">查看文件状态</h3>
+<h4 id="查看指定文件状态">查看指定文件状态</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status <span class="o">[</span>filename<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看所有文件状态">查看所有文件状态</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="添加文件到暂存区">添加文件到暂存区</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .   <span class="o">(</span>注意有个.<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="提交暂存区的内容到本地仓库">提交暂存区的内容到本地仓库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;消息内容&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="流程">流程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add . --&gt; git commit -m <span class="s2">&#34;提交的内容&#34;</span>  --&gt; git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="回滚">回滚</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#将当前的version重置到某次提或者合并，在此次提交或者合并之后的更新都会被丢弃。</span>
+</span></span><span class="line"><span class="cl">git reset --hard
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>取消commit</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1.先用 git log命令查看commit_id
+</span></span><span class="line"><span class="cl"><span class="c1">#将某次commit的更新取消，但是这次commit的前后更新都不受影响。</span>
+</span></span><span class="line"><span class="cl">2.再使用 git revert commit_id 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git分支常用命令">Git分支常用命令</h2>
+<h3 id="列出本地所有本地分支">列出本地所有本地分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="列出所有远程分支">列出所有远程分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch -r
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="新建一个分支但依然停留在当前分支">新建一个分支，但依然停留在当前分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch <span class="o">[</span>branch-name<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="新建一个分支并切换到该分支">新建一个分支，并切换到该分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git checkout -b <span class="o">[</span>branch<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="合并指定分支到当前分支">合并指定分支到当前分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git merge <span class="o">[</span>branch<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除分支">删除分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch -d <span class="o">[</span>branch-name<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除远程分支">删除远程分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git push origin --delete <span class="o">[</span>branch-name<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git branch -dr <span class="o">[</span>remote/branch<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="切换分支">切换分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看所有分支</span>
+</span></span><span class="line"><span class="cl">git branch -av
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换分支（以下两个命令都可以）</span>
+</span></span><span class="line"><span class="cl">git switch master
+</span></span><span class="line"><span class="cl">git checkout -b master
+</span></span><span class="line"><span class="cl"><span class="c1"># switch仅仅用于切换，而check out是一个很底层的命令，可以完成很多事情。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看本地分支与远程仓库的关联关系</span>
+</span></span><span class="line"><span class="cl">git branch -vv
+</span></span><span class="line"><span class="cl"><span class="c1"># 分支关联</span>
+</span></span><span class="line"><span class="cl">git branch --set-upstream-to<span class="o">=</span>origin/province_xizang
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="常用命令-1">常用命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone git地址            // down项目到当前文件夹下 例:git clone http://xxx.git
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;邮箱&#34;</span>    // 设置邮箱<span class="o">(</span>push时必填<span class="o">)</span>
+</span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;名字&#34;</span>    // 设置名字<span class="o">(</span>push时必填<span class="o">)</span>
+</span></span><span class="line"><span class="cl">git config --global gui.encoding utf-8    // gitk编码修改为utf-8
+</span></span><span class="line"><span class="cl">gitk                    // 查看最近提交版本记录的图形化界面<span class="o">(</span>可以清楚的查看到提交用户名称,时间,注释,提交的代码等<span class="o">)</span>
+</span></span><span class="line"><span class="cl">git log                    // 显示当前分支的版本历史
+</span></span><span class="line"><span class="cl">git branch -av                // 查看当前分支详情 -a表示分支列表 -v表示版本号及注释
+</span></span><span class="line"><span class="cl">git checkout 分支名            // 切换分支, 分支名选最后一个/后面的名称
+</span></span><span class="line"><span class="cl">git checkout 文件名            // 恢复暂存区的指定文件到工作区<span class="o">(</span>不可逆<span class="o">)</span> 例: git checkout *
+</span></span><span class="line"><span class="cl">git status                // 显示有变更的文件
+</span></span><span class="line"><span class="cl">git stash                // 将当前操作的文件压入暂存栈
+</span></span><span class="line"><span class="cl">git stash pop                // 将暂存栈的文件 恢复到上一次操作的状态<span class="o">(</span>如果与当前文件有冲突,会自动合并冲突,需要手动找到位置并处理<span class="o">)</span>
+</span></span><span class="line"><span class="cl">git pull                // 下载最新代码
+</span></span><span class="line"><span class="cl">git add 文件名/目录名            // 添加指定文件到暂存区
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;注释&#34;</span>            // 提交add过的文件至本地git仓库
+</span></span><span class="line"><span class="cl">git push                // 将本地git仓库的版本推送到远程git仓库
+</span></span><span class="line"><span class="cl">git reset head 文件名            // 将待提交文件移出add列表中
+</span></span><span class="line"><span class="cl">git reset --hard 版本号            // 将当前版本回退到指定版本
+</span></span><span class="line"><span class="cl">git config --list            // 显示当前的Git配置
+</span></span><span class="line"><span class="cl">git pull origin master --allow-unrelated-histories // pull 允许不相关的历史 用于不同的远程地址作代码同步
+</span></span><span class="line"><span class="cl">git checkout -b 分支名            // 创建本地临时分支
+</span></span><span class="line"><span class="cl">git merge 分支名            // 将指定分支合并到当前分支
+</span></span><span class="line"><span class="cl">git push --set-upstream origin 分支名 // 此操作可将临时分支推至度小满icode
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除git-config中某一项配置">删除git config中某一项配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 删除core.autocrtl配置</span>
+</span></span><span class="line"><span class="cl">git config --global --unset core.autocrtl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="切换换行操作">切换换行操作</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global core.autocrlf <span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="撤销提交到暂存区的的修改">撤销提交到暂存区的的修改</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git reset HEAD --  . <span class="o">(</span>注意最后的一个<span class="s2">&#34;.&#34;</span>,这条命令帮助我们一次性撤销所有放入暂存区的文件<span class="o">)</span>
+</span></span><span class="line"><span class="cl">git reset HEAD -- filename <span class="o">(</span>撤销指定目标文件<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git提交">Git提交</h2>
+<p>用于说明本次 commit 的类别，只允许使用下面的英文标识：</p>
+<ul>
+<li>
+<p>**feat：**增加了一个新功能或由于需求变更导致的修改</p>
+</li>
+<li>
+<p><strong>fix</strong>：修复了一个 Bug</p>
+</li>
+<li>
+<p><strong>docs</strong>：更新了文档（比如改了 README）</p>
+</li>
+<li>
+<p><strong>style</strong>：代码的格式美化，不涉及到功能修改（比如改了缩进）</p>
+</li>
+<li>
+<p>**refactor：**一些代码结构上优化，既不是新特性也不是修复 Bug（比如函数改个名字）</p>
+</li>
+<li>
+<p>**perf：**优化了性能的代码改动</p>
+</li>
+<li>
+<p>**test：**新增或者修改已有的测试代码</p>
+</li>
+<li>
+<p>**build：**影响构建系统或外部依赖的更改（比如 gulp，grunt，webpack、package.json）</p>
+</li>
+<li>
+<p>**chore：**其它不修改 src 或测试文件的变更（比如新增一个文档生成工具）</p>
+</li>
+<li>
+<p>**ci：**更改 CI 的配置文件或脚本（比如 GitLab CI)</p>
+</li>
+<li>
+<p>**revert：**恢复先前的一次提交</p>
+</li>
+</ul>
+<h2 id="删除gitlab中的文件夹">删除gitlab中的文件夹</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#gitlab上只支持删除文件，不支持删除文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git rm -r <span class="s2">&#34;要删除的文件&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;备注&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查看远程仓库">查看远程仓库</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看远程仓库地址</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除现有的仓库地址</span>
+</span></span><span class="line"><span class="cl">git remote rm origin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加远程仓库地址</span>
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:chengtry/chengtry.github.io.git（仓库的SSH URL）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="hexo更新文件">Hexo更新文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hexo clean
+</span></span><span class="line"><span class="cl">hexo generate
+</span></span><span class="line"><span class="cl">hexo deploy
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="hugo更新部署">hugo更新部署</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#添加新博客</span>
+</span></span><span class="line"><span class="cl">hugo new post/test.md
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成网站所需数据</span>
+</span></span><span class="line"><span class="cl">hugo -D 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># hugo标签和目录</span>
+</span></span><span class="line"><span class="cl">在md文件中加上如下即可配置即可，categories：目录，tags：标签
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: <span class="s2">&#34;Java&#34;</span>
+</span></span><span class="line"><span class="cl">date: 2023-02-14T19:55:47+08:00
+</span></span><span class="line"><span class="cl">draft: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">categories: 
+</span></span><span class="line"><span class="cl">- Study
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tags:
+</span></span><span class="line"><span class="cl">- Java
+</span></span><span class="line"><span class="cl">- Spring
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="github">Github</h1>
+<h2 id="查找小技巧">查找小技巧</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">常用前缀后缀
+</span></span><span class="line"><span class="cl">1.查找百科大全  awesome xxx
+</span></span><span class="line"><span class="cl">2.查找空项目架子   xxx  starter
+</span></span><span class="line"><span class="cl">3.找例子     xxx sample
+</span></span><span class="line"><span class="cl">4.找教程   xxx tutorial
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="取消github主分支保护请求">取消github主分支保护请求</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Repo &gt; Settings &gt; Branches &gt; Branch protection rules [remote]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/2022-08-24-19-23-58-image.png" alt=""></p>
+<h1 id="git使用问题">Git使用问题</h1>
+<h2 id="idea中git-pull拉取代码报错cannot-pull-with-rebase-you-have-unstaged-changes-please-commit-or-stash-them">IDEA中Git Pull拉取代码报错：cannot pull with rebase: You have unstaged changes. please commit or stash them.</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 在多人协作开发时，经常碰到同事把最新修改推送到远程库，你在本地也做了修改，这个时候无论是执行git pull还是执行git push都会提示错误
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">解决办法</span><span class="err">：</span><span class="n">先隐藏掉本地的修改</span><span class="err">，</span><span class="n">然后执行git</span> <span class="n">pull从代码块拉取最新代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">stash</span> <span class="o">--&gt;</span> <span class="n">Stash</span> <span class="n">Changes</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">pull</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">unstash</span> <span class="o">--&gt;</span> <span class="n">UnStash</span> <span class="n">Chages</span><span class="o">...</span> <span class="o">--&gt;</span> <span class="n">选择隐藏的版本</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20211209145529309.png" alt=""></p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20211209145537331.png" alt="image-20211209145537331"></p>
+<p><img src="F:%5Cimages%5CTypora/image-20211209145546444.png" alt="image-20211209145546444"></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20211209145618863.png" alt=""></p>
+<h2 id="git-fetch-和-git-pull">git fetch 和 git pull</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># git fetch是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 而git pull 则是将远程主机的最新内容拉下来后直接合并，即：git pull = git fetch + git merge，这样可能会产生冲突，需要手动解决。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推荐使用git fetch，比较是否有冲突代码，再进行合并</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git更新代码产生冲突解决">Git更新代码产生冲突解决</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="o">.</span> <span class="n">git</span> <span class="n">fetch</span> <span class="n">拉取到本地仓库</span>
+</span></span><span class="line"><span class="cl"><span class="n">2</span><span class="o">.</span> <span class="n">对比Local和Remote代码冲突</span>
+</span></span><span class="line"><span class="cl"><span class="n">3</span><span class="o">.</span> <span class="n">解决冲突或者将本地仓库代码版本回退</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210918142752291.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210918142734737.png" alt=""></p>
+<h2 id="git报错-refusing-to-merge-unrelated-histories">Git报错-refusing to merge unrelated histories</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#合并两个独立启动仓库的历史</span>
+</span></span><span class="line"><span class="cl">git pull origin main --allow-unrelated-histories
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push origin main:main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git-push-出现-the-current-branch-dev-has-no-upstream-branch的问题">git push 出现 The current branch dev has no upstream branch.的问题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#本地dev push 到 远程（origin）的main -u表示同时建立关联</span>
+</span></span><span class="line"><span class="cl">git push origin main -u
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push --set-upstream origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git-push出现updates-were-rejected-because-the-tip-of-your-current-branch-is-behind">git push出现Updates were rejected because the tip of your current branch is behind</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#使用强制push的方法：（不推荐）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。</span>
+</span></span><span class="line"><span class="cl">git push -u origin main -f
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#push前先将远程repository修改pull下来</span>
+</span></span><span class="line"><span class="cl">git pull origin main
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git合并分支">git合并分支</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> git checkout main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> git merge --no-ff <span class="o">[</span>name-branchName<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> git push origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git-commit了但是未push怎么退回">git commit了但是未push怎么退回</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 退回，仅仅是撤回commit操作，您写的代码仍然保留。</span>
+</span></span><span class="line"><span class="cl">git reset HEAD~
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-03-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">Git</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/transactional%E6%B3%A8%E8%A7%A3%E7%9B%B8%E5%85%B3/">
+            <span class="next-text nav-default">@Transactional注解相关</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
