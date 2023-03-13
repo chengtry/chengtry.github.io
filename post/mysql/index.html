@@ -49,7 +49,7 @@
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"><meta itemprop="datePublished" content="2023-03-06T19:43:17+08:00" />
 <meta itemprop="dateModified" content="2023-03-06T19:43:17+08:00" />
-<meta itemprop="wordCount" content="9912">
+<meta itemprop="wordCount" content="10031">
 <meta itemprop="keywords" content="MySQL,数据库," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL"/>
 <meta name="twitter:description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"/>
@@ -133,8 +133,8 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 9912 字 </span>
-          <span class="more-meta"> 预计阅读 20 分钟 </span>
+          <span class="more-meta"> 约 10031 字 </span>
+          <span class="more-meta"> 预计阅读 21 分钟 </span>
         
       </div>
     </header>
@@ -205,8 +205,19 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="汉字占用字节数">汉字占用字节数</h2>
-<p>常用中文字符用utf-8编码占用3个字节（大约2万多字），但超大字符集中的更大多数汉字要占4个字节。</p>
-<h2 id="mysql索引类型和索引方法">MySQL索引类型和索引方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">常用中文字符用utf-8编码占用3个字节（大约2万多字），但超大字符集中的更大多数汉字要占4个字节。
+</span></span><span class="line"><span class="cl">MySQL5.7版本默认字符集latin1（ISO_8859_1），utf-8字符集默认指向utf8mb3（最多3个字节）
+</span></span><span class="line"><span class="cl">MySQL8.0版本默认字符集utf8mb4（最多4个字节，像是一些颜文字占4个字节，如：o(*￣▽￣*)ブ）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mysql索引类型和索引方法">MySQL索引类型和索引方法</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
