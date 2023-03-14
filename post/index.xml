@@ -6,7 +6,16 @@
     <description>Recent content in Posts on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Mar 2023 19:21:06 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 19:21:21 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Echarts</title>
+      <link>https://chengtry.github.io/post/echarts/</link>
+      <pubDate>Tue, 14 Mar 2023 19:21:21 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/echarts/</guid>
+      <description>Echarts 图例 1 2 3 4 5 6 7 8 9 10 legend就是控制图例的属性 orient: &amp;#39;horizontal&amp;#39; //图例横向显示 orient: &amp;#39;vertical&amp;#39; //图例纵向显示 legend: { orient: &amp;#39;vertical&amp;#39;, //图例纵向显示 left: &amp;#39;left&amp;#39;, //图例居左显示</description>
+    </item>
+    
     <item>
       <title>SpringBoot</title>
       <link>https://chengtry.github.io/post/springboot/</link>
