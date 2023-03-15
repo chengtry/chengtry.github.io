@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Linux">
 <meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
 <meta itemprop="dateModified" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="wordCount" content="8136">
+<meta itemprop="wordCount" content="9189">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"/>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 8136 字 </span>
-          <span class="more-meta"> 预计阅读 17 分钟 </span>
+          <span class="more-meta"> 约 9189 字 </span>
+          <span class="more-meta"> 预计阅读 19 分钟 </span>
         
       </div>
     </header>
@@ -178,7 +178,7 @@
             <li><a href="#scp命令">scp命令</a></li>
             <li><a href="#查看使用最多的命令">查看使用最多的命令</a></li>
             <li><a href="#vim进入文件显示序号">VIM进入文件显示序号</a></li>
-            <li><a href="#vi模式定位最后一行">vi模式定位最后一行</a></li>
+            <li><a href="#vi模式定位">vi模式定位</a></li>
           </ul>
         </li>
         <li><a href="#在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</a></li>
@@ -249,6 +249,7 @@
         <li><a href="#linux下mysql表名区分大小写怎么解决">Linux下MySQL表名区分大小写怎么解决</a></li>
         <li><a href="#mysql查看某张表的索引">MySQL查看某张表的索引</a></li>
         <li><a href="#mysql没有root用户">MySQL没有root用户</a></li>
+        <li><a href="#linux下对mysql数据库备份并设置定时">Linux下对MySQL数据库备份并设置定时</a></li>
       </ul>
     </li>
     <li><a href="#windows使用vscode实现remote-ssh免密登录">Windows使用vscode实现remote ssh免密登录</a></li>
@@ -952,13 +953,27 @@
 </span></span><span class="line"><span class="cl">4.保存退出即可
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="vi模式定位最后一行">vi模式定位最后一行</h3>
+</div><h3 id="vi模式定位">vi模式定位</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># vi模式进入后，按住 shift+G 即可定位最后一行</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1.定位最后一行
+</span></span><span class="line"><span class="cl">vi模式进入后，按住 shift+G 即可定位最后一行
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2.定位行首
+</span></span><span class="line"><span class="cl">键盘上的Home键，或者退出编辑模式，按下数字0键
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3.定位行尾
+</span></span><span class="line"><span class="cl">键盘上的End键
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</h2>
@@ -1595,16 +1610,42 @@
 <h2 id="mysql启动报错mysqlcommand-not-found">MySQL启动报错：mysql:command not found</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 由于系统默认会查找（默认在/usr/bin下）的命令，如果这个命令不在这个目录下，当然会找不到命令</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 我们需要做的就是映射一个链接到/usr/bin目录下，相当于建立一个链接文件。</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 我的mysql命令目录是/yc/mysql/bin/mysql</span>
 </span></span><span class="line"><span class="cl">ln -s /yc/mysql/bin/mysql /usr/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 硬连接不允许跨分区</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@qiyexinxi06 bin<span class="o">]</span><span class="c1"># lsblk</span>
+</span></span><span class="line"><span class="cl">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+</span></span><span class="line"><span class="cl">sr0     11:0    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+</span></span><span class="line"><span class="cl">sr1     11:1    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+</span></span><span class="line"><span class="cl">vda    253:0    <span class="m">0</span>   50G  <span class="m">0</span> disk 
+</span></span><span class="line"><span class="cl">├─vda1 253:1    <span class="m">0</span>  200M  <span class="m">0</span> part /boot
+</span></span><span class="line"><span class="cl">├─vda2 253:2    <span class="m">0</span>  500M  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
+</span></span><span class="line"><span class="cl">└─vda3 253:3    <span class="m">0</span> 49.3G  <span class="m">0</span> part /
+</span></span><span class="line"><span class="cl">vdb    253:16   <span class="m">0</span>    1T  <span class="m">0</span> disk 
+</span></span><span class="line"><span class="cl">└─vdb1 253:17   <span class="m">0</span> 1024G  <span class="m">0</span> part /data
+</span></span><span class="line"><span class="cl">ln: 无法创建硬链接 <span class="s1">&#39;/usr/bin/mysql&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;/data/ths/mysql/bin/mysql&#39;</span>: 无效的跨设备链接
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="启动mysql">启动MySQL</h2>
@@ -1996,6 +2037,153 @@ Failed to start mysqld.service: Unit not found.</p>
 </span></span><span class="line"><span class="cl">GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> WITH GRANT OPTION<span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 刷新权限</span>
 </span></span><span class="line"><span class="cl">flush privileges<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="linux下对mysql数据库备份并设置定时">Linux下对MySQL数据库备份并设置定时</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看本机上是否已经安装了crontabs</span>
+</span></span><span class="line"><span class="cl">service crond status
+</span></span><span class="line"><span class="cl"><span class="c1"># 没安装的话需要手动安装</span>
+</span></span><span class="line"><span class="cl">yum install vixie-cron crontabs 
+</span></span><span class="line"><span class="cl">yum install crontabs
+</span></span><span class="line"><span class="cl">service crond start <span class="c1"># 启动crontabs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编写脚本，例： backup_disclosure.sh </span>
+</span></span><span class="line"><span class="cl">------------------------------backup_disclosure.sh -----------------------------------------------
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 特殊字符用\进行转义</span>
+</span></span><span class="line"><span class="cl">mysqldump -uroot -pSolution<span class="se">\!</span>密码 disclosure &gt; /ths/ths_backup/disclosure_<span class="k">$(</span>date +%Y%m%d_%H%M<span class="k">)</span>.sql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 给新生成的sql文件授权</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">777</span> /ths/ths_backup/disclosure_<span class="k">$(</span>date +%Y%m%d_%H%M<span class="k">)</span>.sql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除/ths/ths_backup目录下前30天的以disclosure开头.sql结尾的文件</span>
+</span></span><span class="line"><span class="cl">find /ths/ths_backup/ -type f -mtime +30 -name disclosure<span class="se">\*</span>.sql -exec rm <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl">------------------------------backup_disclosure.sh -----------------------------------------------
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加/修改定时任务</span>
+</span></span><span class="line"><span class="cl">crontab -e
+</span></span><span class="line"><span class="cl">*/1 * * * * sh /ths/timing/backup_disclosure.sh <span class="c1"># 每一分钟执行/ths/timing/backup_disclosure.sh这个脚本</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启crond使改动生效</span>
+</span></span><span class="line"><span class="cl">service crond restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查询定时任务</span>
+</span></span><span class="line"><span class="cl">crontab -l
+</span></span><span class="line"><span class="cl">*/1 * * * * sh /ths/timing/backup_disclosure.sh <span class="c1"># 每一分钟执行/ths/timing/backup_disclosure.sh这个脚本</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># crontab的粒度最小是到分钟</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat /etc/corntab
+</span></span><span class="line"><span class="cl"><span class="c1"># Example of job definition:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># .---------------- minute (0 - 59)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># |  .------------- hour (0 - 23)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># |  |  .---------- day of month (1 - 31)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># |  |  |  |  |</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># *  *  *  *  * user-name  command to be executed</span>
+</span></span><span class="line"><span class="cl">*/1 * * * * mysql /ths/timing/bkdisclosure.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 日期格式精确到秒</span>
+</span></span><span class="line"><span class="cl"><span class="k">$(</span>date +%Y%m%d_%H%M%S<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除/ths/ths_backup目录下前30天的以disclosure开头.sql结尾的文件</span>
+</span></span><span class="line"><span class="cl">find /ths/ths_backup/ -type f -mtime +30 -name disclosure<span class="se">\*</span>.sql -exec rm <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-------------------------------切换用户备份------------------------------------------------
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换用户备份</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#切换mysql用户</span>
+</span></span><span class="line"><span class="cl">su - mysql <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 特殊字符用\进行转义
+</span></span></span><span class="line"><span class="cl"><span class="s">mysqldump -uroot -psolution\!密码 disclosure &gt; /data/ths/ths_backup/disclosure_$(date +%Y%m%d_%H%M).sql
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 给新生成的sql文件授权
+</span></span></span><span class="line"><span class="cl"><span class="s">chmod 777 /data/ths/ths_backup/disclosure_$(date +%Y%m%d_%H%M).sql
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 删除/ths/ths_backup目录下前30天的以jdp_开头.sql结尾的文件
+</span></span></span><span class="line"><span class="cl"><span class="s">find /data/ths/ths_backup/ -type f -mtime +30 -name disclosure_\*.sql -exec rm {} \;
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">-------------------------------切换用户备份------------------------------------------------
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="windows使用vscode实现remote-ssh免密登录">Windows使用vscode实现remote ssh免密登录</h1>
