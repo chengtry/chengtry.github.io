@@ -6,7 +6,16 @@
     <description>Recent content in 数据库 on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Mar 2023 19:43:17 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Mar 2023 19:06:34 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DB2</title>
+      <link>https://chengtry.github.io/post/db2/</link>
+      <pubDate>Thu, 16 Mar 2023 19:06:34 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/db2/</guid>
+      <description>DB2增加字段 1 altertable[表名]add[字段名][字段类型] DB2删除字段 1 altertable表名称dropcolumn字段名</description>
+    </item>
+    
     <item>
       <title>MySQL</title>
       <link>https://chengtry.github.io/post/mysql/</link>
