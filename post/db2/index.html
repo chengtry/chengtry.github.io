@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DB2 - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="DB2增加字段 1 altertable[表名]add[字段名][字段类型] DB2删除字段 1 altertable表名称dropcolumn字段名" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/db2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.22af978d32806c567f310f3d6bdb8f737f1461161aa436311b0442d4a485b68c.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="DB2" />
+<meta property="og:description" content="DB2增加字段 1 altertable[表名]add[字段名][字段类型] DB2删除字段 1 altertable表名称dropcolumn字段名" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/db2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-16T19:06:34+08:00" />
+<meta property="article:modified_time" content="2023-03-16T19:06:34+08:00" />
+
+<meta itemprop="name" content="DB2">
+<meta itemprop="description" content="DB2增加字段 1 altertable[表名]add[字段名][字段类型] DB2删除字段 1 altertable表名称dropcolumn字段名"><meta itemprop="datePublished" content="2023-03-16T19:06:34+08:00" />
+<meta itemprop="dateModified" content="2023-03-16T19:06:34+08:00" />
+<meta itemprop="wordCount" content="9066">
+<meta itemprop="keywords" content="DB2," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DB2"/>
+<meta name="twitter:description" content="DB2增加字段 1 altertable[表名]add[字段名][字段类型] DB2删除字段 1 altertable表名称dropcolumn字段名"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">DB2</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-03-16 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            <a href="/categories/note/"> Note </a>
+            </div>
+          <span class="more-meta"> 约 9066 字 </span>
+          <span class="more-meta"> 预计阅读 19 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#db2增加字段">DB2增加字段</a></li>
+        <li><a href="#db2删除字段">DB2删除字段</a></li>
+        <li><a href="#db2修改字段长度">DB2修改字段长度</a></li>
+        <li><a href="#db2给字段添加字段">DB2给字段添加字段</a></li>
+        <li><a href="#union-all行转列">UNION ALL行转列</a></li>
+        <li><a href="#db2查询某个schema下的表的数量">DB2查询某个SCHEMA下的表的数量</a></li>
+        <li><a href="#db2-sql-error-sqlcode-407">DB2 SQL Error: SQLCODE=-407</a></li>
+        <li><a href="#db2删除重复数据有主键">DB2删除重复数据（有主键）</a></li>
+        <li><a href="#db2删除重复数据无主键">DB2删除重复数据（无主键）</a></li>
+        <li><a href="#db2-sqlcode-668">DB2 SQLCODE=-668</a></li>
+        <li><a href="#db2查看锁表">DB2查看锁表</a></li>
+        <li><a href="#lower函数upper函数">LOWER函数、UPPER函数</a></li>
+        <li><a href="#db2生成uuid">DB2生成UUID</a></li>
+        <li><a href="#db2行转列">DB2行转列</a></li>
+        <li><a href="#db2fetch-first-1-row-only">DB2：fetch first 1 row only</a></li>
+        <li><a href="#db2分页函数">DB2分页函数</a></li>
+        <li><a href="#db2取余函数">DB2取余函数</a></li>
+        <li><a href="#rank-over指定条件排名">RANK() OVER指定条件排名</a></li>
+        <li><a href="#db2类型转换函数cast">DB2类型转换函数：CAST()</a></li>
+        <li><a href="#空数据表关联置为-">空数据表关联置为-</a></li>
+        <li><a href="#case-when-语法相当于if">CASE WHEN 语法(相当于if)：</a></li>
+        <li><a href="#db2删除重复字段">DB2删除重复字段：</a></li>
+        <li><a href="#db2批量更新某个字段">DB2批量更新某个字段：</a></li>
+        <li><a href="#db2建表默认系统时间">DB2建表默认系统时间</a></li>
+        <li><a href="#db2查询表名字段名字段中文名字段类型等">DB2查询表名、字段名、字段中文名、字段类型等</a></li>
+        <li><a href="#db2中decfloat类型">DB2中DECFLOAT类型</a></li>
+        <li><a href="#db2锁表sqlcode-911">DB2锁表SQLCODE=-911</a></li>
+        <li><a href="#db2获取数据的最新时间数据其他数据一样数据时间不一样">DB2获取数据的最新时间数据（其他数据一样，数据时间不一样）</a></li>
+        <li><a href="#数据01展示为1处理方式">数据0.1展示为.1处理方式</a></li>
+        <li><a href="#查询数据库表字典信息语句">查询数据库表字典信息语句</a></li>
+        <li><a href="#db2varchar_format函数">DB2varchar_format()函数</a></li>
+        <li><a href="#db2查询表空间使用率">DB2查询表空间使用率</a></li>
+        <li><a href="#db2查看某个数据库中数据数量">DB2查看某个数据库中数据数量</a></li>
+        <li><a href="#db2查询某个表或者某个schema占用空间大小">DB2查询某个表或者某个Schema占用空间大小</a></li>
+        <li><a href="#db2上服务器解除死锁">DB2上服务器解除死锁</a></li>
+        <li><a href="#db2数据库挂了启动时报错">DB2数据库挂了，启动时报错</a></li>
+        <li><a href="#db2还原ixf文件">DB2还原ixf文件</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="db2增加字段">DB2增加字段</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="p">[</span><span class="err">表名</span><span class="p">]</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="p">[</span><span class="err">字段名</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="err">字段类型</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2删除字段">DB2删除字段</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名称</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="err">字段名</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2修改字段长度">DB2修改字段长度</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="p">[</span><span class="err">表名</span><span class="p">]</span><span class="w"> </span><span class="k">alter</span><span class="w"> </span><span class="p">[</span><span class="err">字段名</span><span class="p">]</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="p">[</span><span class="err">字段类型</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2给字段添加字段">DB2给字段添加字段</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">comment</span><span class="w">  </span><span class="k">on</span><span class="w">  </span><span class="k">column</span><span class="w">  </span><span class="p">[</span><span class="err">表名</span><span class="p">].[</span><span class="err">字段名</span><span class="p">]</span><span class="w">   </span><span class="k">is</span><span class="w">  </span><span class="s1">&#39;注释内容&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="union-all行转列">UNION ALL行转列</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="err">已完成占比，未达时序占比，达到时序占比</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">FINISHED_NUM</span><span class="p">)</span><span class="o">/</span><span class="k">SUM</span><span class="p">(</span><span class="n">RECTIFICATION_PLAN_TASKNUM</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VALUE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">NOTREACHSEQUENCE_NUM</span><span class="p">)</span><span class="o">/</span><span class="k">SUM</span><span class="p">(</span><span class="n">RECTIFICATION_PLAN_TASKNUM</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">REACHSEQUENCE_NUM</span><span class="p">)</span><span class="o">/</span><span class="k">SUM</span><span class="p">(</span><span class="n">RECTIFICATION_PLAN_TASKNUM</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="n">ALTERNATELY_NAME字段对应各FINISHED_CANCELLED_NUM</span><span class="err">、</span><span class="n">FINISHED_NOTCANCEL_NUM</span><span class="err">、</span><span class="n">NOTREACHSEQUENCE_NUM</span><span class="err">、</span><span class="n">NOTREACHSEQUENCE_NUM总和</span><span class="err">，已经行转列，可加查询条件。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">FINISHED_CANCELLED_NUM</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NUM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">FINISHED_NOTCANCEL_NUM</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NUM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">NOTREACHSEQUENCE_NUM</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NUM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NAME</span><span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">REACHSEQUENCE_NUM</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NUM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_COUNTSUMMARY_TASKCOMPLETION_TOTALINFO</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ALTERNATELY_NAME</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210627182211777.png" alt="image-20210627182211777"></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210627182314095.png" alt="image-20210627182314095"></p>
+<h2 id="db2查询某个schema下的表的数量">DB2查询某个SCHEMA下的表的数量</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="err">主要是</span><span class="n">SYSCAT</span><span class="p">.</span><span class="n">TABLES这张系统表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">SYSCAT</span><span class="p">.</span><span class="n">TABLES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TABSCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SCHEMA名&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2-sql-error-sqlcode-407">DB2 SQL Error: SQLCODE=-407</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">DB2</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="k">SQLCODE</span><span class="o">=-</span><span class="mi">407</span><span class="p">,</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="o">=</span><span class="mi">23502</span><span class="p">,</span><span class="w"> </span><span class="n">SQLERRMC</span><span class="o">=</span><span class="n">TBSPACEID</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">TABLEID</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="n">COLNO</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">DRIVER</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">71</span><span class="p">.</span><span class="mi">22</span><span class="w"> </span><span class="err">错误原因是不能把</span><span class="n">NULL值插到定义为NOT</span><span class="w"> </span><span class="n">NULL的列中</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">解决办法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">1</span><span class="p">.</span><span class="err">第一步找到对应的</span><span class="n">schema名和表名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">SYSCAT</span><span class="p">.</span><span class="n">TABLES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TBSPACEID</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TABLEID</span><span class="o">=</span><span class="s1">&#39;26&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="p">.</span><span class="err">查找对应的列名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">SYSCAT</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TABSCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TJ_QGWRYJCSJGLYGX_ZXJC&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">TABNAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;HYLB&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">COLNO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="p">.</span><span class="err">查看数据排除不为空的数据</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2删除重复数据有主键">DB2删除重复数据（有主键）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="err">主键</span><span class="p">,</span><span class="err">字段</span><span class="p">,</span><span class="n">row_number</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">主键</span><span class="p">,</span><span class="err">字段</span><span class="p">,</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">字段</span><span class="w"> </span><span class="k">asc</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">aa</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="err">表名</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ww</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">ww</span><span class="p">.</span><span class="n">aa</span><span class="o">&gt;</span><span class="mi">1</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2删除重复数据无主键">DB2删除重复数据（无主键）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="err">重复字段</span><span class="p">,</span><span class="n">row_number</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">重复字段</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">重复字段</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="n">row_seq</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="err">表名</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">row_seq</span><span class="o">&gt;</span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2-sqlcode-668">DB2 SQLCODE=-668</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">reorg</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CALL</span><span class="w"> </span><span class="n">SYSPROC</span><span class="p">.</span><span class="n">ADMIN_CMD</span><span class="p">(</span><span class="s1">&#39;reorg table thskettle6.R_REPOSITORY_LOG&#39;</span><span class="p">)</span><span class="w">  </span><span class="o">//</span><span class="err">上服务器上执行</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2查看锁表">DB2查看锁表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">Select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DB_NAME</span><span class="p">,</span><span class="s1">&#39;db2 get snapshot for application agentid &#39;</span><span class="o">||</span><span class="n">a</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="p">,</span><span class="s1">&#39;db2 &#34;force application (&#39;</span><span class="o">||</span><span class="n">a</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="o">||</span><span class="s1">&#39;)&#34;&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">APPL_NAME</span><span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="n">APPL_ID</span><span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="n">APPL_STATUS</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">LOCK_MODE</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">LOCK_STATUS</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">a</span><span class="p">.</span><span class="n">TABSCHEMA</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">TABNAME</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">DBPARTITIONNUM</span><span class="p">,</span><span class="w"> </span><span class="k">cast</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">STMT_TEXT</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">sysibmadm</span><span class="p">.</span><span class="n">locks_held</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">sysibmadm</span><span class="p">.</span><span class="n">applications</span><span class="w"> </span><span class="n">b</span><span class="w">  </span><span class="k">on</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">agent_id</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">agent_id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">sysibmadm</span><span class="p">.</span><span class="n">long_running_sql</span><span class="w"> </span><span class="k">c</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="o">=</span><span class="k">c</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="n">TABNAME</span><span class="o">=</span><span class="s1">&#39;R_REPOSITORY_LOG&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="lower函数upper函数">LOWER函数、UPPER函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">LOWER函数</span><span class="err">：将大写字母转换为小写字母</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="s1">&#39;YANGCHENG&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w"> </span><span class="c1">--&gt; 结果 yangcheng
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">UPPER函数</span><span class="err">：将小写字母转换为大写字母</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">UPPER</span><span class="p">(</span><span class="s1">&#39;yangcheng&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w"> </span><span class="c1">--&gt; 结果 YANGCHENG
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2生成uuid">DB2生成UUID</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">RAND</span><span class="p">()</span><span class="err">函数、</span><span class="n">HEX</span><span class="p">()</span><span class="err">函数、</span><span class="n">CONCAT函数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">大写</span><span class="mi">32</span><span class="err">位</span><span class="n">UUID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">HEX</span><span class="p">(</span><span class="n">RAND</span><span class="p">()),</span><span class="n">HEX</span><span class="p">(</span><span class="n">RAND</span><span class="p">()))</span><span class="w"> </span><span class="n">PKID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">小写</span><span class="mi">32</span><span class="err">位</span><span class="n">UUID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">HEX</span><span class="p">(</span><span class="n">RAND</span><span class="p">())</span><span class="o">||</span><span class="n">HEX</span><span class="p">(</span><span class="n">RAND</span><span class="p">()))</span><span class="w"> </span><span class="n">PKID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2行转列">DB2行转列</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">PKID</span><span class="p">,</span><span class="n">DATA_TYPES_CODE</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">xmlserialize</span><span class="p">(</span><span class="n">xmlagg</span><span class="p">(</span><span class="n">xmltext</span><span class="p">(</span><span class="w"> </span><span class="n">concat</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="n">ZDQYBM_R</span><span class="p">)))</span><span class="k">as</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">ZDQYBM</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">substr</span><span class="p">(</span><span class="n">xmlserialize</span><span class="p">(</span><span class="n">xmlagg</span><span class="p">(</span><span class="n">xmltext</span><span class="p">(</span><span class="w"> </span><span class="n">concat</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="n">ZDQYMC_R</span><span class="p">)))</span><span class="k">as</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">ZDQYMC</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">HISTORY</span><span class="p">.</span><span class="n">AAA_WANGCHAO_ZDQY</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">PKID</span><span class="p">,</span><span class="n">DATA_TYPES_CODE</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">其他业务库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;ZRBHQ_&#39;</span><span class="o">||</span><span class="n">DATA_CODE</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">substr</span><span class="p">(</span><span class="n">xmlserialize</span><span class="p">(</span><span class="n">xmlagg</span><span class="p">(</span><span class="n">xmltext</span><span class="p">(</span><span class="w"> </span><span class="n">concat</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="n">FACILITY_TYPE</span><span class="p">)))</span><span class="k">as</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">3000</span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">VALUE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">DATA_CODE</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">FACILITY_TYPE</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;其他&#39;</span><span class="p">,</span><span class="n">FACILITY_TYPE</span><span class="p">)</span><span class="w"> </span><span class="n">FACILITY_TYPE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">QGBHQLD_SM</span><span class="p">.</span><span class="n">DS_QGZRBHLD_CONSERVATION_HUMAN_ACTIVITIES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">DATA_CODE</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span><span class="w">   </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DATA_CODE</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2fetch-first-1-row-only">DB2：fetch first 1 row only</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">DB2的fetch</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="err">相当于</span><span class="n">Oracle的where</span><span class="w"> </span><span class="n">rownum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">相当于</span><span class="n">MySQL的</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2分页函数">DB2分页函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER函数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">取</span><span class="n">PWXK</span><span class="p">.</span><span class="n">PWXK_ITEM_SQDJ表中ITEMENDTIME时间最大数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ITEMENDTIME</span><span class="p">,</span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ITEMENDTIME</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ROWNUM</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">PWXK</span><span class="p">.</span><span class="n">PWXK_ITEM_SQDJ</span><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ROWNUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">FETCH</span><span class="w"> </span><span class="k">FIRST</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">ONLY</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">取</span><span class="n">PWXK</span><span class="p">.</span><span class="n">PWXK_ITEM_SQDJ表中ITEMENDTIME时间逆序排序最大的两条</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ITEMENDTIME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">PWXK</span><span class="p">.</span><span class="n">PWXK_ITEM_SQDJ</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ITEMENDTIME</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">FETCH</span><span class="w"> </span><span class="k">FIRST</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">ONLY</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2取余函数">DB2取余函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">取余：</span><span class="k">MOD</span><span class="p">()</span><span class="err">函数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MOD</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w"> </span><span class="c1">--&gt; 结果：1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="rank-over指定条件排名">RANK() OVER指定条件排名</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">按照</span><span class="n">AQI逆序排序进行排名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">注：排名后的数字为</span><span class="n">NUMBER类型</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">REGIONNAME</span><span class="p">,</span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AQI</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2类型转换函数cast">DB2类型转换函数：CAST()</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">将</span><span class="n">NUMBER类型转换为VARCHAR类型</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span><span class="w"> </span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">将日期类型转换为字符类型</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">SYSDATE</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="空数据表关联置为-">空数据表关联置为-</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">CITYCODE</span><span class="w"> </span><span class="n">REGIONCODE</span><span class="p">,</span><span class="n">CITYNAME</span><span class="w"> </span><span class="n">REGIONNAME</span><span class="p">,</span><span class="w"> </span><span class="n">DECODE</span><span class="p">(</span><span class="k">CAST</span><span class="p">(</span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">50</span><span class="p">)),</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">50</span><span class="p">)))</span><span class="w"> </span><span class="n">AQIRANKING</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">DECODE</span><span class="p">(</span><span class="k">CAST</span><span class="p">(</span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">50</span><span class="p">)),</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">50</span><span class="p">)))</span><span class="w"> </span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">CITYCODE</span><span class="p">,</span><span class="n">CITYNAME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TCODE</span><span class="p">.</span><span class="n">T_COD_CITY_REGION</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">CITYCODE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;110000&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">T</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">REGIONCODE</span><span class="p">,</span><span class="n">REGIONNAME</span><span class="p">,</span><span class="n">AQIRANKING</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">AQIRANKINGB</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHEN</span><span class="w"> </span><span class="n">AQIRANKINGB</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AQIFLAG</span><span class="w"> </span><span class="k">FROM</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">DS</span><span class="p">.</span><span class="n">CITYCODE</span><span class="w"> </span><span class="n">REGIONCODE</span><span class="p">,</span><span class="n">AREA</span><span class="w"> </span><span class="n">REGIONNAME</span><span class="p">,</span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AQI</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">AQIRANKING</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="w"> </span><span class="n">DS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">TCODE</span><span class="p">.</span><span class="n">T_COD_CITY_REGION</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">ON</span><span class="w">  </span><span class="n">DS</span><span class="p">.</span><span class="n">CITYCODE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">CITYCODE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">ISCITY_168</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TIMEPOINT</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">TIMEPOINT</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">CITYCODE</span><span class="w"> </span><span class="n">REGIONCODEB</span><span class="p">,</span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AQI</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">AQIRANKINGB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">TIMEPOINT</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">TIMEPOINT</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DSJYDD</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">B</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">REGIONCODE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">REGIONCODEB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">AND</span><span class="w"> </span><span class="n">REGIONCODE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;110000&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="n">F</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">CITYCODE</span><span class="o">=</span><span class="n">F</span><span class="p">.</span><span class="n">REGIONCODE</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="case-when-语法相当于if">CASE WHEN 语法(相当于if)：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">（</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">WHEN</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">*</span><span class="err">）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">例：</span><span class="p">(</span><span class="err">当</span><span class="w"> </span><span class="n">EFFECTIVE_STATE</span><span class="o">=</span><span class="mi">0</span><span class="err">时，值为</span><span class="s1">&#39;待制证&#39;</span><span class="w"> </span><span class="err">，</span><span class="w"> </span><span class="n">EFFECTIVE_STATE</span><span class="o">=</span><span class="mi">1</span><span class="err">时，值为</span><span class="s1">&#39;有效&#39;</span><span class="w"> </span><span class="err">，否则其他只为空</span><span class="p">)</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">EFFECTIVE_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;待制证&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHEN</span><span class="w"> </span><span class="n">EFFECTIVE_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;有效&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EFFECTIVE_STATE</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2删除重复字段">DB2删除重复字段：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="err">主键</span><span class="p">,</span><span class="err">字段</span><span class="p">,</span><span class="n">row_number</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">主键</span><span class="p">,</span><span class="err">字段</span><span class="p">,</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">字段</span><span class="w"> </span><span class="k">asc</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">aa</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="err">表名</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ww</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">ww</span><span class="p">.</span><span class="n">aa</span><span class="o">&gt;</span><span class="mi">1</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2批量更新某个字段">DB2批量更新某个字段：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="err">例：从备份表</span><span class="n">HKYWATER</span><span class="p">.</span><span class="n">T_RISKRANK_TARGET_JL0225中取TARGET_TYPE字段数据并批量更新至HKYWATER</span><span class="p">.</span><span class="n">T_RISKRANK_TARGET中</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">HKYWATER</span><span class="p">.</span><span class="n">T_RISKRANK_TARGET</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SET</span><span class="w">  </span><span class="n">TARGET_TYPE</span><span class="o">=</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">TARGET_TYPE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">HKYWATER</span><span class="p">.</span><span class="n">T_RISKRANK_TARGET_JL0225</span><span class="w"> </span><span class="n">a</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">TARGET_ID</span><span class="o">=</span><span class="n">HKYWATER</span><span class="p">.</span><span class="n">T_RISKRANK_TARGET</span><span class="p">.</span><span class="n">TARGET_ID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2建表默认系统时间">DB2建表默认系统时间</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">CREATE_TIME</span><span class="w">          </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s2">&#34;SYSIBM&#34;</span><span class="p">.</span><span class="s2">&#34;TIMESTAMP&#34;</span><span class="p">(</span><span class="k">CURRENT</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2查询表名字段名字段中文名字段类型等">DB2查询表名、字段名、字段中文名、字段类型等</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="n">TBNAME</span><span class="p">,</span><span class="w">     </span><span class="c1">--表名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="n">NAME</span><span class="p">,</span><span class="w">       </span><span class="c1">--字段名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="n">REMARKS</span><span class="p">,</span><span class="w">    </span><span class="c1">--字段中文名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="n">COLTYPE</span><span class="p">,</span><span class="w">    </span><span class="c1">--字段类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="k">LENGTH</span><span class="p">,</span><span class="w">     </span><span class="c1">--字段长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="k">SCALE</span><span class="p">,</span><span class="w">      </span><span class="c1">--精度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">T</span><span class="p">.</span><span class="n">NULLS</span><span class="w">       </span><span class="c1">--是否为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">SYSIBM</span><span class="p">.</span><span class="n">SYSCOLUMNS</span><span class="w"> </span><span class="n">T</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TBCREATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TJ_QGYYSSYDHJZKPG&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TBNAME</span><span class="o">=</span><span class="s1">&#39;CITY_2017_1_1_TMP&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2中decfloat类型">DB2中DECFLOAT类型</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">DECFLOAT</span><span class="w"> </span><span class="err">是</span><span class="w"> </span><span class="n">DB2</span><span class="w"> </span><span class="mi">9</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="err">引入的一种新的数据类型，它是一种十进制浮点数据类型，适合处理精确的十进制业务数据。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">DECFLOAT</span><span class="w"> </span><span class="err">合并了</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="w"> </span><span class="err">类型的精度和</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="err">类型的一些性能优势，它是一种结果精确而且处理高效的数据类型。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">DECFLOAT</span><span class="w"> </span><span class="err">提供</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="err">位和</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="err">位两种精度的浮点数据类型。分别为表示为</span><span class="w"> </span><span class="n">DECFLOAT</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="err">和</span><span class="w"> </span><span class="n">DECFOAT</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span><span class="err">。如果没有指明精度，</span><span class="n">DECFLOAT</span><span class="w"> </span><span class="err">默认为</span><span class="w"> </span><span class="n">DECFLOAT</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span><span class="err">。这两种精度的数据分别存储在</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="err">字节和</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="err">字节的空间里。</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2锁表sqlcode-911">DB2锁表SQLCODE=-911</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">服务器中执行</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">1</span><span class="p">.</span><span class="err">登录数据库服务器</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="p">.</span><span class="err">切换为</span><span class="n">db2inst1用户</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="p">.</span><span class="err">连接数据库：</span><span class="n">db2</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="err">你的数据库名</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="err">用户名</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="err">密码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">4</span><span class="p">.</span><span class="err">找出锁表应用程序句柄：</span><span class="n">db2</span><span class="w"> </span><span class="s2">&#34;get snapshot for locks on 数据库名&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">5</span><span class="p">.</span><span class="err">杀死锁表进程：</span><span class="n">db2</span><span class="w"> </span><span class="s2">&#34;force application(123)&#34;</span><span class="w">  </span><span class="mi">123</span><span class="err">为锁表应用程序句柄进程</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">客户端数据库中执行</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">call</span><span class="w"> </span><span class="n">sysproc</span><span class="p">.</span><span class="n">admin_cmd</span><span class="p">(</span><span class="s2">&#34;reorg table 表名&#34;</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2获取数据的最新时间数据其他数据一样数据时间不一样">DB2获取数据的最新时间数据（其他数据一样，数据时间不一样）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">用</span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="err">排序，对时间逆序排序，再取排序第一个即可</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TASKINFO_ID</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">FILLIN_MONTH_TASK</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ROWINDEX</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">INSTRUCTIONS_ID</span><span class="p">,</span><span class="w"> </span><span class="n">TASKINFO_ID</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">ALTERNATELY_CODE</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">ALTERNATELY_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">R_TASKNAME</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已完成已销号&#39;</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已完成未销号&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已达序时进度&#39;</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;4&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;未达序时进度&#39;</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">COMPLETION_STATUS</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">B</span><span class="p">.</span><span class="n">FILLIN_MONTH</span><span class="w"> </span><span class="n">FILLIN_MONTH_TASK</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_INSTRUCTIONS_TASKINFO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_TASKINFO</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TASKINFO_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">PKID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">TO_CHAR</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">FILLIN_MONTH</span><span class="p">,</span><span class="s1">&#39;YYYY-MM&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2021-12-01&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">INSTRUCTIONS_ID</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TASKINFO_ID</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">ALTERNATELY_CODE</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">ALTERNATELY_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">R_TASKNAME</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已完成已销号&#39;</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已完成未销号&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;已达序时进度&#39;</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">COMPLETION_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;4&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;未达序时进度&#39;</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">COMPLETION_STATUS</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">B</span><span class="p">.</span><span class="n">FILLIN_MONTH</span><span class="w"> </span><span class="n">FILLIN_MONTH_TASK</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="k">FROM</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_INSTRUCTIONS_TASKINFO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_TASKINFO_RECORD</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TASKINFO_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">TASKINFO_PKID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">TO_CHAR</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">FILLIN_MONTH</span><span class="p">,</span><span class="s1">&#39;YYYY-MM&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2021-12&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">)</span><span class="n">B</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">ROWINDEX</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="数据01展示为1处理方式">数据0.1展示为.1处理方式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">环境质量业务库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">XZQDM</span><span class="p">,</span><span class="n">XZQMC</span><span class="p">,</span><span class="n">TIMEPOINT</span><span class="p">,</span><span class="n">PM10</span><span class="p">,</span><span class="n">PM2_5</span><span class="p">,</span><span class="n">SO2</span><span class="p">,</span><span class="n">NO2</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">CO</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="o">||</span><span class="n">CO</span><span class="p">,</span><span class="n">CO</span><span class="p">)</span><span class="w"> </span><span class="n">CO</span><span class="p">,</span><span class="n">O3</span><span class="p">,</span><span class="n">QUALITY</span><span class="p">,</span><span class="n">PRIMARYPOLLUTANT</span><span class="w"> </span><span class="k">FROM</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">XZQDM</span><span class="p">,</span><span class="n">XZQMC</span><span class="p">,</span><span class="n">TIMEPOINT</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">PM10</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">PM10</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">PM10</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">PM2_5</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">PM2_5</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">PM2_5</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">DECODE</span><span class="p">(</span><span class="n">SO2</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">SO2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">SO2</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">NO2</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">NO2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">NO2</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">CO</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">CO</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">CO</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">DECODE</span><span class="p">(</span><span class="n">O3</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">CAST</span><span class="p">(</span><span class="n">O3</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="w"> </span><span class="n">O3</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">QUALITY</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="n">QUALITY</span><span class="p">)</span><span class="w"> </span><span class="n">QUALITY</span><span class="p">,</span><span class="n">DECODE</span><span class="p">(</span><span class="n">PRIMARYPOLLUTANT</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="n">PRIMARYPOLLUTANT</span><span class="p">)</span><span class="w"> </span><span class="n">PRIMARYPOLLUTANT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w">  </span><span class="n">A</span><span class="p">.</span><span class="n">XZQDM</span><span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">XZQMC</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">TIMEPOINT</span><span class="p">,</span><span class="n">PM10</span><span class="p">,</span><span class="n">PM2_5</span><span class="p">,</span><span class="n">SO2</span><span class="p">,</span><span class="n">NO2</span><span class="p">,</span><span class="n">ROUND</span><span class="p">(</span><span class="n">CO</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">CO</span><span class="p">,</span><span class="n">O3</span><span class="p">,</span><span class="n">QUALITY</span><span class="p">,</span><span class="n">PRIMARYPOLLUTANT</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">TCODE</span><span class="p">.</span><span class="n">T_COD_DALFLK_CITY</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">SELECT</span><span class="w">  </span><span class="n">TO_CHAR</span><span class="p">(</span><span class="n">TIMEPOINT</span><span class="p">,</span><span class="s1">&#39;MM-DD HH24&#39;</span><span class="p">)</span><span class="o">||</span><span class="s1">&#39;时&#39;</span><span class="w"> </span><span class="n">TIMEPOINT</span><span class="p">,</span><span class="w"> </span><span class="n">AREA</span><span class="p">,</span><span class="w"> </span><span class="n">CITYCODE</span><span class="p">,</span><span class="n">PRIMARYPOLLUTANT</span><span class="p">,</span><span class="w"> </span><span class="k">REPLACE</span><span class="p">(</span><span class="n">QUALITY</span><span class="p">,</span><span class="s1">&#39;污染&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">QUALITY</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">PM10</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">PM10</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">PM10</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">PM2_5</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">PM2_5</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">PM2_5</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">SO2</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">SO2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">SO2</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">NO2</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">NO2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">NO2</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">CO</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">CO</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="n">CO</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">O3</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">O3</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">O3</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CAST</span><span class="p">(</span><span class="n">DECODE</span><span class="p">(</span><span class="n">AQI</span><span class="p">,</span><span class="s1">&#39;—&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="n">AQI</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span><span class="w"> </span><span class="n">AQI</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">TENV</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TIMEPOINT</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">TIMEPOINT</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TENV</span><span class="p">.</span><span class="n">AIR_CITYHOURAQI_PUBLISH</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">XZQDM</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="k">CAST</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">CITYCODE</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">XZQDM</span><span class="w"> </span><span class="o">!=</span><span class="s1">&#39;KA0014&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">))</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查询数据库表字典信息语句">查询数据库表字典信息语句</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TY_YYSYD.&#39;</span><span class="o">||</span><span class="n">B</span><span class="p">.</span><span class="n">TABNAME</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">COLNAME</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">TYPENAME</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">NULLS</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="k">LENGTH</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">REMARKS</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">syscat</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">syscat</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="n">B</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABSCHEMA</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">TABSCHEMA</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABNAME</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">TABNAME</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABSCHEMA</span><span class="o">=</span><span class="s1">&#39;TY_YYSYD&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">AND</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABNAME</span><span class="o">=</span><span class="s1">&#39;T_DP_SYDJBXX&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2varchar_format函数">DB2varchar_format()函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">trim</span><span class="p">(</span><span class="n">varchar_format</span><span class="p">(</span><span class="o">-</span><span class="p">.</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;9999999999999.9&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DUAL</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="err">结果：</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2查询表空间使用率">DB2查询表空间使用率</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">substr</span><span class="p">(</span><span class="n">tbsp_name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">TABLESPACE_NAME</span><span class="p">,</span><span class="n">substr</span><span class="p">(</span><span class="n">tbsp_content_type</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">TABLESPACE_TYPE</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">tbsp_total_size_kb</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">TOTAL_MB</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">sum</span><span class="p">(</span><span class="n">tbsp_used_size_kb</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">USED_MB</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">tbsp_free_size_kb</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">FREE_MB</span><span class="p">,</span><span class="n">tbsp_page_size</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PAGE_SIZE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">from</span><span class="w"> </span><span class="n">SYSIBMADM</span><span class="p">.</span><span class="n">TBSP_UTILIZATION</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">tbsp_name</span><span class="p">,</span><span class="n">tbsp_content_type</span><span class="p">,</span><span class="n">tbsp_page_size</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">　　</span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2查看某个数据库中数据数量">DB2查看某个数据库中数据数量</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select TABSCHEMA,TABNAME,SUM(CARD) CARDS from SYSCAT.TABLES 
+</span></span><span class="line"><span class="cl">GROUP BY TABSCHEMA,TABNAME
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2查询某个表或者某个schema占用空间大小">DB2查询某个表或者某个Schema占用空间大小</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">SUM</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">CARD</span><span class="p">)</span><span class="w"> </span><span class="n">TCARD</span><span class="p">,</span><span class="c1">--数据量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">   </span><span class="n">round</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">NPAGES</span><span class="p">)</span><span class="o">*</span><span class="mi">32768</span><span class="o">/</span><span class="p">(</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">TSIZE</span><span class="w"> </span><span class="c1">--大小G
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">SYSCAT</span><span class="p">.</span><span class="n">TABLES</span><span class="w"> </span><span class="n">T</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">WHERE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">OWNERTYPE</span><span class="o">=</span><span class="s1">&#39;U&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TABSCHEMA</span><span class="w">  </span><span class="o">=</span><span class="s1">&#39;schema名称&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TABNAME</span><span class="o">=</span><span class="s1">&#39;表名&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2上服务器解除死锁">DB2上服务器解除死锁</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">数据库连接工具（</span><span class="n">ADS</span><span class="err">）执行以下语句</span><span class="w"> </span><span class="c1">--&gt; 查看死锁表的进程号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">DB_NAME</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">AGENT_ID</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">APPL_NAME</span><span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="n">APPL_ID</span><span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="n">APPL_STATUS</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">LOCK_MODE</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">LOCK_STATUS</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">TABSCHEMA</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">TABNAME</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">DBPARTITIONNUM</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">sysibmadm</span><span class="p">.</span><span class="n">locks_held</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">sysibmadm</span><span class="p">.</span><span class="n">applications</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">agent_id</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">agent_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">登录</span><span class="n">DB2数据库服务器</span><span class="err">，切换最高权限用户，连接数据库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">1</span><span class="p">.</span><span class="n">su</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">db2inst1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">password</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">连接数据库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="p">.</span><span class="n">db2</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="err">数据库名称（例如：</span><span class="n">db2</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">screenfj</span><span class="err">）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">杀掉死锁进程号</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="p">.</span><span class="n">db2</span><span class="w"> </span><span class="s2">&#34;force application (进程号)&#34;</span><span class="err">（例如：</span><span class="n">db2</span><span class="w"> </span><span class="s2">&#34;force application (18572)&#34;</span><span class="err">）</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2数据库挂了启动时报错">DB2数据库挂了，启动时报错</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 数据库报错 db2nodes.cfg line number“1”,Reason code“10”</span>
+</span></span><span class="line"><span class="cl">原因：服务器名称变了导致DB2数据库连接不上
+</span></span><span class="line"><span class="cl">解决：修改db2nodes.cfg文件中配置的服务器名称
+</span></span><span class="line"><span class="cl">1.find / -name db2nodes.cfg
+</span></span><span class="line"><span class="cl">/home/db2inst1/sqllib/db2nodes.cfg
+</span></span><span class="line"><span class="cl">2.cd /home/db2inst1/sqllib
+</span></span><span class="line"><span class="cl">3.cat db2nodes.cfg
+</span></span><span class="line"><span class="cl">4.vi db2nodes.cfg <span class="c1"># 修改该文件的服务器名称</span>
+</span></span><span class="line"><span class="cl">5.db2start <span class="c1"># 重启数据库</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="db2还原ixf文件">DB2还原ixf文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">登录服务器，切换</span><span class="n">db2inst1用户</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">su</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">db2inst1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">连接对应数据库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">db2</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">filldb</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">还原</span><span class="n">ixf文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">db2</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="o">/</span><span class="n">bak</span><span class="o">/</span><span class="n">tab215</span><span class="p">.</span><span class="n">ixf</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">ixf</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">EPI</span><span class="p">.</span><span class="n">T_BAS_TASKINFO</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-03-16
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/db2/">DB2</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%BA%BF%E4%B8%8A%E9%87%8D%E5%A4%A7%E6%95%85%E9%9A%9C/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">线上重大故障</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/echarts/">
+            <span class="next-text nav-default">Echarts</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
