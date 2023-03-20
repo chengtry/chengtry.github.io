@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Java">
 <meta itemprop="description" content="JavaSE 冒泡排序 （1）从左边开始把大的往右边移动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 int[] arr = {3,2,5,1,4}; for(int i=1; i&lt;arr.length; i&#43;&#43;){ /* 因为每一轮从最左边开始，int j"><meta itemprop="datePublished" content="2023-02-14T19:55:47+08:00" />
 <meta itemprop="dateModified" content="2023-02-14T19:55:47+08:00" />
-<meta itemprop="wordCount" content="22921">
+<meta itemprop="wordCount" content="23024">
 <meta itemprop="keywords" content="Java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java"/>
 <meta name="twitter:description" content="JavaSE 冒泡排序 （1）从左边开始把大的往右边移动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 int[] arr = {3,2,5,1,4}; for(int i=1; i&lt;arr.length; i&#43;&#43;){ /* 因为每一轮从最左边开始，int j"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 22921 字 </span>
+          <span class="more-meta"> 约 23024 字 </span>
           <span class="more-meta"> 预计阅读 46 分钟 </span>
         
       </div>
@@ -164,6 +164,7 @@
         <li><a href="#java-8-lambda表达式">Java 8 Lambda表达式</a></li>
         <li><a href="#java-8-stream流">Java 8 Stream流</a></li>
         <li><a href="#stream双冒号-使用">stream双冒号 ::使用</a></li>
+        <li><a href="#stream流判断一个集合中是否包含一个对象">Stream流判断一个集合中是否包含一个对象</a></li>
         <li><a href="#xml中的resulttype返回list">xml中的resultType返回List</a></li>
         <li><a href="#三目运算符">三目运算符</a></li>
         <li><a href="#增强for循环">增强for循环</a></li>
@@ -992,6 +993,43 @@
 </span></span><span class="line"><span class="cl">	<span class="o">}</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="stream流判断一个集合中是否包含一个对象">Stream流判断一个集合中是否包含一个对象</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;b&#34;</span><span class="o">,</span> <span class="n">3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="n">exists</span> <span class="o">=</span> <span class="n">tempNameMapList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">map</span> <span class="o">-&gt;</span> <span class="n">map</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">2</span><span class="o">));</span> <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="n">exists</span> <span class="o">=</span> <span class="n">tempNameMapList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">map</span> <span class="o">-&gt;</span> <span class="n">map</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">2</span><span class="o">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// noneMatch：不包含
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">dictionaryCodeNameList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">dictionaryCodeNameMap</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">dictionaryCodeNameMap</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">actionReports</span><span class="o">.</span><span class="na">getReporttype</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// anyMatch：包含                                          
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">dictionaryCodeNameList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">dictionaryCodeNameMap</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">dictionaryCodeNameMap</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">actionReports</span><span class="o">.</span><span class="na">getReporttype</span><span class="o">())</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="xml中的resulttype返回list">xml中的resultType返回List</h2>
