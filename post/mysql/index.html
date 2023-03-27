@@ -49,7 +49,7 @@
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"><meta itemprop="datePublished" content="2023-03-06T19:43:17+08:00" />
 <meta itemprop="dateModified" content="2023-03-06T19:43:17+08:00" />
-<meta itemprop="wordCount" content="10341">
+<meta itemprop="wordCount" content="10529">
 <meta itemprop="keywords" content="MySQL,数据库," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL"/>
 <meta name="twitter:description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"/>
@@ -133,8 +133,8 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 10341 字 </span>
-          <span class="more-meta"> 预计阅读 21 分钟 </span>
+          <span class="more-meta"> 约 10529 字 </span>
+          <span class="more-meta"> 预计阅读 22 分钟 </span>
         
       </div>
     </header>
@@ -180,6 +180,8 @@
         <li><a href="#mysql登录报错">MySQL登录报错</a></li>
         <li><a href="#mysql执行计划">MySQL执行计划</a></li>
         <li><a href="#mysql57之前没有开窗函数如何实现">MySQL5.7之前没有开窗函数如何实现</a></li>
+        <li><a href="#mysqlbinlogcommand-not-found">mysqlbinlog:command not found</a></li>
+        <li><a href="#-bash-mysqldump-command-not-found">-bash: mysqldump: command not found</a></li>
       </ul>
     </li>
   </ul>
@@ -1009,6 +1011,48 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">根据</span><span class="n">CREATED_TIME逆序排序</span><span class="err">，按照</span><span class="n">PUBLISHDATA_ID分组</span><span class="err">，</span><span class="n">rank排名每次加一</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mysqlbinlogcommand-not-found">mysqlbinlog:command not found</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># mysqlbinlog命令未找到。</span>
+</span></span><span class="line"><span class="cl">原因：系统默认从 /usr/bin 目录下查询命令
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解决：建立连接
+</span></span><span class="line"><span class="cl"><span class="c1"># 查询mysql目录，一般mysqlbinlog和mysql在同一个目录</span>
+</span></span><span class="line"><span class="cl">find / -name mysql
+</span></span><span class="line"><span class="cl">ln -s /yc/mysql/bin/mysqlbinlog /usr/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-bash-mysqldump-command-not-found">-bash: mysqldump: command not found</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># mysqldump命令未找到。</span>
+</span></span><span class="line"><span class="cl">原因：系统默认从 /usr/bin 目录下查询命令
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解决：建立连接
+</span></span><span class="line"><span class="cl"><span class="c1"># 查询mysql目录，一般mysqldump和mysql在同一个目录</span>
+</span></span><span class="line"><span class="cl">find / -name mysql
+</span></span><span class="line"><span class="cl">ln -s /yc/mysql/bin/mysqldump /usr/bin
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>

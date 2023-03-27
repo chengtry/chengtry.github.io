@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Docker">
 <meta itemprop="description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容"><meta itemprop="datePublished" content="2023-02-16T19:57:37+08:00" />
 <meta itemprop="dateModified" content="2023-02-16T19:57:37+08:00" />
-<meta itemprop="wordCount" content="7348">
+<meta itemprop="wordCount" content="7346">
 <meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker"/>
 <meta name="twitter:description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 7348 字 </span>
+          <span class="more-meta"> 约 7346 字 </span>
           <span class="more-meta"> 预计阅读 15 分钟 </span>
         
       </div>
@@ -159,7 +159,7 @@
         </li>
         <li><a href="#docker常用命令">Docker常用命令</a>
           <ul>
-            <li><a href="#镜像相关命令">**镜像相关命令</a></li>
+            <li><a href="#镜像相关命令">镜像相关命令</a></li>
             <li><a href="#容器相关命令"><strong>容器相关命令</strong></a></li>
             <li><a href="#docker命令">Docker命令</a></li>
           </ul>
@@ -307,7 +307,7 @@
 <p>一个Docker Registry可包含多个Docker仓库，每个仓库可包含多个镜像标签，每个标签对应一个Docker镜像。这跟Maven的仓库有点类似，如果把Docker Registry比作Maven仓库的话，那么Docker仓库就可理解为某jar包的路径，而镜像标签则可理解为jar包的版本号。</p>
 <p>Docker Registry可分为公有Docker Registry和私有Docker Registry。最常用的Docker Registry莫过于官方的Docker Hub，这也是默认的Docker Registry。Docker Hub上存放着大量优秀的镜像，我们可使用Docker命令下载并使用。</p>
 <h2 id="docker常用命令">Docker常用命令</h2>
-<h3 id="镜像相关命令">**镜像相关命令</h3>
+<h3 id="镜像相关命令">镜像相关命令</h3>
 <p>可使用docker search命令搜索存放在Docker Hub中的镜像。执行该命令后，Docker就会在Docker Hub中搜索含有 tomcat 这个关键词的镜像仓库。</p>
 <h4 id="2下载镜像">2、下载镜像</h4>
 <p>使用命令docker pull命令即可从Docker Registry上下载镜像，执行该命令后，Docker会从 Docker Hub中的 tomcat仓库下载最新版本的 tomcat镜像。如果要下载指定版本则在tomcat后面加冒号指定版本，例如：docker pull tomcat:7</p>

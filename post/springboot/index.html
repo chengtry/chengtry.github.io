@@ -49,7 +49,7 @@
 <meta itemprop="name" content="SpringBoot">
 <meta itemprop="description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"><meta itemprop="datePublished" content="2023-03-13T19:21:06+08:00" />
 <meta itemprop="dateModified" content="2023-03-13T19:21:06+08:00" />
-<meta itemprop="wordCount" content="15048">
+<meta itemprop="wordCount" content="15062">
 <meta itemprop="keywords" content="SpringBoot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SpringBoot"/>
 <meta name="twitter:description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"/>
@@ -133,7 +133,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 15048 字 </span>
+          <span class="more-meta"> 约 15062 字 </span>
           <span class="more-meta"> 预计阅读 31 分钟 </span>
         
       </div>
@@ -984,9 +984,19 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="pomxml">pom.xml</h3>
-<p>spring-boot-dependencies：核心依赖在父工程中！</p>
-<p>我们在写或者引入一些SpringBoot依赖时，不需要指定版本是因为有这些仓库</p>
-<h3 id="启动器">启动器</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">spring-boot-dependencies：核心依赖在父工程中！
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">我们在写或者引入一些SpringBoot依赖时，不需要指定版本是因为有这些仓库
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动器">启动器</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1117,13 +1127,35 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="springboot整合redis">SpringBoot整合Redis</h1>
-<p>说明：在springBoot2.x 版本后，底层原来用的jedis被替换为了lettuce</p>
-<p>jedis：采用直连，多个线程操作是不安全的，想要避免不安全需要使用jedis pool连接池！更像BIO模式</p>
-<p>lettuce：底层采用netty，实例可以在多个线程中进行共享，不存在线程不安全的情况。更像NIO模式</p>
-<p>BIO:同步阻塞IO      （Blocking I/O）               一个连接一个线程（JDK1.4以前只有BIO）</p>
-<p>NIO:同步非阻塞IO  （New I/O）                      一个请求一个线程  （JDK1.4以后支持NIO）</p>
-<p>AIO:异步非阻塞IO  （Asynchronous I/O）    一个有效请求一个线程（JDK1.7以后支持AIO）</p>
-<h2 id="整合">整合</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">说明：在springBoot2.x 版本后，底层原来用的jedis被替换为了lettuce
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">jedis：采用直连，多个线程操作是不安全的，想要避免不安全需要使用jedis pool连接池！更像BIO模式
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">lettuce：底层采用netty，实例可以在多个线程中进行共享，不存在线程不安全的情况。更像NIO模式
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">BIO:同步阻塞IO      （Blocking I/O）               一个连接一个线程（JDK1.4以前只有BIO）     
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NIO:同步非阻塞IO  （New I/O）                      一个请求一个线程  （JDK1.4以后支持NIO）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">AIO:异步非阻塞IO  （Asynchronous I/O）    一个有效请求一个线程（JDK1.7以后支持AIO）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="整合">整合</h2>
 <h3 id="1导入依赖">1.导入依赖</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

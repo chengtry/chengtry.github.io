@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Redis">
 <meta itemprop="description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"><meta itemprop="datePublished" content="2023-02-14T19:48:43+08:00" />
 <meta itemprop="dateModified" content="2023-02-14T19:48:43+08:00" />
-<meta itemprop="wordCount" content="11344">
+<meta itemprop="wordCount" content="11374">
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis"/>
 <meta name="twitter:description" content="Redis基础 Redis的安装： 安装redis 1 2 3 4 5 #下载redis的安装包并用Xftp上传到服务器，用tar命令解压安装包 1. tar -xzvf redis-6.0.6.tar.gz #进"/>
@@ -133,7 +133,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 11344 字 </span>
+          <span class="more-meta"> 约 11374 字 </span>
           <span class="more-meta"> 预计阅读 23 分钟 </span>
         
       </div>
@@ -2025,32 +2025,104 @@
 </div><h1 id="缓存穿透缓存击穿缓存雪崩">缓存穿透、缓存击穿、缓存雪崩</h1>
 <h2 id="缓存穿透">缓存穿透</h2>
 <h3 id="概念">概念：</h3>
-<p>在默认情况下，用户请求数据时，会先在缓存(Redis)中查找，若没找到即缓存未命中，再在数据库中进行查找，数量少可能问题不大，可是一旦大量的请求数据（例如秒杀场景）缓存都没有命中的话，就会全部转移到数据库上，造成数据库极大的压力，就有可能导致数据库崩溃。网络安全中也有人恶意使用这种手段进行攻击被称为洪水攻击。</p>
-<h3 id="解决方案">解决方案：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">在默认情况下，用户请求数据时，会先在缓存(Redis)中查找，若没找到即缓存未命中，再在数据库中进行查找，数量少可能问题不大，可是一旦大量的请求数据（例如秒杀场景）缓存都没有命中的话，就会全部转移到数据库上，造成数据库极大的压力，就有可能导致数据库崩溃。网络安全中也有人恶意使用这种手段进行攻击被称为洪水攻击。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="解决方案">解决方案：</h3>
 <h4 id="1布隆过滤器">1.布隆过滤器</h4>
-<p><strong>布隆过滤器解决方法：</strong></p>
-<p>将数据库中所有的查询条件，放入布隆过滤器中，当一个查询请求过来时，先经过布隆过滤器进行查，如果判断请求查询值存在，则继续查；如果判断请求查询不存在，直接丢弃。</p>
-<p><strong>布隆过滤器原理</strong></p>
-<p>原理就是一个对一个key进行k个hash算法获取k个值，在比特数组中将这k个值散列后设定为1，然后查的时候如果特定的这几个位置都为1，那么布隆过滤器判断该key存在。布隆过滤器可能会误判，如果它说不存在那肯定不存在，如果它说存在，那数据有可能实际不存在；Redis的bitmap只支持2^32大小，对应到内存也就是512MB，误判率万分之一，可以放下2亿左右的数据，性能高，空间占用率及小，省去了大量无效的数据库连接。</p>
-<p>因此我们可以通过布隆过滤器，将Redis缓存穿透控制在一个可容范围内。布隆过滤器可以判断某个数据一定不存在，但是无法判断一定存在。</p>
-<h2 id="缓存击穿">缓存击穿</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">布隆过滤器解决方法：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">将数据库中所有的查询条件，放入布隆过滤器中，当一个查询请求过来时，先经过布隆过滤器进行查，如果判断请求查询值存在，则继续查；如果判断请求查询不存在，直接丢弃。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**布隆过滤器原理**
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">原理就是一个对一个key进行k个hash算法获取k个值，在比特数组中将这k个值散列后设定为1，然后查的时候如果特定的这几个位置都为1，那么布隆过滤器判断该key存在。布隆过滤器可能会误判，如果它说不存在那肯定不存在，如果它说存在，那数据有可能实际不存在；Redis的bitmap只支持2^32大小，对应到内存也就是512MB，误判率万分之一，可以放下2亿左右的数据，性能高，空间占用率及小，省去了大量无效的数据库连接。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">因此我们可以通过布隆过滤器，将Redis缓存穿透控制在一个可容范围内。布隆过滤器可以判断某个数据一定不存在，但是无法判断一定存在。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="缓存击穿">缓存击穿</h2>
 <h3 id="概念-1">概念：</h3>
-<p>相较于缓存穿透，缓存击穿的目的性更强，一个存在的key，在缓存过期的一刻，同时有大量的请求，这些请求都会击穿到DB，造成瞬时DB请求量大、压力骤增。这就是缓存被击穿，只是针对其中某个key的缓存不可用而导致击穿，但是其他的key依然可以使用缓存响应。 比如热搜排行上，一个热点新闻被同时大量访问就可能导致缓存击穿。</p>
-<h3 id="解决方案-1">解决方案：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">相较于缓存穿透，缓存击穿的目的性更强，一个存在的key，在缓存过期的一刻，同时有大量的请求，这些请求都会击穿到DB，造成瞬时DB请求量大、压力骤增。这就是缓存被击穿，只是针对其中某个key的缓存不可用而导致击穿，但是其他的key依然可以使用缓存响应。 比如热搜排行上，一个热点新闻被同时大量访问就可能导致缓存击穿。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="解决方案-1">解决方案：</h3>
 <h4 id="1设置热点数据永不过期">1.设置热点数据永不过期</h4>
-<p>这样就不会出现热点数据过期的情况，但是当Redis内存空间满的时候也会清理部分数据，而且此种方案会占用空间，一旦热点数据多了起来，就会占用部分空间。</p>
-<p>在访问key之前，采用SETNX（set if not exists）来设置另一个短期key来锁住当前key的访问，访问结束再删除该短期key。保证同时刻只有一个线程访问。这样对锁的要求就十分高。</p>
-<h2 id="缓存雪崩">缓存雪崩</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">这样就不会出现热点数据过期的情况，但是当Redis内存空间满的时候也会清理部分数据，而且此种方案会占用空间，一旦热点数据多了起来，就会占用部分空间。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">在访问key之前，采用SETNX（set if not exists）来设置另一个短期key来锁住当前key的访问，访问结束再删除该短期key。保证同时刻只有一个线程访问。这样对锁的要求就十分高。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="缓存雪崩">缓存雪崩</h2>
 <h3 id="概念-2">概念：</h3>
-<p>大量的key设置了相同的过期时间，导致在缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p>
-<h3 id="解决方案-2">解决方案：</h3>
-<h4 id="1redis高可用">1.redis高可用</h4>
-<p>这个思想的含义是，既然redis有可能挂掉，那我多增设几台redis，这样一台挂掉之后其他的还可以继续工作，其实就是搭建的集群</p>
-<h4 id="2限流降级">2.限流降级</h4>
-<p>这个解决方案的思想是，在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。</p>
-<h4 id="3数据预热">3.数据预热</h4>
-<p>数据加热的含义就是在正式部署之前，我先把可能的数据先预先访问一遍，这样部分可能大量访问的数据就会加载到缓存中。在即将发生大并发访问前手动触发加载缓存不同的key，设置不同的过期时间，让缓存失效的时间点尽量均匀。</p>
-<h1 id="redis主从复制">Redis主从复制</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">大量的key设置了相同的过期时间，导致在缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="解决方案-2">解决方案：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">1.redis高可用
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这个思想的含义是，既然redis有可能挂掉，那我多增设几台redis，这样一台挂掉之后其他的还可以继续工作，其实就是搭建的集群
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2.限流降级
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这个解决方案的思想是，在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3.数据预热
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">数据加热的含义就是在正式部署之前，我先把可能的数据先预先访问一遍，这样部分可能大量访问的数据就会加载到缓存中。在即将发生大并发访问前手动触发加载缓存不同的key，设置不同的过期时间，让缓存失效的时间点尽量均匀。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="redis主从复制">Redis主从复制</h1>
 <h2 id="概念-3">概念</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
