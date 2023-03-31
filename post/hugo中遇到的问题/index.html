@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-04-01T01:06:32+08:00" />
-<meta property="article:modified_time" content="2023-04-01T01:09:38+08:00" />
+<meta property="article:modified_time" content="2023-04-01T01:17:30+08:00" />
 
 <meta itemprop="name" content="Hugo中遇到的问题">
 <meta itemprop="description" content="hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate = [&#39;expiryDate&#39;] #lastmod = [&#39;:git&#39;, &#39;lastmod&#39;, &#39;date&#39;, &#39;publishDate&#39;] lastmod = [&#34;:fileModTime&#34;, &#39;lastmod&#39;, &#39;:git&#39;,"><meta itemprop="datePublished" content="2023-04-01T01:06:32+08:00" />
-<meta itemprop="dateModified" content="2023-04-01T01:09:38+08:00" />
-<meta itemprop="wordCount" content="133">
+<meta itemprop="dateModified" content="2023-04-01T01:17:30+08:00" />
+<meta itemprop="wordCount" content="216">
 <meta itemprop="keywords" content="问题," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo中遇到的问题"/>
 <meta name="twitter:description" content="hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate = [&#39;expiryDate&#39;] #lastmod = [&#39;:git&#39;, &#39;lastmod&#39;, &#39;date&#39;, &#39;publishDate&#39;] lastmod = [&#34;:fileModTime&#34;, &#39;lastmod&#39;, &#39;:git&#39;,"/>
@@ -128,11 +128,11 @@
       <h1 class="post-title">Hugo中遇到的问题</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-04-01 </span>
+        <span class="post-time"> 2023-04-01 01:06:32 </span>
         <div class="post-category">
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 133 字 </span>
+          <span class="more-meta"> 约 216 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -146,6 +146,7 @@
     <li>
       <ul>
         <li><a href="#hugo-上次更新时间不变的问题">hugo 上次更新时间不变的问题</a></li>
+        <li><a href="#hugo时间显示精确到秒">hugo时间显示精确到秒</a></li>
       </ul>
     </li>
   </ul>
@@ -178,6 +179,17 @@
 </span></span><span class="line"><span class="cl"><span class="c"># 之前一直用上面注释掉的配置，发下一直不生效，上次更新时间和文章创建时间一致，后面在lastmod中加了 &#34;:fileModTime&#34;, 又生效了</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="hugo时间显示精确到秒">hugo时间显示精确到秒</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># 在配置文件中（config.toml）修改这个值dateFormatToUse，需要注意的是：时分秒的数字不能改，否则会出问题。</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dateFormatToUse</span> <span class="p">=</span> <span class="s2">&#34;2006-01-02 15:04:05&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -189,7 +201,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-01
+        2023-04-01 01:17:30
         
     </span>
   </p>
