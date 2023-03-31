@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Linux">
 <meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
 <meta itemprop="dateModified" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="wordCount" content="9189">
+<meta itemprop="wordCount" content="9320">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 9189 字 </span>
+          <span class="more-meta"> 约 9320 字 </span>
           <span class="more-meta"> 预计阅读 19 分钟 </span>
         
       </div>
@@ -211,6 +211,7 @@
         <li><a href="#内网linux安装windows字体">内网Linux安装windows字体</a></li>
         <li><a href="#查看服务器有几个cpu">查看服务器有几个CPU</a></li>
         <li><a href="#linux通过df和du查看磁盘使用的大小不一致问题">Linux通过df和du查看磁盘使用的大小不一致问题</a></li>
+        <li><a href="#linux中scp在后台运行">Linux中scp在后台运行</a></li>
       </ul>
     </li>
     <li><a href="#linux防火墙问题">Linux防火墙问题</a>
@@ -345,7 +346,7 @@
 </span></span><span class="line"><span class="cl">tar -zcvf yc.txt.tar.gz yc.txt
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#将yc目录压缩成yc.tar.gz压缩包</span>
-</span></span><span class="line"><span class="cl">tar -zxvf yc.tar.gz yc
+</span></span><span class="line"><span class="cl">tar -zcvf yc.tar.gz yc
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="gzip打压缩命令">gzip打压缩命令：</h3>
@@ -1476,6 +1477,25 @@
 </span></span><span class="line"><span class="cl">通过命令lsof  <span class="p">|</span> grep deleted 获取对已删除文件的读写操作的进程id，
 </span></span><span class="line"><span class="cl">通过重启该进程或者kill掉该进程来释放所占磁盘空间，
 </span></span><span class="line"><span class="cl">通过ps -ef <span class="p">|</span>grep  id ,查看该进程id是否存在，不存在即可kill掉，存在可重启该应用。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="linux中scp在后台运行">Linux中scp在后台运行</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> 1.scp -r /ths/ db2inst1@10.100.222.228:/ths/db2backup/filebackup/
+</span></span><span class="line"><span class="cl"> passsword:输入密码
+</span></span><span class="line"><span class="cl"> 2.键盘Crtl + Z
+</span></span><span class="line"><span class="cl"> 3.查看刚刚停止的任务命令：jobs
+</span></span><span class="line"><span class="cl"> 4.使用bg命令将刚才的任务放入后台执行：bg %1 <span class="c1">#（这个1就是任务）</span>
+</span></span><span class="line"><span class="cl"> 5.使用disown命令忽略SIGHUP信号：disown -h %1
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="linux防火墙问题">Linux防火墙问题</h1>
