@@ -8,12 +8,12 @@
     <language>zh-cn</language>
     <lastBuildDate>Sat, 01 Apr 2023 01:06:32 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo中遇到的问题</title>
-      <link>https://chengtry.github.io/post/hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <title>Hugo相关</title>
+      <link>https://chengtry.github.io/post/hugo%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sat, 01 Apr 2023 01:06:32 +0800</pubDate>
       
-      <guid>https://chengtry.github.io/post/hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&amp;#39;date&amp;#39;, &amp;#39;publishDate&amp;#39;, &amp;#39;lastmod&amp;#39;] expiryDate = [&amp;#39;expiryDate&amp;#39;] #lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;lastmod&amp;#39;, &amp;#39;date&amp;#39;, &amp;#39;publishDate&amp;#39;] lastmod = [&amp;#34;:fileModTime&amp;#34;, &amp;#39;lastmod&amp;#39;, &amp;#39;:git&amp;#39;,</description>
+      <guid>https://chengtry.github.io/post/hugo%E7%9B%B8%E5%85%B3/</guid>
+      <description>hugo本地调试 1 hugo server -D hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&amp;#39;date&amp;#39;, &amp;#39;publishDate&amp;#39;, &amp;#39;lastmod&amp;#39;] expiryDate =</description>
     </item>
     
   </channel>
