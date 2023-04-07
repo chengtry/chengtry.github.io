@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/oracle/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-20T17:14:24+08:00" />
-<meta property="article:modified_time" content="2023-03-20T17:15:08+08:00" />
+<meta property="article:modified_time" content="2023-04-07T15:37:38+08:00" />
 
 <meta itemprop="name" content="Oracle">
 <meta itemprop="description" content="Oracle数据导出命令 1 2 3 # oracle数据导入导出命令需要有oracle环境 # expdp 账号名/密码@数据库名 dumpfile=路径名称 tab"><meta itemprop="datePublished" content="2023-03-20T17:14:24+08:00" />
-<meta itemprop="dateModified" content="2023-03-20T17:15:08+08:00" />
-<meta itemprop="wordCount" content="2177">
+<meta itemprop="dateModified" content="2023-04-07T15:37:38+08:00" />
+<meta itemprop="wordCount" content="2301">
 <meta itemprop="keywords" content="Oracle,数据库," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Oracle"/>
 <meta name="twitter:description" content="Oracle数据导出命令 1 2 3 # oracle数据导入导出命令需要有oracle环境 # expdp 账号名/密码@数据库名 dumpfile=路径名称 tab"/>
@@ -133,7 +133,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 2177 字 </span>
+          <span class="more-meta"> 约 2301 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
@@ -155,6 +155,7 @@
         <li><a href="#oracle行转列listagg函数">ORACLE行转列（LISTAGG函数）</a></li>
         <li><a href="#oracle中的定位函数instr函数">ORACLE中的定位函数：INSTR函数</a></li>
         <li><a href="#oracle空值排序">ORACLE空值排序</a></li>
+        <li><a href="#oracle事务隔离级别">Oracle事务隔离级别</a></li>
       </ul>
     </li>
   </ul>
@@ -325,6 +326,19 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">nulls</span><span class="w"> </span><span class="k">last</span><span class="err">：把空值放到最后面，再对非空值排序</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="oracle事务隔离级别">Oracle事务隔离级别</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">Oracle支持Read</span><span class="w"> </span><span class="n">Commited</span><span class="p">(</span><span class="err">读已提交</span><span class="p">)</span><span class="err">和</span><span class="n">Serialized</span><span class="p">(</span><span class="err">串行化</span><span class="p">)</span><span class="err">隔离级别</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Oracle默认隔离级别</span><span class="err">：</span><span class="k">Read</span><span class="w"> </span><span class="n">Commited</span><span class="p">(</span><span class="err">读已提交</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">MySQL默认隔离级别</span><span class="err">：</span><span class="k">Repeatable</span><span class="w"> </span><span class="k">Read</span><span class="p">(</span><span class="err">可重复读</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -336,7 +350,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-03-20 17:15:08
+        2023-04-07 15:37:38
         
     </span>
   </p>

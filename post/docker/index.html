@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="Docker基础 走进Docker 1 2 3 Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Docker" />
-<meta property="og:description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容" />
+<meta property="og:description" content="Docker基础 走进Docker 1 2 3 Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/docker/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-16T19:57:37+08:00" />
-<meta property="article:modified_time" content="2023-03-27T16:09:42+08:00" />
+<meta property="article:modified_time" content="2023-04-07T15:56:44+08:00" />
 
 <meta itemprop="name" content="Docker">
-<meta itemprop="description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容"><meta itemprop="datePublished" content="2023-02-16T19:57:37+08:00" />
-<meta itemprop="dateModified" content="2023-03-27T16:09:42+08:00" />
-<meta itemprop="wordCount" content="7346">
+<meta itemprop="description" content="Docker基础 走进Docker 1 2 3 Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个"><meta itemprop="datePublished" content="2023-02-16T19:57:37+08:00" />
+<meta itemprop="dateModified" content="2023-04-07T15:56:44+08:00" />
+<meta itemprop="wordCount" content="7506">
 <meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker"/>
-<meta name="twitter:description" content="Docker基础 走进Docker Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容"/>
+<meta name="twitter:description" content="Docker基础 走进Docker 1 2 3 Docker基于GO语言开发，是一个开源项目。 Docker从狭义上来讲就是一个进程，从广义上来讲是一个"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 7346 字 </span>
+          <span class="more-meta"> 约 7506 字 </span>
           <span class="more-meta"> 预计阅读 15 分钟 </span>
         
       </div>
@@ -147,20 +147,11 @@
       <ul>
         <li><a href="#走进docker">走进Docker</a></li>
         <li><a href="#docker安装">Docker安装</a></li>
-        <li><a href="#docker架构">Docker架构</a>
-          <ul>
-            <li><a href="#docker-daemondocker守护进程"><strong>Docker daemon（Docker守护进程）</strong></a></li>
-            <li><a href="#client-docker客户端"><strong>Client</strong>（ <strong>Docker</strong>客户端）</a></li>
-            <li><a href="#images镜像"><strong>Images（镜像）</strong></a></li>
-            <li><a href="#container容器"><strong>Container</strong>（容器）</a></li>
-            <li><a href="#repository仓库">Repository（仓库）</a></li>
-            <li><a href="#registry服务器"><strong>Registry</strong>（服务器）</a></li>
-          </ul>
-        </li>
+        <li><a href="#docker架构">Docker架构</a></li>
         <li><a href="#docker常用命令">Docker常用命令</a>
           <ul>
             <li><a href="#镜像相关命令">镜像相关命令</a></li>
-            <li><a href="#容器相关命令"><strong>容器相关命令</strong></a></li>
+            <li><a href="#容器相关命令">容器相关命令</a></li>
             <li><a href="#docker命令">Docker命令</a></li>
           </ul>
         </li>
@@ -228,9 +219,19 @@
     <div class="post-content">
       <h1 id="docker基础">Docker基础</h1>
 <h2 id="走进docker">走进Docker</h2>
-<p>Docker基于GO语言开发，是一个开源项目。</p>
-<p>Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容器，其实更专业的叫法是应用容器（ Application Container ），Docker进程和普通的进程没有任何区别，它就是一个普通的应用进程。不过是用来操作镜像文件的。所以Docker进程+构建的应用镜像文件就等于Docker容器。</p>
-<h2 id="docker安装">Docker安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Docker基于GO语言开发，是一个开源项目。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容器，其实更专业的叫法是应用容器（ Application Container ），Docker进程和普通的进程没有任何区别，它就是一个普通的应用进程。不过是用来操作镜像文件的。所以Docker进程+构建的应用镜像文件就等于Docker容器。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker安装">Docker安装</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -292,31 +293,85 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="docker架构">Docker架构</h2>
-<h3 id="docker-daemondocker守护进程"><strong>Docker daemon（Docker守护进程）</strong></h3>
-<p>Docker daemon是一个运行在宿主机（DOCKER-HOST）的后台进程。可通过 Docker客户端与之通信。</p>
-<h3 id="client-docker客户端"><strong>Client</strong>（ <strong>Docker</strong>客户端）</h3>
-<p>Docker客户端是Docker的用户界面，它可以接受用户命令和配置标识，并与Docker daemon通信。图中，docker build等都是Docker的相关命令。</p>
-<h3 id="images镜像"><strong>Images（镜像）</strong></h3>
-<p>Docker镜像是一个只读模板，它包含创建 Docker容器的说明。任何应用程序运行都需要环境，而镜像就是用来提供这种运行环境的。它和系统安装光盘有点像，使用系统安装光盘可以安装系统，同理，使用Docker镜像可以运行Docker镜像中的程序。</p>
-<h3 id="container容器"><strong>Container</strong>（容器）</h3>
-<p>容器是镜像的可运行实例。镜像和容器的关系有点类似于面向对象中，类和对象的关系。可通过Docker API或者CLI命令来启停、移动、删除容器。</p>
-<h3 id="repository仓库">Repository（仓库）</h3>
-<p>类似于代码仓库，这里是镜像仓库，是Docker用来集中存放镜像文件的地方。注意与注册服务器（Registry）的区别：注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，每个镜像利用tag进行区分，比如Ubuntu仓库存放有多个版本（12.04、14.04等）的Ubuntu镜像。</p>
-<h3 id="registry服务器"><strong>Registry</strong>（服务器）</h3>
-<p>Docker Registry是一个集中存储与分发镜像的服务。构建完 Docker镜像后，就可在当前宿主机上运行。但如果想要在其他机器上运行这个镜像，就需要手动复制。此时可借助Docker Registry来避免镜像的手动复制。</p>
-<p>一个Docker Registry可包含多个Docker仓库，每个仓库可包含多个镜像标签，每个标签对应一个Docker镜像。这跟Maven的仓库有点类似，如果把Docker Registry比作Maven仓库的话，那么Docker仓库就可理解为某jar包的路径，而镜像标签则可理解为jar包的版本号。</p>
-<p>Docker Registry可分为公有Docker Registry和私有Docker Registry。最常用的Docker Registry莫过于官方的Docker Hub，这也是默认的Docker Registry。Docker Hub上存放着大量优秀的镜像，我们可使用Docker命令下载并使用。</p>
-<h2 id="docker常用命令">Docker常用命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">### Docker daemon（Docker守护进程）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker daemon是一个运行在宿主机（DOCKER-HOST）的后台进程。可通过 Docker客户端与之通信。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Client（ Docker客户端）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker客户端是Docker的用户界面，它可以接受用户命令和配置标识，并与Docker daemon通信。图中，docker build等都是Docker的相关命令。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Images（镜像）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker镜像是一个只读模板，它包含创建 Docker容器的说明。任何应用程序运行都需要环境，而镜像就是用来提供这种运行环境的。它和系统安装光盘有点像，使用系统安装光盘可以安装系统，同理，使用Docker镜像可以运行Docker镜像中的程序。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Container（容器）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">容器是镜像的可运行实例。镜像和容器的关系有点类似于面向对象中，类和对象的关系。可通过Docker API或者CLI命令来启停、移动、删除容器。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Repository（仓库）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">类似于代码仓库，这里是镜像仓库，是Docker用来集中存放镜像文件的地方。注意与注册服务器（Registry）的区别：注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，每个镜像利用tag进行区分，比如Ubuntu仓库存放有多个版本（12.04、14.04等）的Ubuntu镜像。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Registry（服务器）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker Registry是一个集中存储与分发镜像的服务。构建完 Docker镜像后，就可在当前宿主机上运行。但如果想要在其他机器上运行这个镜像，就需要手动复制。此时可借助Docker Registry来避免镜像的手动复制。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">一个Docker Registry可包含多个Docker仓库，每个仓库可包含多个镜像标签，每个标签对应一个Docker镜像。这跟Maven的仓库有点类似，如果把Docker Registry比作Maven仓库的话，那么Docker仓库就可理解为某jar包的路径，而镜像标签则可理解为jar包的版本号。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker Registry可分为公有Docker Registry和私有Docker Registry。最常用的Docker Registry莫过于官方的Docker Hub，这也是默认的Docker Registry。Docker Hub上存放着大量优秀的镜像，我们可使用Docker命令下载并使用。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker常用命令">Docker常用命令</h2>
 <h3 id="镜像相关命令">镜像相关命令</h3>
-<p>可使用docker search命令搜索存放在Docker Hub中的镜像。执行该命令后，Docker就会在Docker Hub中搜索含有 tomcat 这个关键词的镜像仓库。</p>
-<h4 id="2下载镜像">2、下载镜像</h4>
-<p>使用命令docker pull命令即可从Docker Registry上下载镜像，执行该命令后，Docker会从 Docker Hub中的 tomcat仓库下载最新版本的 tomcat镜像。如果要下载指定版本则在tomcat后面加冒号指定版本，例如：docker pull tomcat:7</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker pull tomcat:7
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">可使用docker search命令搜索存放在Docker Hub中的镜像。执行该命令后，Docker就会在Docker Hub中搜索含有 tomcat 这个关键词的镜像仓库。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2下载镜像">2、下载镜像</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用命令docker pull命令即可从Docker Registry上下载镜像，执行该命令后，Docker会从 Docker Hub中的 tomcat仓库下载最新版本的 tomcat镜像。如果要下载指定版本则在tomcat后面加冒号指定版本，例如：docker pull tomcat:7 </span>
+</span></span><span class="line"><span class="cl">docker pull tomcat:7
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3列出镜像">3、列出镜像</h4>
@@ -329,64 +384,98 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="4删除本地镜像">4、删除本地镜像</h4>
-<p>使用docker rmi命令即可删除指定镜像</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker rmi tomcat:7  （rmi,i指的就是image  删除指定7版本的tomcat）
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用docker rmi命令即可删除指定镜像</span>
+</span></span><span class="line"><span class="cl">docker rmi tomcat:7  （rmi,i指的就是image  删除指定7版本的tomcat）
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="5关于镜像">5、关于镜像</h4>
-<p>Docker 里是以镜像 ID 来作为判断依据，如果发现几个镜像有着不同名称或标签，然而 镜像ID 全都一样，那么它们实际就是同一个镜像，本地也只保存了一份文件。</p>
-<h3 id="容器相关命令"><strong>容器相关命令</strong></h3>
-<h4 id="1新建并启动容器"><strong>1</strong>、新建并启动容器</h4>
-<p>使用以下docker run命令即可新建并启动一个容器，该命令是最常用的命令，它有很多选项，下面将列举一些常用的选项。</p>
-<p>-d选项：表示后台运行</p>
-<p>-p选项：指定端口映射，</p>
-<p>　　&ndash; hostPort:containerPort</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker run -d -p 8080:8080 tomcat:7
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Docker 里是以镜像 ID 来作为判断依据，如果发现几个镜像有着不同名称或标签，然而 镜像ID 全都一样，那么它们实际就是同一个镜像，本地也只保存了一份文件。
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这样就能启动一个 tomcat 容器。在本例中，为docker run添加了两个参数，含义如下：</p>
-<p>-d 后台运行</p>
-<p>-p 宿主机端口:容器端口</p>
-<p>这里是把 容器的8080 端口映射到 虚拟机的8080端口，通过虚拟机自带的浏览器 访问 127.0.0.1:8080 或者 物理机访问 虚拟机的ip:8080 (8.131.111.20:8080)也可以访问，都是一个意思。</p>
-<h4 id="2列出容器">2、列出容器</h4>
-<p>用docker ps命令即可列出 正在运行中的容器</p>
+</div><h3 id="容器相关命令">容器相关命令</h3>
+<h4 id="1新建并启动容器"><strong>1</strong>、新建并启动容器</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">使用以下docker run命令即可新建并启动一个容器，该命令是最常用的命令，它有很多选项，下面将列举一些常用的选项。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-d选项：表示后台运行
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-p选项：指定端口映射，
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">　　-- hostPort:containerPort
+</span></span><span class="line"><span class="cl">　　
+</span></span><span class="line"><span class="cl"># docker run -d -p 8080:8080 tomcat:7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这样就能启动一个 tomcat 容器。在本例中，为docker run添加了两个参数，含义如下：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-d 后台运行
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-p 宿主机端口:容器端口
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这里是把 容器的8080 端口映射到 虚拟机的8080端口，通过虚拟机自带的浏览器 访问 127.0.0.1:8080 或者 物理机访问 虚拟机的ip:8080 (8.131.111.20:8080)也可以访问，都是一个意思。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2列出容器">2、列出容器</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker ps
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 用docker ps命令即可列出 正在运行中的容器</span>
+</span></span><span class="line"><span class="cl">docker ps
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3停止容器">3、停止容器</h4>
-<p>使用 docker stop命令，即可停止容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker stop 4dbf26d1624d
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用 docker stop命令，即可停止容器。其中 4dbf26d1624d 是容器 ID,当然也可使用 docker stop容器名称来停止指定容器</span>
+</span></span><span class="line"><span class="cl">docker stop 4dbf26d1624d
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>其中 4dbf26d1624d 是容器 ID,当然也可使用 docker stop容器名称来停止指定容器</p>
-<h4 id="4启动已停止的容器">4、启动已停止的容器</h4>
-<p>使用docker run命令，即可新建并启动一个容器。对于已停止的容器，可使用 docker start命令来启动</p>
+</div><h4 id="4启动已停止的容器">4、启动已停止的容器</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker start 4dbf26d1624d
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用docker run命令，即可新建并启动一个容器。对于已停止的容器，可使用 docker start命令来启动</span>
+</span></span><span class="line"><span class="cl">docker start 4dbf26d1624d
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="5查看容器日志">5、查看容器日志</h4>
@@ -399,8 +488,15 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="6进入容器">6、进入容器</h4>
-<p>使用docker exec命令用于进入一个正在运行的docker容器。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了</p>
-<h5 id="1docker-exec">1.docker exec</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">使用docker exec命令用于进入一个正在运行的docker容器。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="1docker-exec">1.docker exec</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -411,7 +507,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker exec -it 4dbf26d1624d /bin/bash
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># docker exec -it 4dbf26d1624d /bin/bash</span>
 </span></span><span class="line"><span class="cl">-i: 交互式操作。
 </span></span><span class="line"><span class="cl">-t: 终端。
 </span></span><span class="line"><span class="cl">/bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。
@@ -427,54 +523,108 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="err">#</span> <span class="n">docker</span> <span class="n">attach</span> <span class="n">4dbf26d1624d</span> 
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># docker attach 4dbf26d1624d </span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">attach</span> <span class="n">与</span> <span class="n">docker</span> <span class="n">exec</span> <span class="n">区别就是</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">attach</span> <span class="n">使用exit命令退出后</span><span class="err">，</span><span class="n">容器也会相应停止运行</span>
-</span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">exec</span> <span class="n">使用exit命令退出后</span><span class="err">，</span><span class="n">容器依然保持运行状态</span><span class="err">（</span><span class="n">使用docker</span> <span class="n">ps命令可以查看运行状态</span><span class="err">）</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>退出容器</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># exit
+</span></span><span class="line"><span class="cl">docker attach 与 docker <span class="nb">exec</span> 区别就是:
+</span></span><span class="line"><span class="cl">docker attach 使用exit命令退出后，容器也会相应停止运行
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> 使用exit命令退出后，容器依然保持运行状态（使用docker ps命令可以查看运行状态）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出容器</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="7删除容器">7、删除容器</h4>
-<p>使用docker rm命令即可删除指定容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># docker rm 4dbf26d1624d
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用docker rm命令即可删除指定容器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 该命令只能删除已停止的容器，如需删除正在运行的容器，可使用-f参数</span>
+</span></span><span class="line"><span class="cl">docker rm 4dbf26d1624d
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>该命令只能删除已停止的容器，如需删除正在运行的容器，可使用-f参数</p>
-<h3 id="docker命令">Docker命令</h3>
-<p>Docker images :查看本地主机上所有的镜像</p>
-<p>docker search mysql &ndash;filter=STARS=100：搜索msql的STARS数量大于100</p>
-<p>docker rmi -f c8562eaf9d81：根据镜像ID删除镜像</p>
-<p>有了镜像才可以创建容器</p>
-<p>Docker run [可选参数] images</p>
-<p>docker run -it centos /bin/bash：启动并进入容器</p>
-<p>exit:退出容器命令，从容器退回主机（直接容器退出并停止）</p>
-<p>Ctrl + P + Q:容器不停止退出</p>
-<p>Docker ps ：查看当前运行的容器</p>
-<p>Docker ps -a：查看docker运行过的容器</p>
-<p>Docker ps -a -n=1：指定运行过容器的个数</p>
-<p>docker rm 容器ID：删除容器，但是不能删除正在运行的容器</p>
-<p>docker rm -f 容器ID：强制删除</p>
-<p>docker start 容器ID：启动容器</p>
-<p>docker restart 容器ID：重启容器</p>
-<p>docker stop 容器ID：停止当前正在运行的容器</p>
-<p>docker kill 容器ID：强制停止当前容器</p>
-<h4 id="查看容器日志信息">查看容器日志信息</h4>
+</div><h3 id="docker命令">Docker命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Docker images :查看本地主机上所有的镜像
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker search mysql --filter=STARS=100：搜索msql的STARS数量大于100
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker rmi -f c8562eaf9d81：根据镜像ID删除镜像
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">有了镜像才可以创建容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker run [可选参数] images
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker run -it centos /bin/bash：启动并进入容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">exit:退出容器命令，从容器退回主机（直接容器退出并停止）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Ctrl + P + Q:容器不停止退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker ps ：查看当前运行的容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker ps -a：查看docker运行过的容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Docker ps -a -n=1：指定运行过容器的个数
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker rm 容器ID：删除容器，但是不能删除正在运行的容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker rm -f 容器ID：强制删除
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker start 容器ID：启动容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker restart 容器ID：重启容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker stop 容器ID：停止当前正在运行的容器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker kill 容器ID：强制停止当前容器
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看容器日志信息">查看容器日志信息</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -653,15 +803,34 @@
 </div><h2 id="docker常见问题">Docker常见问题</h2>
 <h3 id="docker一启动就退出">Docker一启动就退出：</h3>
 <h4 id="原因">原因：</h4>
-<p>1、docker容器运行必须有一个前台进程， 如果没有前台进程执行，容器认为空闲，就会自行退出</p>
-<p>前台运行的意思是容器里运行的指令会直接显示在物理机终端界面里，安装好容器后测试运行的那个 hello-world 容器就是个典型的例子；</p>
-<p>2、容器运行的命令如果不是那些一直挂起的命令（ 运行top，tail、循环等），就是会自动退出
-3、这个是 docker 的机制问题</p>
-<h4 id="解决办法">解决办法：</h4>
-<p>docker run -d -it centos /bin/bash
-添加-it 参数交互运行
-添加-d 参数后台运行</p>
-<h2 id="docker容器时间与宿主机时间不一致">docker容器时间与宿主机时间不一致</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">1、docker容器运行必须有一个前台进程， 如果没有前台进程执行，容器认为空闲，就会自行退出
+</span></span><span class="line"><span class="cl">前台运行的意思是容器里运行的指令会直接显示在物理机终端界面里，安装好容器后测试运行的那个 hello-world 容器就是个典型的例子；
+</span></span><span class="line"><span class="cl">2、容器运行的命令如果不是那些一直挂起的命令（ 运行top，tail、循环等），就是会自动退出
+</span></span><span class="line"><span class="cl">3、这个是 docker 的机制问题
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="解决办法">解决办法：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">docker run -d -it centos /bin/bash
+</span></span><span class="line"><span class="cl">添加-it 参数交互运行
+</span></span><span class="line"><span class="cl">添加-d 参数后台运行
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker容器时间与宿主机时间不一致">docker容器时间与宿主机时间不一致</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -951,10 +1120,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">show databases<span class="p">;</span>
-</span></span><span class="line"><span class="cl">或者
-</span></span><span class="line"><span class="cl"><span class="k">select</span> schema_name from information_schema.schemata<span class="se">\G</span><span class="p">;</span>  <span class="se">\G</span>：以纵向报表的形式输出结果，有利于阅读
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">或者</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="k">schema_name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span><span class="err">\</span><span class="k">G</span><span class="p">;</span><span class="w">  </span><span class="err">\</span><span class="k">G</span><span class="err">：以纵向报表的形式输出结果，有利于阅读</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</h2>
 <div class="highlight"><div class="chroma">
@@ -1365,7 +1534,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-03-27 16:09:42
+        2023-04-07 15:56:44
         
     </span>
   </p>
