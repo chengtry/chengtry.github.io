@@ -35,7 +35,7 @@
 
 
 
-<link href="/sass/main.min.b9d4170c1fdb81e07e352ce48de8fa2122e5131f8d92ed034efda6f5e22af0a9.css" rel="stylesheet">
+<link href="/sass/main.min.6d63348a2304f62f504100c316135a1e34435beedb52da81bbfaa1b1d36b9879.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/hugo%E7%9B%B8%E5%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-04-01T01:06:32+08:00" />
-<meta property="article:modified_time" content="2023-04-03T19:22:19+08:00" />
+<meta property="article:modified_time" content="2023-04-07T16:55:28+08:00" />
 
 <meta itemprop="name" content="Hugo相关">
 <meta itemprop="description" content="hugo本地调试 1 hugo server -D hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate ="><meta itemprop="datePublished" content="2023-04-01T01:06:32+08:00" />
-<meta itemprop="dateModified" content="2023-04-03T19:22:19+08:00" />
-<meta itemprop="wordCount" content="527">
+<meta itemprop="dateModified" content="2023-04-07T16:55:28+08:00" />
+<meta itemprop="wordCount" content="1249">
 <meta itemprop="keywords" content="问题," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo相关"/>
 <meta name="twitter:description" content="hugo本地调试 1 hugo server -D hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate ="/>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 527 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 1249 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
     </header>
@@ -151,6 +151,10 @@
         <li><a href="#hugo修改中间主体内容的背景颜色">hugo修改中间主体内容的背景颜色</a></li>
         <li><a href="#hugo修改整个网站的背景颜色">hugo修改整个网站的背景颜色</a></li>
         <li><a href="#hugo修改最上方横条颜色">hugo修改最上方横条颜色</a></li>
+        <li><a href="#hugo修改回到顶部颜色和大小">hugo修改回到顶部颜色和大小</a></li>
+        <li><a href="#hugo代码可复制功能">hugo代码可复制功能</a></li>
+        <li><a href="#修改hugo的样式">修改hugo的样式</a></li>
+        <li><a href="#修改hugo标题样式">修改hugo标题样式</a></li>
       </ul>
     </li>
   </ul>
@@ -221,7 +225,7 @@
 </span></span><span class="line"><span class="cl"><span class="nc">.slideout-panel</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="na">position</span><span class="o">:</span> <span class="ni">relative</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="na">z-index</span><span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="na">background-color</span><span class="o">:</span> <span class="mh">#f7f7ee</span><span class="p">;</span> <span class="c1">// 这个就是背景颜色
+</span></span><span class="line"><span class="cl">  <span class="na">background-color</span><span class="o">:</span> <span class="mh">#f9f9f9</span><span class="p">;</span> <span class="c1">// 这个就是背景颜色
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="na">min-height</span><span class="o">:</span> <span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -280,6 +284,277 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="hugo修改回到顶部颜色和大小">hugo修改回到顶部颜色和大小</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// 要修改的文件：...\themes\even\assets\sass\_partial\_back-to-top.scss
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nc">.back-to-top</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="na">display</span><span class="o">:</span> <span class="ni">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">position</span><span class="o">:</span> <span class="ni">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">right</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">bottom</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">transition-property</span><span class="o">:</span> <span class="ni">transform</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">transition-timing-function</span><span class="o">:</span> <span class="ni">ease-out</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">transition-duration</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.3</span><span class="kt">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">z-index</span><span class="o">:</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">background-color</span><span class="o">:</span> <span class="mh">#72b72b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">position</span><span class="o">:</span> <span class="ni">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">right</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">bottom</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">height</span><span class="o">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">width</span><span class="o">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">text-align</span><span class="o">:</span> <span class="ni">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">padding-top</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">border-radius</span><span class="o">:</span> <span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">overflow</span><span class="o">:</span> <span class="ni">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nc">.icon-up</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="na">vertical-align</span><span class="o">:</span> <span class="ni">top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="hugo代码可复制功能">hugo代码可复制功能</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">主要按照这位大佬改的：
+</span></span><span class="line"><span class="cl">https://lucumt.info/post/hugo/share-experience-for-using-hugo-even-theme/#%E4%BB%A3%E7%A0%81%E5%9D%97%E5%8F%AF%E5%A4%8D%E5%88%B6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>1.<code>config.toml</code>中添加如下配置，用于控制是否开启代码复制功能</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">enableCopyCode</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>2.<code>assets/sass/_partial/_post/_code.scss</code>添加如下代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.copy-code</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="na">position</span><span class="o">:</span> <span class="ni">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">right</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">z-index</span><span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">font-size</span><span class="o">:</span> <span class="mf">.9</span><span class="kt">em</span> <span class="k">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">padding</span><span class="o">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">1</span><span class="mf">.5</span><span class="kt">rem</span> <span class="k">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">color</span><span class="o">:</span> <span class="mh">#b1b1b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">font-weight</span><span class="o">:</span> <span class="ni">bold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">cursor</span><span class="o">:</span> <span class="ni">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">user-select</span><span class="o">:</span> <span class="ni">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>3.在<code>layouts/partials/scripts.html</code>底部添加如下代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- copy to clipboard --&gt;</span>
+</span></span><span class="line"><span class="cl">{{- if .Site.Params.enableCopyCode -}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">createCopyButton</span><span class="p">(</span><span class="nx">highlightDiv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">div</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;copy-code&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">div</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">&#34;Copy&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">copyCodeToClipboard</span><span class="p">(</span><span class="nx">div</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">addCopyButtonToDom</span><span class="p">(</span><span class="nx">div</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">copyCodeToClipboard</span><span class="p">(</span><span class="nx">button</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">codeToCopy</span> <span class="o">=</span> <span class="nx">highlightDiv</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;:last-child &gt; .chroma &gt; code&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">innerText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="nx">codeToCopy</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">button</span><span class="p">.</span><span class="nx">blur</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">button</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">&#34;Copied!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">button</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">&#34;Copy&#34;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">addCopyButtonToDom</span><span class="p">(</span><span class="nx">button</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlightDiv</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">button</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">wrapper</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;highlight-wrapper&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlightDiv</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">,</span> <span class="nx">highlightDiv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">wrapper</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">highlightDiv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">isMobile</span> <span class="o">=</span> <span class="sr">/iPhone|iPad|iPod|Android/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isMobile</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">     <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&#34;.highlight&#34;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">highlightDiv</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">createCopyButton</span><span class="p">(</span><span class="nx">highlightDiv</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="修改hugo的样式">修改hugo的样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// 要修改的文件：...\themes\even\assets\sass\variables.scss
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ========== Theme Color ========== //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Config here to change theme color
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$theme-color-config</span><span class="o">:</span> <span class="s1">&#39;Mint Green&#39;</span><span class="p">;</span> <span class="c1">//修改这个，也可以自定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Default theme color map
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$theme-color-map</span><span class="o">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="na">&#39;Default&#39;</span><span class="o">:</span> <span class="mh">#c05b4d</span> <span class="mh">#f8f5ec</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Mint Green&#39;</span><span class="o">:</span> <span class="mh">#16982B</span> <span class="mh">#f5f5f5</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Cobalt Blue&#39;</span><span class="o">:</span> <span class="mh">#0047AB</span> <span class="mh">#f0f2f5</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Hot Pink&#39;</span><span class="o">:</span> <span class="mh">#FF69B4</span> <span class="mh">#f8f5f5</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Dark Violet&#39;</span><span class="o">:</span> <span class="mh">#9932CC</span> <span class="mh">#f5f4fa</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="修改hugo标题样式">修改hugo标题样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// 要修改的文件：...\themes\even\assets\sass\_partial\_header\_logo.scss
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nc">.logo-wrapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="na">float</span><span class="o">:</span> <span class="ni">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">.logo</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">font-size</span><span class="o">:</span> <span class="nv">$logo-font-size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// font-family: $logo-font-family;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="na">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="s2">&#34;Microsoft YaHei&#34;</span><span class="o">,</span> <span class="s2">&#34;Hiragino Sans GB&#34;</span><span class="o">,</span> <span class="s2">&#34;WenQuanYi Micro Hei&#34;</span><span class="o">,</span> <span class="ni">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -291,7 +566,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-03 19:22:19
+        2023-04-07 16:55:28
         
     </span>
   </p>
@@ -367,6 +642,41 @@
 
 
 
+
+
+<script>
+  function createCopyButton(highlightDiv) {
+    const div = document.createElement("div");
+    div.className = "copy-code";
+    div.innerText = "Copy";
+    div.addEventListener("click", () =>
+      copyCodeToClipboard(div, highlightDiv)
+    );
+    addCopyButtonToDom(div, highlightDiv);
+  }
+
+  async function copyCodeToClipboard(button, highlightDiv) {
+    const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code")
+      .innerText;
+    await navigator.clipboard.writeText(codeToCopy);
+    button.blur();
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 2000);
+  }
+
+  function addCopyButtonToDom(button, highlightDiv) {
+    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    const wrapper = document.createElement("div");
+    wrapper.className = "highlight-wrapper";
+    highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+    wrapper.appendChild(highlightDiv);
+  }
+
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile){
+     document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+  }
+</script>  
 
 
 </body>
