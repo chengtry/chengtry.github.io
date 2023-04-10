@@ -6,7 +6,16 @@
     <description>Recent content on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 01:06:32 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 11:32:26 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java日志</title>
+      <link>https://chengtry.github.io/post/java%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Mon, 10 Apr 2023 11:32:26 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/java%E6%97%A5%E5%BF%97/</guid>
+      <description>log4j和slf4j的区别 1 2 3 4 5 6 7 log4j（ log for java ）（4 同 for） Apache的一个开源项目，可以灵活地记录日志信息，我们可以通过</description>
+    </item>
+    
     <item>
       <title>Hugo相关</title>
       <link>https://chengtry.github.io/post/hugo%E7%9B%B8%E5%85%B3/</link>
