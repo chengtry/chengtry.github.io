@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/hugo%E7%9B%B8%E5%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-04-01T01:06:32+08:00" />
-<meta property="article:modified_time" content="2023-04-07T16:55:28+08:00" />
+<meta property="article:modified_time" content="2023-04-12T18:50:48+08:00" />
 
 <meta itemprop="name" content="Hugo相关">
 <meta itemprop="description" content="hugo本地调试 1 hugo server -D hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate ="><meta itemprop="datePublished" content="2023-04-01T01:06:32+08:00" />
-<meta itemprop="dateModified" content="2023-04-07T16:55:28+08:00" />
-<meta itemprop="wordCount" content="1249">
+<meta itemprop="dateModified" content="2023-04-12T18:50:48+08:00" />
+<meta itemprop="wordCount" content="1398">
 <meta itemprop="keywords" content="问题," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo相关"/>
 <meta name="twitter:description" content="hugo本地调试 1 hugo server -D hugo 上次更新时间不变的问题 1 2 3 4 5 6 7 8 9 [frontmatter] # 左边意为，变量 .Date 将会被赋值为右边数组中最先找到的的日期值 date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;] expiryDate ="/>
@@ -85,6 +85,8 @@
         <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
 
@@ -113,6 +115,8 @@
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
       </li>
   </ul>
 </nav>
@@ -132,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 1249 字 </span>
+          <span class="more-meta"> 约 1398 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -155,6 +159,7 @@
         <li><a href="#hugo代码可复制功能">hugo代码可复制功能</a></li>
         <li><a href="#修改hugo的样式">修改hugo的样式</a></li>
         <li><a href="#修改hugo标题样式">修改hugo标题样式</a></li>
+        <li><a href="#hugo添加关于模块">hugo添加“关于”模块</a></li>
       </ul>
     </li>
   </ul>
@@ -555,7 +560,35 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="hugo添加关于模块">hugo添加“关于”模块</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">配置文件：config.toml
+</span></span><span class="line"><span class="cl">1.在配置目录添加如下配置：
+</span></span><span class="line"><span class="cl">[[menu.main]]
+</span></span><span class="line"><span class="cl">  name = &#34;关于&#34;
+</span></span><span class="line"><span class="cl">  weight = 50
+</span></span><span class="line"><span class="cl">  identifier = &#34;关于&#34;
+</span></span><span class="line"><span class="cl">  url = &#34;/about/&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2.然后在content目录下新建一个about.md就行啦，然后写一些“关于”的内容
+</span></span><span class="line"><span class="cl">about.md和post/目录同级。
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20230412185014385.png" alt=""></p>
+
     </div>
 
     <div class="post-copyright">
@@ -566,7 +599,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-07 16:55:28
+        2023-04-12 18:50:48
         
     </span>
   </p>
