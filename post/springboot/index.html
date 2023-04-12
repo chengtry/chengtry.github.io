@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/springboot/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-13T19:21:06+08:00" />
-<meta property="article:modified_time" content="2023-04-10T19:04:19+08:00" />
+<meta property="article:modified_time" content="2023-04-12T17:34:04+08:00" />
 
 <meta itemprop="name" content="SpringBoot">
 <meta itemprop="description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"><meta itemprop="datePublished" content="2023-03-13T19:21:06+08:00" />
-<meta itemprop="dateModified" content="2023-04-10T19:04:19+08:00" />
-<meta itemprop="wordCount" content="15474">
+<meta itemprop="dateModified" content="2023-04-12T17:34:04+08:00" />
+<meta itemprop="wordCount" content="15913">
 <meta itemprop="keywords" content="SpringBoot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SpringBoot"/>
 <meta name="twitter:description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"/>
@@ -133,8 +133,8 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 15474 字 </span>
-          <span class="more-meta"> 预计阅读 31 分钟 </span>
+          <span class="more-meta"> 约 15913 字 </span>
+          <span class="more-meta"> 预计阅读 32 分钟 </span>
         
       </div>
     </header>
@@ -187,6 +187,7 @@
             <li><a href="#代码">代码</a></li>
           </ul>
         </li>
+        <li><a href="#打印日志">打印日志</a></li>
       </ul>
     </li>
     <li><a href="#springboot原理">SpringBoot原理</a>
@@ -270,17 +271,12 @@
         <li><a href="#mybatis-plus多数据源">MyBatis-Plus多数据源</a></li>
       </ul>
     </li>
-    <li><a href="#打印日志">打印日志</a>
-      <ul>
-        <li><a href="#yml配置">yml配置</a></li>
-      </ul>
-    </li>
     <li><a href="#springboot文件上传">SpringBoot文件上传</a>
       <ul>
         <li><a href="#controller">Controller</a></li>
         <li><a href="#service">Service</a></li>
         <li><a href="#config">Config</a></li>
-        <li><a href="#yml配置-1">yml配置</a></li>
+        <li><a href="#yml配置">yml配置</a></li>
         <li><a href="#html页面">HTML页面</a></li>
         <li><a href="#服务器报错">服务器报错：</a></li>
         <li><a href="#文件上传案例">文件上传案例</a></li>
@@ -293,6 +289,12 @@
         <li><a href="#用命令进行打包成依赖">用命令进行打包成依赖</a></li>
         <li><a href="#查看打包完后的路径">查看打包完后的路径</a></li>
         <li><a href="#打包后的exportword-100pom-文件">打包后的exportword-1.0.0.pom 文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#springboot自定义404页面">SpringBoot自定义404页面</a>
+      <ul>
+        <li><a href="#配置类">配置类</a></li>
+        <li><a href="#404页面">404页面</a></li>
       </ul>
     </li>
   </ul>
@@ -1058,6 +1060,21 @@
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="打印日志">打印日志</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># 配置debug级别SQL日志</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">logging</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">com.yc.dao</span><span class="p">:</span><span class="w"> </span><span class="l">debug</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="springboot原理">SpringBoot原理</h1>
 <h2 id="springbootapplication">SpringBootApplication</h2>
@@ -3341,22 +3358,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#@DS 可以注解在方法上或类上，同时存在就近原则 方法上注解 优先于 类上注解。</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="打印日志">打印日志</h1>
-<h2 id="yml配置">yml配置</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># 配置debug级别SQL日志</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">logging</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">com.yc.dao</span><span class="p">:</span><span class="w"> </span><span class="l">debug</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
 </div><h1 id="springboot文件上传">SpringBoot文件上传</h1>
 <h2 id="controller">Controller</h2>
 <div class="highlight"><div class="chroma">
@@ -3581,7 +3582,7 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="yml配置-1">yml配置</h2>
+</div><h2 id="yml配置">yml配置</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -4025,6 +4026,145 @@
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h1 id="springboot自定义404页面">SpringBoot自定义404页面</h1>
+<h2 id="配置类">配置类</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">ths.boot.config</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.web.server.ErrorPage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.web.server.ErrorPageRegistrar</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.web.server.ErrorPageRegistry</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 错误页面配置
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 继承错误页面注册器 ErrorPageRegistrar
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ErrorPageConfig</span> <span class="kd">implements</span> <span class="n">ErrorPageRegistrar</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerErrorPages</span><span class="o">(</span><span class="n">ErrorPageRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 配置错误页面
+</span></span></span><span class="line"><span class="cl"><span class="cm">         *
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * ErrorPage 有两个参数
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 参数1 响应状态码  NOT_FOUND 404  INTERNAL_SERVER_ERROR 500
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 参数2 出现响应状态码的时候的跳转路径  可以自定义跳转路径
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ErrorPage</span> <span class="n">error404</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ErrorPage</span><span class="o">(</span><span class="n">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">,</span> <span class="s">&#34;/error/404.html&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将ErrorPage 注册到注册器中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">registry</span><span class="o">.</span><span class="na">addErrorPages</span><span class="o">(</span><span class="n">error404</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="404页面">404页面</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- 404页面的位置：src/main/resources/static/error/404.html --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 404图片的位置：src/main/resources/static/images/404.png --&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>页面走丢了<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">vh</span><span class="p">;</span> <span class="c">/*设置容器高度，也可根据需求自定义*/</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">img</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span> <span class="c">/*确保图片不超出容器边界*/</span>
+</span></span><span class="line"><span class="cl">            <span class="k">max-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span> <span class="c">/*水平方向上居中*/</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/404.png&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;404&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -4036,7 +4176,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-10 19:04:19
+        2023-04-12 17:34:04
         
     </span>
   </p>
