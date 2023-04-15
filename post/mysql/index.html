@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/mysql/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-06T19:43:17+08:00" />
-<meta property="article:modified_time" content="2023-04-07T15:45:03+08:00" />
+<meta property="article:modified_time" content="2023-04-13T14:25:17+08:00" />
 
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"><meta itemprop="datePublished" content="2023-03-06T19:43:17+08:00" />
-<meta itemprop="dateModified" content="2023-04-07T15:45:03+08:00" />
-<meta itemprop="wordCount" content="10608">
+<meta itemprop="dateModified" content="2023-04-13T14:25:17+08:00" />
+<meta itemprop="wordCount" content="10934">
 <meta itemprop="keywords" content="MySQL,数据库," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL"/>
 <meta name="twitter:description" content="MySQL添加字段并设置默认值 1 ALTERTABLEvoc_storage_tankADDIS_DELETEvarchar(100)DEFA"/>
@@ -141,7 +141,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 10608 字 </span>
+          <span class="more-meta"> 约 10934 字 </span>
           <span class="more-meta"> 预计阅读 22 分钟 </span>
         
       </div>
@@ -169,8 +169,8 @@
         <li><a href="#mysql模糊查询">MySQL模糊查询</a></li>
         <li><a href="#mysql删除字段">MySQL删除字段</a></li>
         <li><a href="#mysql子查询报错every-derived-table-must-have-its-own-alias">MySQL子查询报错：Every derived table must have its own alias</a></li>
-        <li><a href="#mysql行转列以逗号分隔">MySQL行转列以逗号分隔</a></li>
-        <li><a href="#mysql列转行数据是以逗号分割">MySQL列转行（数据是以逗号分割）</a></li>
+        <li><a href="#mysql列转行以逗号分隔">MySQL列转行以逗号分隔</a></li>
+        <li><a href="#mysql行转列数据是以逗号分割">MySQL行转列（数据是以逗号分割）</a></li>
         <li><a href="#mysql修改字段类型">MySQL修改字段类型</a></li>
         <li><a href="#mysql默认创建时间更新时间的创建">MySQL默认创建时间，更新时间的创建</a></li>
         <li><a href="#mysql格式化时间函数">MySQL格式化时间函数</a></li>
@@ -629,7 +629,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">A</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="mysql行转列以逗号分隔">MySQL行转列以逗号分隔</h2>
+</div><h2 id="mysql列转行以逗号分隔">MySQL列转行以逗号分隔</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -648,7 +648,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">72</span><span class="n">b290073481487ba827ea82b39e7a12</span><span class="p">,</span><span class="mi">72</span><span class="n">b290073481487ba827ea82b39e7a12</span><span class="p">,</span><span class="mi">72</span><span class="n">b290073481487ba827ea82b39e7a12</span><span class="p">,</span><span class="mi">72</span><span class="n">b290073481487ba827ea82b39e7a12</span><span class="p">,</span><span class="mi">1</span><span class="n">a478c2f646744079479f5617db7eb68</span><span class="p">,</span><span class="mi">34</span><span class="n">f5f3d309604e5d81d99958331f672a</span><span class="p">,</span><span class="mi">91130133095341720</span><span class="n">Y001P</span><span class="p">,</span><span class="mi">91130581681358306</span><span class="n">H001V</span><span class="p">,</span><span class="n">a51c55aee1294f7cbc404765c9932e2e</span><span class="p">,</span><span class="n">b63dbebb01524b878f428edcc24415dc</span><span class="p">,</span><span class="n">c3c77a1087df4c94a7c5ca443d2eddf4</span><span class="p">,</span><span class="n">dbfea44ea53b4a6e84e545669e4fbdee</span><span class="p">,</span><span class="n">f23128d6d9b24812b77d47a6eae2cefd</span><span class="p">,</span><span class="n">f6e4c41cbbe5466dba0e43b3db287d71</span><span class="p">,</span><span class="n">PWXK_213c174a</span><span class="o">-</span><span class="mi">0</span><span class="n">b8d</span><span class="o">-</span><span class="mi">4135</span><span class="o">-</span><span class="n">bf53</span><span class="o">-</span><span class="mi">07</span><span class="n">cae95f4106</span><span class="p">,</span><span class="n">PWXK_31268616</span><span class="o">-</span><span class="n">ca0c</span><span class="o">-</span><span class="mi">4825</span><span class="o">-</span><span class="mi">9</span><span class="n">f4c</span><span class="o">-</span><span class="mi">68</span><span class="n">b83d073142</span><span class="p">,</span><span class="n">PWXK_3d75c297</span><span class="o">-</span><span class="mi">160</span><span class="n">e</span><span class="o">-</span><span class="mi">4943</span><span class="o">-</span><span class="mi">8906</span><span class="o">-</span><span class="n">deb7353fb6de</span><span class="p">,</span><span class="n">PWXK_457eb642</span><span class="o">-</span><span class="n">affc</span><span class="o">-</span><span class="mi">4231</span><span class="o">-</span><span class="mi">9460</span><span class="o">-</span><span class="mi">17027</span><span class="n">ba6d661</span><span class="p">,</span><span class="n">PWXK_4ff82a59</span><span class="o">-</span><span class="mi">2</span><span class="n">a20</span><span class="o">-</span><span class="mi">4</span><span class="n">bd7</span><span class="o">-</span><span class="n">a9b7</span><span class="o">-</span><span class="mi">42</span><span class="n">e556868d7a</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="mysql列转行数据是以逗号分割">MySQL列转行（数据是以逗号分割）</h2>
+</div><h2 id="mysql行转列数据是以逗号分割">MySQL行转列（数据是以逗号分割）</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -667,12 +667,20 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="n">SUBSTRING_INDEX</span><span class="w"> </span><span class="err">：</span><span class="w"> </span><span class="err">获取分隔符隔开后，根据最后参数索引获取字符串</span><span class="w"> </span><span class="err">，负数为倒数</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">LENGTH</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">字符串</span><span class="w"> </span><span class="err">长度</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="err">：</span><span class="w"> </span><span class="err">替换字符串</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="n">help_topic表的自增id是从0开始</span><span class="err">，所以在进行截取时要对</span><span class="n">id进行</span><span class="o">+</span><span class="mi">1</span><span class="err">。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">例</span><span class="mi">1</span><span class="err">：</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w">  </span><span class="n">TRADE_NAME</span><span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="n">ENTER_ID</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">ENTER_ID</span><span class="p">,</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">NAME_TRADE</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">HELP_TOPIC_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">),</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TRADE_NAME</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">FROM</span><span class="w">
@@ -685,6 +693,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">AND</span><span class="w"> </span><span class="n">CODE_REGION_SHENG</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AA</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">TRADE_NAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="err">例</span><span class="mi">2</span><span class="err">：</span><span class="n">FILE_ID原本格式</span><span class="err">：</span><span class="n">f485f8aecd19459a8e453e1029133b3e</span><span class="p">,</span><span class="mi">4</span><span class="n">bb2b32ef3e34bbd9cd84e6bd3f06517</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">substring_index</span><span class="p">(</span><span class="n">substring_index</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">FILE_ID</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="n">help_topic_id</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">t_report_titlepage</span><span class="w"> </span><span class="n">a</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">join</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="n">help_topic</span><span class="w"> </span><span class="n">b</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">help_topic_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">length</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">FILE_ID</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">length</span><span class="p">(</span><span class="k">replace</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">FILE_ID</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mysql修改字段类型">MySQL修改字段类型</h2>
@@ -1059,7 +1073,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-07 15:45:03
+        2023-04-13 14:25:17
         
     </span>
   </p>
