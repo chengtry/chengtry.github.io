@@ -103,7 +103,7 @@
       <pubDate>Mon, 13 Mar 2023 19:21:06 +0800</pubDate>
       
       <guid>https://chengtry.github.io/post/springboot/</guid>
-      <description>SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&amp;#34;delete from companymess where username = #{username}&amp;#34;) public int deletecompany(@Param(&amp;#34;username&amp;#34;)String username);</description>
+      <description>SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&amp;#34;delete from companymess where username = #{username}&amp;#34;) public</description>
     </item>
     
     <item>

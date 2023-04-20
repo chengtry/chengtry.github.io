@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&amp;#34;delete from companymess where username = #{username}&amp;#34;) public int deletecompany(@Param(&amp;#34;username&amp;#34;)String username);" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&amp;#34;delete from companymess where username = #{username}&amp;#34;) public" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="SpringBoot" />
-<meta property="og:description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);" />
+<meta property="og:description" content="SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/springboot/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-13T19:21:06+08:00" />
-<meta property="article:modified_time" content="2023-04-12T17:34:04+08:00" />
+<meta property="article:modified_time" content="2023-04-20T18:31:52+08:00" />
 
 <meta itemprop="name" content="SpringBoot">
-<meta itemprop="description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"><meta itemprop="datePublished" content="2023-03-13T19:21:06+08:00" />
-<meta itemprop="dateModified" content="2023-04-12T17:34:04+08:00" />
-<meta itemprop="wordCount" content="15913">
+<meta itemprop="description" content="SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public"><meta itemprop="datePublished" content="2023-03-13T19:21:06+08:00" />
+<meta itemprop="dateModified" content="2023-04-20T18:31:52+08:00" />
+<meta itemprop="wordCount" content="15916">
 <meta itemprop="keywords" content="SpringBoot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SpringBoot"/>
-<meta name="twitter:description" content="SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);"/>
+<meta name="twitter:description" content="SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -141,7 +141,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 15913 字 </span>
+          <span class="more-meta"> 约 15916 字 </span>
           <span class="more-meta"> 预计阅读 32 分钟 </span>
         
       </div>
@@ -154,11 +154,7 @@
   <ul>
     <li><a href="#springboot">SpringBoot</a>
       <ul>
-        <li><a href="#用注解方式编写sql语句">用注解方式编写SQL语句</a>
-          <ul>
-            <li><a href="#解决方案在dao层接口上添加mapper注解即可">解决方案：在（dao层）接口上添加@Mapper注解即可</a></li>
-          </ul>
-        </li>
+        <li><a href="#用注解方式编写sql语句">用注解方式编写SQL语句</a></li>
         <li><a href="#启动项目后进入页面404错误">启动项目后进入页面404错误</a>
           <ul>
             <li><a href="#1在pomxml中加入thymeleaf模板引擎">1.在pom.xml中加入thymeleaf模板引擎</a></li>
@@ -312,21 +308,24 @@
     <div class="post-content">
       <h1 id="springboot">SpringBoot</h1>
 <h2 id="用注解方式编写sql语句">用注解方式编写SQL语句</h2>
-<h3 id="解决方案在dao层接口上添加mapper注解即可">解决方案：在（dao层）接口上添加@Mapper注解即可</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.yc.dao</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 解决方案：在（dao层）接口上添加@Mapper注解即可
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.yc.dao</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.apache.ibatis.annotations.*</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
@@ -4184,7 +4183,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-12 17:34:04
+        2023-04-20 18:31:52
         
     </span>
   </p>

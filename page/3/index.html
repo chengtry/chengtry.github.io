@@ -137,14 +137,14 @@
           <a href="/categories/study/"> Study </a>
           <a href="/categories/note/"> Note </a>
           </div>
-        <span class="more-meta"> 约 15913 字 </span>
+        <span class="more-meta"> 约 15916 字 </span>
         <span class="more-meta"> 预计阅读 32 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      SpringBoot 用注解方式编写SQL语句 解决方案：在（dao层）接口上添加@Mapper注解即可 1 2 3 4 5 6 7 8 9 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public int deletecompany(@Param(&#34;username&#34;)String username);
+      SpringBoot 用注解方式编写SQL语句 1 2 3 4 5 6 7 8 9 10 11 // 解决方案：在（dao层）接口上添加@Mapper注解即可 package com.yc.dao; import org.apache.ibatis.annotations.*; @Mapper public interface CompanyDao { @Delete(&#34;delete from companymess where username = #{username}&#34;) public
     </div>
     <div class="read-more">
       <a href="/post/springboot/" class="read-more-link">阅读更多</a>

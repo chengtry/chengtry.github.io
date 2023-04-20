@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-18T21:57:36+08:00" />
-<meta property="article:modified_time" content="2023-04-01T00:33:02+08:00" />
+<meta property="article:modified_time" content="2023-04-20T18:29:43+08:00" />
 
 <meta itemprop="name" content="Linux">
 <meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="dateModified" content="2023-04-01T00:33:02+08:00" />
-<meta itemprop="wordCount" content="9320">
+<meta itemprop="dateModified" content="2023-04-20T18:29:43+08:00" />
+<meta itemprop="wordCount" content="9319">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"/>
@@ -140,7 +140,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 9320 字 </span>
+          <span class="more-meta"> 约 9319 字 </span>
           <span class="more-meta"> 预计阅读 19 分钟 </span>
         
       </div>
@@ -244,7 +244,6 @@
         <li><a href="#启动mysql">启动MySQL</a></li>
         <li><a href="#mysql启动报错">MySQL启动报错：</a></li>
         <li><a href="#service-mysqld-start-报错">service mysqld start 报错：</a></li>
-        <li><a href="#mysql启动报错the-server-quit-without-updating-pid-file">mysql启动报错:The server quit without updating PID file</a></li>
         <li><a href="#mysql忘记密码修改mysql密码">MySQL忘记密码，修改MySQL密码</a></li>
         <li><a href="#mysql查看所有数据库">MySQL查看所有数据库</a></li>
         <li><a href="#mysql命令模式提示no-database-selected">MySQL命令模式提示：No database selected</a></li>
@@ -597,8 +596,8 @@
 </span></span><span class="line"><span class="cl">free
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20210810094447347-16767286693482.png" alt="image-20210810094447347"></p>
-<p><img src="F:%5Cimages%5CTypora%5Cimage-20210810094534238-16767286693481.png" alt="image-20210810094534238"></p>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210810094447347-16767286693482.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/image-20210810094534238-16767286693481.png" alt=""></p>
 <h3 id="用户相关命令">用户相关命令</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1706,25 +1705,6 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mysql启动报错">MySQL启动报错：</h2>
-<p>ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/tmp/mysql.sock‘ (2)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 网上百度了解决方案如下</span>
-</span></span><span class="line"><span class="cl">1.找到mysql的安装目录，我的mysql安装目录：/yc/mysql
-</span></span><span class="line"><span class="cl">2.执行 sudo ./support-files/mysql.server start （这个命令即可）
-</span></span><span class="line"><span class="cl">3. mysql -uroot -p （密码）
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="service-mysqld-start-报错">service mysqld start 报错：</h2>
-<p>[root@yc ~]# service mysqld start
-Redirecting to /bin/systemctl start mysqld.service
-Failed to start mysqld.service: Unit not found.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1738,9 +1718,56 @@ Failed to start mysqld.service: Unit not found.</p>
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1.进入 my.cnf</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1.ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/tmp/mysql.sock‘ (2)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 网上百度了解决方案如下</span>
+</span></span><span class="line"><span class="cl">1.找到mysql的安装目录，我的mysql安装目录：/yc/mysql
+</span></span><span class="line"><span class="cl">2.执行 sudo ./support-files/mysql.server start （这个命令即可）
+</span></span><span class="line"><span class="cl">3. mysql -uroot -p （密码）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.The server quit without updating PID file</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 权限问题</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 授权tmp目录</span>
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">777</span> tmp
+</span></span><span class="line"><span class="cl"><span class="c1"># 对mysql的安装目录和数据目录分别进行授权</span>
+</span></span><span class="line"><span class="cl">chown -R mysql.mysql /usr/local/mysql
+</span></span><span class="line"><span class="cl">chown -R mysql.mysql /data/mysql
+</span></span><span class="line"><span class="cl">service mysqld start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="service-mysqld-start-报错">service mysqld start 报错：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># service mysqld start</span>
+</span></span><span class="line"><span class="cl">Redirecting to /bin/systemctl start mysqld.service
+</span></span><span class="line"><span class="cl">Failed to start mysqld.service: Unit not found.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.进入 my.cnf</span>
 </span></span><span class="line"><span class="cl">vim /etc/my.cnf
 </span></span><span class="line"><span class="cl">添加以下命令
 </span></span><span class="line"><span class="cl">skip-grant-tables <span class="c1">#跳过数据库权限验证</span>
@@ -1751,27 +1778,6 @@ Failed to start mysqld.service: Unit not found.</p>
 </span></span><span class="line"><span class="cl">/yc/mysql/support-files/mysql.server
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">/yc/mysql/support-files/mysql.server start <span class="c1"># 用这个命令启动</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="mysql启动报错the-server-quit-without-updating-pid-file">mysql启动报错:The server quit without updating PID file</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 权限问题</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 授权tmp目录</span>
-</span></span><span class="line"><span class="cl">chmod -R <span class="m">777</span> tmp
-</span></span><span class="line"><span class="cl"><span class="c1"># 对mysql的安装目录和数据目录分别进行授权</span>
-</span></span><span class="line"><span class="cl">chown -R mysql.mysql /usr/local/mysql
-</span></span><span class="line"><span class="cl">chown -R mysql.mysql /data/mysql
-</span></span><span class="line"><span class="cl">service mysqld start
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mysql忘记密码修改mysql密码">MySQL忘记密码，修改MySQL密码</h2>
@@ -2288,7 +2294,7 @@ Failed to start mysqld.service: Unit not found.</p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-01 00:33:02
+        2023-04-20 18:29:43
         
     </span>
   </p>
