@@ -31,7 +31,7 @@
       <pubDate>Tue, 14 Feb 2023 19:55:47 +0800</pubDate>
       
       <guid>https://chengtry.github.io/post/java/</guid>
-      <description>JavaSE 冒泡排序 （1）从左边开始把大的往右边移动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 int[] arr = {3,2,5,1,4}; for(int i=1; i&amp;lt;arr.length; i++){ /* 因为每一轮从最左边开始，int j</description>
+      <description>Java 冒泡排序 （1）从左边开始把大的往右边移动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 int[] arr = {3,2,5,1,4}; for(int i=1; i&amp;lt;arr.length; i++){ /* 因为每一轮从最左边开始，int j</description>
     </item>
     
   </channel>

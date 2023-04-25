@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JSP on chengtry</title>
+    <link>https://chengtry.github.io/tags/jsp/</link>
+    <description>Recent content in JSP on chengtry</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 Apr 2023 10:31:30 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JSP</title>
+      <link>https://chengtry.github.io/post/jsp/</link>
+      <pubDate>Tue, 25 Apr 2023 10:31:30 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/jsp/</guid>
+      <description>JSP记录 1 2 3 4 5 6 7 8 9 10 11 JSP 与 PHP、ASP、ASP.NET 等语言类似，运行在服务端的语言。 JSP（全称Java Server Pages）是由 Sun Microsystems</description>
+    </item>
+    
+  </channel>
+</rss>

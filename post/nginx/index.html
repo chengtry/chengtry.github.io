@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="nginx 简介 1.nginx是什么 1 2 3 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Nginx" />
-<meta property="og:description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少" />
+<meta property="og:description" content="nginx 简介 1.nginx是什么 1 2 3 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/nginx/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-22T20:22:37+08:00" />
-<meta property="article:modified_time" content="2023-03-06T19:56:28+08:00" />
+<meta property="article:modified_time" content="2023-04-24T14:52:13+08:00" />
 
 <meta itemprop="name" content="Nginx">
-<meta itemprop="description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少"><meta itemprop="datePublished" content="2023-02-22T20:22:37+08:00" />
-<meta itemprop="dateModified" content="2023-03-06T19:56:28+08:00" />
-<meta itemprop="wordCount" content="5328">
+<meta itemprop="description" content="nginx 简介 1.nginx是什么 1 2 3 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有"><meta itemprop="datePublished" content="2023-02-22T20:22:37+08:00" />
+<meta itemprop="dateModified" content="2023-04-24T14:52:13+08:00" />
+<meta itemprop="wordCount" content="5477">
 <meta itemprop="keywords" content="Nginx," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx"/>
-<meta name="twitter:description" content="nginx 简介 1.nginx是什么 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少"/>
+<meta name="twitter:description" content="nginx 简介 1.nginx是什么 1 2 3 Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,7 +140,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 5328 字 </span>
+          <span class="more-meta"> 约 5477 字 </span>
           <span class="more-meta"> 预计阅读 11 分钟 </span>
         
       </div>
@@ -164,10 +164,6 @@
             <li><a href="#第一步安装-pcre">第一步，安装 pcre</a></li>
             <li><a href="#第二步安装所需其他依赖">第二步：安装所需其他依赖</a></li>
             <li><a href="#第三步安装nginx">第三步：安装nginx</a></li>
-          </ul>
-        </li>
-        <li><a href="#nginx解压安装">nginx解压安装</a>
-          <ul>
             <li><a href="#第四步测试">第四步：测试</a></li>
           </ul>
         </li>
@@ -237,81 +233,127 @@
       <h1 id="nginx">nginx</h1>
 <h2 id="简介">简介</h2>
 <h3 id="1nginx是什么">1.nginx是什么</h3>
-<p>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。</p>
-<p>Nginx 是高性能的 HTTP 和反向代理的web服务器，处理高并发能力是十分强大的，能经受高负 载的考验,有报告表明能支持高达 50,000 个并发连接数。</p>
-<h3 id="2nginx作用">2.nginx作用</h3>
-<h4 id="1反向代理">（1）反向代理</h4>
-<p>反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端,</p>
-<p>简单来说就是真实的服务器不能直接被外部网络访问，想要访问必须通过代理。</p>
-<h4 id="2负载均衡">（2）负载均衡</h4>
-<p>负载均衡也是 Nginx 常用的一个功能，当有2台或以上服务器时，根据规则随机的将请求分发到指定的服务器上处理，负载均衡配置一般都需要同时配置反向代理，通过反向代理跳转到负载均衡。</p>
-<h4 id="3http服务器">（3）HTTP服务器</h4>
-<p>Nginx本身也是一个静态资源的服务器，当只有静态资源的时候，就可以使用Nginx来做服务器，同时现在也很流行动静分离，就可以通过Nginx来实现</p>
-<h4 id="4正向代理">（4）正向代理</h4>
-<p>意思是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。</p>
-<h2 id="nginx安装">nginx安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Nginx 是高性能的 HTTP 和反向代理的web服务器，处理高并发能力是十分强大的，能经受高负 载的考验,有报告表明能支持高达 50,000 个并发连接数。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2nginx作用">2.nginx作用</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">（1）反向代理
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">简单来说就是真实的服务器不能直接被外部网络访问，想要访问必须通过代理。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">（2）负载均衡
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">负载均衡也是 Nginx 常用的一个功能，当有2台或以上服务器时，根据规则随机的将请求分发到指定的服务器上处理，负载均衡配置一般都需要同时配置反向代理，通过反向代理跳转到负载均衡。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">（3）HTTP服务器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Nginx本身也是一个静态资源的服务器，当只有静态资源的时候，就可以使用Nginx来做服务器，同时现在也很流行动静分离，就可以通过Nginx来实现
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">（4）正向代理
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">意思是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx安装">nginx安装</h2>
 <h3 id="第一步安装-pcre">第一步，安装 pcre</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>解压文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar –xvf pcre-8.37.tar.gz
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>进入解压缩的 pcre-8.37 执行 ./configure,解压之后进行编译</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">依次执行以下命令
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压文件</span>
+</span></span><span class="line"><span class="cl">tar –xvf pcre-8.37.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入解压缩的 pcre-8.37 执行 ./configure,解压之后进行编译,依次执行以下命令</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pcre-8.37
 </span></span><span class="line"><span class="cl">./configure
 </span></span><span class="line"><span class="cl">make
 </span></span><span class="line"><span class="cl">make install
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ./configure报错：pcre configure: error: C compiler cannot create executables</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看日志：</span>
+</span></span><span class="line"><span class="cl">tail -f config.log
+</span></span><span class="line"><span class="cl"><span class="c1"># 发现：</span>
+</span></span><span class="line"><span class="cl">/usr/bin/ld: cannot find -lc
+</span></span><span class="line"><span class="cl"><span class="c1"># 解决办法：</span>
+</span></span><span class="line"><span class="cl">yum install glibc glibc-devel glibc-static
+</span></span><span class="line"><span class="cl"><span class="c1"># 再次执行./configure，报错：</span>
+</span></span><span class="line"><span class="cl">configure: error: You need a C++ compiler <span class="k">for</span> C++ support.
+</span></span><span class="line"><span class="cl"><span class="c1">#解决办法：</span>
+</span></span><span class="line"><span class="cl">yum -y install gcc-c++  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 再次执行./configure，成功！</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="第二步安装所需其他依赖">第二步：安装所需其他依赖</h3>
-<p>安装openss，zlib，gcc依赖</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum -y install make zlib zlib-devel gcc-c++ libtool    openssl openssl-devel
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="第三步安装nginx">第三步：安装nginx</h3>
-<p>nginx官网下载：nginx.org</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -xvf nginx-1.19.8.tar.gz
-</span></span><span class="line"><span class="cl">进入nginx目录下执行 ./configure
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl">make install
-</span></span><span class="line"><span class="cl">安装成功后 usr/local 下会增一个 nginx 文件夹
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 安装openss，zlib，gcc依赖</span>
+</span></span><span class="line"><span class="cl">yum -y install make zlib zlib-devel gcc-c++ libtool    openssl openssl-devel
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="nginx解压安装">nginx解压安装</h2>
+</div><h3 id="第三步安装nginx">第三步：安装nginx</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -322,15 +364,13 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1 解压</span>
-</span></span><span class="line"><span class="cl">cd到安装目录下
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1 解压，进到到安装目录下</span>
 </span></span><span class="line"><span class="cl">tar -zxvf nginx-1.12.2.tar.gz
 </span></span><span class="line"><span class="cl"><span class="c1"># 2 进入home目录</span>
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> nginx-1.12.2
-</span></span><span class="line"><span class="cl"><span class="c1"># 3 /ths/nginx 要安装的目录</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 nginx默认安装目录是：/usr/local下，这里我们可以指定安装目录：/ths/nginx（一般安装包不要放到这个目录下）</span>
 </span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/ths/nginx 
 </span></span><span class="line"><span class="cl"><span class="c1"># 4 编译并安装</span>
 </span></span><span class="line"><span class="cl">make <span class="o">&amp;&amp;</span> make install  
@@ -1386,7 +1426,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-03-06 19:56:28
+        2023-04-24 14:52:13
         
     </span>
   </p>
