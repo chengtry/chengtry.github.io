@@ -13,7 +13,7 @@
       <pubDate>Fri, 10 Mar 2023 18:37:15 +0800</pubDate>
       
       <guid>https://chengtry.github.io/post/git/</guid>
-      <description>Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 1 2 3 Git是</description>
+      <description>Git Git与SVN的区别 1 2 3 4 5 6 7 8 9 Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版</description>
     </item>
     
   </channel>

@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -35,24 +35,24 @@
 
 
 
-<link href="/sass/main.min.6d63348a2304f62f504100c316135a1e34435beedb52da81bbfaa1b1d36b9879.css" rel="stylesheet">
+<link href="/sass/main.min.f4f3850fc1de83dad6ea2e076bd92fabda928cb902ec9662f80aad35fb865d2d.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Linux" />
-<meta property="og:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解" />
+<meta property="og:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-18T21:57:36+08:00" />
-<meta property="article:modified_time" content="2023-04-20T18:29:43+08:00" />
+<meta property="article:modified_time" content="2023-04-27T15:20:42+08:00" />
 
 <meta itemprop="name" content="Linux">
-<meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="dateModified" content="2023-04-20T18:29:43+08:00" />
-<meta itemprop="wordCount" content="9319">
+<meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
+<meta itemprop="dateModified" content="2023-04-27T15:20:42+08:00" />
+<meta itemprop="wordCount" content="9328">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
-<meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解"/>
+<meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,7 +140,7 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 9319 字 </span>
+          <span class="more-meta"> 约 9328 字 </span>
           <span class="more-meta"> 预计阅读 19 分钟 </span>
         
       </div>
@@ -187,9 +187,9 @@
             <li><a href="#查看使用最多的命令">查看使用最多的命令</a></li>
             <li><a href="#vim进入文件显示序号">VIM进入文件显示序号</a></li>
             <li><a href="#vi模式定位">vi模式定位</a></li>
+            <li><a href="#在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</a></li>
           </ul>
         </li>
-        <li><a href="#在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</a></li>
         <li><a href="#rpm方式安装jdk不需要配置环境变量">rpm方式安装JDK(不需要配置环境变量)</a>
           <ul>
             <li><a href="#1下载rpm安装包并安装">1.下载rpm安装包并安装</a></li>
@@ -291,23 +291,23 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#解压 tar包</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 解压 tar包</span>
 </span></span><span class="line"><span class="cl">tar -xvf  file.tar 
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#解压tar.gz </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压tar.gz </span>
 </span></span><span class="line"><span class="cl">tar -zxvf  file.tar.gz 
 </span></span><span class="line"><span class="cl">例如：tar -zxvf redis-6.0.6.tar.gz
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#解压 tar.bz2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压 tar.bz2</span>
 </span></span><span class="line"><span class="cl">tar -xjvf  file.tar.bz2
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#解压tar.Z</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压tar.Z</span>
 </span></span><span class="line"><span class="cl">tar -xZvf  file.tar.Z
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#解压rar</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压rar</span>
 </span></span><span class="line"><span class="cl">unrar e  file.rar
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#解压zip</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压zip</span>
 </span></span><span class="line"><span class="cl">unzip  file.zip
 </span></span></code></pre></td></tr></table>
 </div>
@@ -318,7 +318,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#gunzip 只能解压.gz文件</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># gunzip 只能解压.gz文件</span>
 </span></span><span class="line"><span class="cl">gunzip yc.txt.gz  --&gt; 结果：yc.txt
 </span></span></code></pre></td></tr></table>
 </div>
@@ -330,8 +330,8 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#将yc.zip压缩包解压（linux需要提前安装unzip命令）</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#安装unzip命令：yum install -y unzip zip</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 将yc.zip压缩包解压（linux需要提前安装unzip命令）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装unzip命令：yum install -y unzip zip</span>
 </span></span><span class="line"><span class="cl">unzip yc.zip
 </span></span></code></pre></td></tr></table>
 </div>
@@ -347,12 +347,12 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#tar -zcvf 压缩命令既可以压缩文件，也可以压缩目录！</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># tar -zcvf 压缩命令既可以压缩文件，也可以压缩目录！</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#将yc.txt文件压缩成yc.txt.tar.gz压缩包</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将yc.txt文件压缩成yc.txt.tar.gz压缩包</span>
 </span></span><span class="line"><span class="cl">tar -zcvf yc.txt.tar.gz yc.txt
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#将yc目录压缩成yc.tar.gz压缩包</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将yc目录压缩成yc.tar.gz压缩包</span>
 </span></span><span class="line"><span class="cl">tar -zcvf yc.tar.gz yc
 </span></span></code></pre></td></tr></table>
 </div>
@@ -363,7 +363,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#gzip 压缩命令只能压缩.gz文件！不能压缩目录！</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># gzip 压缩命令只能压缩.gz文件！不能压缩目录！</span>
 </span></span><span class="line"><span class="cl">gzip yx.txt    --&gt; 结果yc.txt.gz
 </span></span></code></pre></td></tr></table>
 </div>
@@ -374,7 +374,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#将yc.txt文件压缩为yc.zip压缩包</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 将yc.txt文件压缩为yc.zip压缩包</span>
 </span></span><span class="line"><span class="cl">zip yc.zip yc.txt
 </span></span></code></pre></td></tr></table>
 </div>
@@ -388,9 +388,9 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#首先：ps -ef的意思是以长格式显示所有进程；“|”是管道，意思是前面ps的输出做为后面的输入，即—grep命令所检索的文本源；grep redis是在所有进程里查找与字符redis有关的进程，并显示出来。</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#ps -ef 是用标准的格式显示java这个进程</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#ps aux 是用BSD的格式来显示 java这个进程</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 首先：ps -ef的意思是以长格式显示所有进程；“|”是管道，意思是前面ps的输出做为后面的输入，即—grep命令所检索的文本源；grep redis是在所有进程里查找与字符redis有关的进程，并显示出来。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ps -ef 是用标准的格式显示java这个进程</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ps aux 是用BSD的格式来显示 java这个进程</span>
 </span></span><span class="line"><span class="cl">ps -ef<span class="p">|</span>grep redis
 </span></span><span class="line"><span class="cl">ps -aux<span class="p">|</span>grep redis
 </span></span></code></pre></td></tr></table>
@@ -431,15 +431,15 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1. lslogins           <span class="c1">#列出系统中所有用户的信息</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1. lslogins           <span class="c1"># 列出系统中所有用户的信息</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">2. cat /etc/passwd    <span class="c1">#列出每个用户的详细信息</span>
+</span></span><span class="line"><span class="cl">2. cat /etc/passwd    <span class="c1"># 列出每个用户的详细信息</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">3. id                 <span class="c1">#查看指定用户或当前用户的用户和组信息</span>
+</span></span><span class="line"><span class="cl">3. id                 <span class="c1"># 查看指定用户或当前用户的用户和组信息</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">4. getent passwd      <span class="c1">#列出每个用户的详细信息</span>
+</span></span><span class="line"><span class="cl">4. getent passwd      <span class="c1"># 列出每个用户的详细信息</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">5. <span class="nb">compgen</span> -u         <span class="c1">#列出系统中用户</span>
+</span></span><span class="line"><span class="cl">5. <span class="nb">compgen</span> -u         <span class="c1"># 列出系统中用户</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="查看ip信息">查看ip信息</h3>
@@ -467,7 +467,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">find / -name mysql <span class="c1">#查找根目录下名字是mysql的路径</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">find / -name mysql <span class="c1"># 查找根目录下名字是mysql的路径</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="curl命令">curl命令</h3>
@@ -526,12 +526,14 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#没有专门的重命名命令，但用mv a b 就可以重命名了</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 没有专门的重命名命令，但用mv a b 就可以重命名了</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ycconfig<span class="o">]</span><span class="c1"># ls</span>
 </span></span><span class="line"><span class="cl">sentinel-263781.log
-</span></span><span class="line"><span class="cl"><span class="c1">#将sentinel-263781.log重命名为sentinel-26381.log</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将sentinel-263781.log重命名为sentinel-26381.log</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ycconfig<span class="o">]</span><span class="c1"># mv sentinel-263781.log sentinel-26381.log</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ycconfig<span class="o">]</span><span class="c1"># ls</span>
 </span></span><span class="line"><span class="cl">sentinel-26381.log
@@ -589,10 +591,10 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#top命令查看内存使用率</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># top命令查看内存使用率</span>
 </span></span><span class="line"><span class="cl">top
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#free命令可以显示Linux系统中空闲的、已用的物理内存及swap内存,及被内核使用的buffer。在Linux系统监控的工具中，free命令是最经常使用的命令之一。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># free命令可以显示Linux系统中空闲的、已用的物理内存及swap内存,及被内核使用的buffer。在Linux系统监控的工具中，free命令是最经常使用的命令之一。</span>
 </span></span><span class="line"><span class="cl">free
 </span></span></code></pre></td></tr></table>
 </div>
@@ -624,26 +626,26 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#创建用户名为yc的用户</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建用户名为yc的用户</span>
 </span></span><span class="line"><span class="cl">useradd yc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#修改yc用户密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改yc用户密码</span>
 </span></span><span class="line"><span class="cl">passwd yc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#删除用户yc</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除用户yc</span>
 </span></span><span class="line"><span class="cl">userdel yc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#切换为yc用户</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换为yc用户</span>
 </span></span><span class="line"><span class="cl">su yc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#su -用户名</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#当高权限用户切换到低权限用户的时候不需要密码</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#反之低权限切换到高权限用户需要高权限用户的密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># su -用户名</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 当高权限用户切换到低权限用户的时候不需要密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 反之低权限切换到高权限用户需要高权限用户的密码</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#用exit可以退出当前用户，回到上一个用户,而且它的退出是一层一层退出的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 用exit可以退出当前用户，回到上一个用户,而且它的退出是一层一层退出的</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#修改当前用户密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改当前用户密码</span>
 </span></span><span class="line"><span class="cl">passwd
 </span></span></code></pre></td></tr></table>
 </div>
@@ -663,16 +665,16 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#查看一个文件夹中所有文件的大小（不含子目录中的文件）：</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看一个文件夹中所有文件的大小（不含子目录中的文件）：</span>
 </span></span><span class="line"><span class="cl">du -Sh或du -Ssh
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#查看一个文件夹中所有文件的大小（包含子目录中的文件）：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看一个文件夹中所有文件的大小（包含子目录中的文件）：</span>
 </span></span><span class="line"><span class="cl">du -h或者du -sh
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#查看文件最大的10个</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看文件最大的10个</span>
 </span></span><span class="line"><span class="cl">du -s * <span class="p">|</span> sort -nr <span class="p">|</span> head
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#查看文件最小的10个</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看文件最小的10个</span>
 </span></span><span class="line"><span class="cl">du -s * <span class="p">|</span> sort -nr <span class="p">|</span> tail
 </span></span></code></pre></td></tr></table>
 </div>
@@ -921,11 +923,11 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#将当前目录下的taiji.tar.gz复制到10.100.245.218服务器中的...images/user目录下</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 将当前目录下的taiji.tar.gz复制到10.100.245.218服务器中的...images/user目录下</span>
 </span></span><span class="line"><span class="cl">scp taiji.tar.gz root@10.100.245.218:/ths/view-tomcat-8.5.42/webapps/fileserver/assets/
 </span></span><span class="line"><span class="cl">components/datav/help/images/user
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#命令格式</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 命令格式</span>
 </span></span><span class="line"><span class="cl">scp local_file remote_username@remote_ip:remote_folder  
 </span></span><span class="line"><span class="cl">或者  
 </span></span><span class="line"><span class="cl">scp local_file remote_username@remote_ip:remote_file  
@@ -984,7 +986,7 @@
 </span></span><span class="line"><span class="cl">键盘上的End键
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</h2>
+</div><h3 id="在vim打开的文件中查找关键字">在vim打开的文件中查找关键字：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1010,8 +1012,8 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#从官网下载jdk的rpm安装包并用Xftp上传至服务器中</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#安装（默认安装路径：/usr/java/）</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 从官网下载jdk的rpm安装包并用Xftp上传至服务器中</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装（默认安装路径：/usr/java/）</span>
 </span></span><span class="line"><span class="cl">rpm -ivh jdk-8u281-linux-x64.rpm
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1046,12 +1048,12 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#/etc/hosts （主机名修改为yc）</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># /etc/hosts （主机名修改为yc）</span>
 </span></span><span class="line"><span class="cl">::1    localhost    localhost.localdomain    localhost6    localhost6.localdomain6
 </span></span><span class="line"><span class="cl">127.0.0.1    localhost    localhost.localdomain    localhost4    localhost4.localdomain4
 </span></span><span class="line"><span class="cl">172.30.121.4    yc    yc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#/etc/sysconfig/network （添加一行HOSTNAME=yc）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># /etc/sysconfig/network （添加一行HOSTNAME=yc）</span>
 </span></span><span class="line"><span class="cl"><span class="nv">HOSTNAME</span><span class="o">=</span>yc
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2294,7 +2296,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-20 18:29:43
+        2023-04-27 15:20:42
         
     </span>
   </p>

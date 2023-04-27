@@ -13,7 +13,7 @@
       <pubDate>Sat, 18 Feb 2023 21:57:36 +0800</pubDate>
       
       <guid>https://chengtry.github.io/post/linux/</guid>
-      <description>Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #解压 tar包 tar -xvf file.tar #解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz #解</description>
+      <description>Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解</description>
     </item>
     
   </channel>
