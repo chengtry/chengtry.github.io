@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 1 2 3 Git是" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Git" />
-<meta property="og:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式" />
+<meta property="og:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 1 2 3 Git是" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/git/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-10T18:37:15+08:00" />
-<meta property="article:modified_time" content="2023-03-13T19:18:22+08:00" />
+<meta property="article:modified_time" content="2023-04-27T14:32:30+08:00" />
 
 <meta itemprop="name" content="Git">
-<meta itemprop="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式"><meta itemprop="datePublished" content="2023-03-10T18:37:15+08:00" />
-<meta itemprop="dateModified" content="2023-03-13T19:18:22+08:00" />
-<meta itemprop="wordCount" content="3439">
+<meta itemprop="description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 1 2 3 Git是"><meta itemprop="datePublished" content="2023-03-10T18:37:15+08:00" />
+<meta itemprop="dateModified" content="2023-04-27T14:32:30+08:00" />
+<meta itemprop="wordCount" content="3400">
 <meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git"/>
-<meta name="twitter:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 Git是分布式"/>
+<meta name="twitter:description" content="Git 分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。 配置环境变量只是为了能在电脑任意位置使用。 Git与SVN的区别 1 2 3 Git是"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -141,7 +141,7 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 3439 字 </span>
+          <span class="more-meta"> 约 3400 字 </span>
           <span class="more-meta"> 预计阅读 7 分钟 </span>
         
       </div>
@@ -199,8 +199,6 @@
         <li><a href="#git提交">Git提交</a></li>
         <li><a href="#删除gitlab中的文件夹">删除gitlab中的文件夹</a></li>
         <li><a href="#查看远程仓库">查看远程仓库</a></li>
-        <li><a href="#hexo更新文件">Hexo更新文件</a></li>
-        <li><a href="#hugo更新部署">hugo更新部署</a></li>
       </ul>
     </li>
     <li><a href="#github">Github</a>
@@ -219,6 +217,7 @@
         <li><a href="#git-push出现updates-were-rejected-because-the-tip-of-your-current-branch-is-behind">git push出现Updates were rejected because the tip of your current branch is behind</a></li>
         <li><a href="#git合并分支">git合并分支</a></li>
         <li><a href="#git-commit了但是未push怎么退回">git commit了但是未push怎么退回</a></li>
+        <li><a href="#git回退到指定版本代码">git回退到指定版本代码</a></li>
       </ul>
     </li>
   </ul>
@@ -230,15 +229,19 @@
 <p>分布式管理控制，Git是目前世界上最先进的分布式版本控制系统。</p>
 <p>配置环境变量只是为了能在电脑任意位置使用。</p>
 <h2 id="git与svn的区别">Git与SVN的区别</h2>
-<ul>
-<li>
-<p>Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版本都在自己的电脑上。Git可以直接看到更新了哪些代码和文件。</p>
-</li>
-<li>
-<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器中，工作时候需要用自己电脑从中央服务器下载得到最新的版本，提交代码需要自己提交到中央服务器。SVN必须联网才能工作，对网络带宽要求较高。</p>
-</li>
-</ul>
-<h2 id="启动git">启动Git</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版本都在自己的电脑上。Git可以直接看到更新了哪些代码和文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">SVN是集中式版本控制系统，版本库是集中放在中央服务器中，工作时候需要用自己电脑从中央服务器下载得到最新的版本，提交代码需要自己提交到中央服务器。SVN必须联网才能工作，对网络带宽要求较高。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="启动git">启动Git</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -299,36 +302,29 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="创建本地仓库的两种方式">创建本地仓库的两种方式</h3>
-<ol>
-<li>创建全新的仓库</li>
-</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1.创建全新的仓库</span>
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.克隆远程仓库</span>
+</span></span><span class="line"><span class="cl">git clone <span class="o">[</span>url<span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>克隆远程仓库</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone <span class="o">[</span>url<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>删除配置错误的邮箱</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#git config --global --unset命令</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 删除配置错误的邮箱 ：git config --global --unset命令</span>
 </span></span><span class="line"><span class="cl">git config --global --unset user.enail <span class="s2">&#34;自己的邮箱&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -389,40 +385,42 @@
 <li>Staged：暂存状态</li>
 </ol>
 <h3 id="查看文件状态">查看文件状态</h3>
-<h4 id="查看指定文件状态">查看指定文件状态</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status <span class="o">[</span>filename<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="查看所有文件状态">查看所有文件状态</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="添加文件到暂存区">添加文件到暂存区</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .   <span class="o">(</span>注意有个.<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="提交暂存区的内容到本地仓库">提交暂存区的内容到本地仓库</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;消息内容&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看指定文件状态</span>
+</span></span><span class="line"><span class="cl">git status <span class="o">[</span>filename<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有文件状态</span>
+</span></span><span class="line"><span class="cl">git status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加文件到暂存区</span>
+</span></span><span class="line"><span class="cl">git add .   <span class="o">(</span>注意有个.<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提交暂存区的内容到本地仓库</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;消息内容&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消commit</span>
+</span></span><span class="line"><span class="cl">1.先用 git log命令查看commit_id
+</span></span><span class="line"><span class="cl"><span class="c1"># 将某次commit的更新取消，但是这次commit的前后更新都不受影响。</span>
+</span></span><span class="line"><span class="cl">2.再使用 git revert commit_id 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="流程">流程</h3>
@@ -443,19 +441,6 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#将当前的version重置到某次提或者合并，在此次提交或者合并之后的更新都会被丢弃。</span>
 </span></span><span class="line"><span class="cl">git reset --hard
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>取消commit</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1.先用 git log命令查看commit_id
-</span></span><span class="line"><span class="cl"><span class="c1">#将某次commit的更新取消，但是这次commit的前后更新都不受影响。</span>
-</span></span><span class="line"><span class="cl">2.再使用 git revert commit_id 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git分支常用命令">Git分支常用命令</h2>
@@ -583,29 +568,29 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone git地址            // down项目到当前文件夹下 例:git clone http://xxx.git
-</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;邮箱&#34;</span>    // 设置邮箱<span class="o">(</span>push时必填<span class="o">)</span>
-</span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;名字&#34;</span>    // 设置名字<span class="o">(</span>push时必填<span class="o">)</span>
-</span></span><span class="line"><span class="cl">git config --global gui.encoding utf-8    // gitk编码修改为utf-8
-</span></span><span class="line"><span class="cl">gitk                    // 查看最近提交版本记录的图形化界面<span class="o">(</span>可以清楚的查看到提交用户名称,时间,注释,提交的代码等<span class="o">)</span>
-</span></span><span class="line"><span class="cl">git log                    // 显示当前分支的版本历史
-</span></span><span class="line"><span class="cl">git branch -av                // 查看当前分支详情 -a表示分支列表 -v表示版本号及注释
-</span></span><span class="line"><span class="cl">git checkout 分支名            // 切换分支, 分支名选最后一个/后面的名称
-</span></span><span class="line"><span class="cl">git checkout 文件名            // 恢复暂存区的指定文件到工作区<span class="o">(</span>不可逆<span class="o">)</span> 例: git checkout *
-</span></span><span class="line"><span class="cl">git status                // 显示有变更的文件
-</span></span><span class="line"><span class="cl">git stash                // 将当前操作的文件压入暂存栈
-</span></span><span class="line"><span class="cl">git stash pop                // 将暂存栈的文件 恢复到上一次操作的状态<span class="o">(</span>如果与当前文件有冲突,会自动合并冲突,需要手动找到位置并处理<span class="o">)</span>
-</span></span><span class="line"><span class="cl">git pull                // 下载最新代码
-</span></span><span class="line"><span class="cl">git add 文件名/目录名            // 添加指定文件到暂存区
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;注释&#34;</span>            // 提交add过的文件至本地git仓库
-</span></span><span class="line"><span class="cl">git push                // 将本地git仓库的版本推送到远程git仓库
-</span></span><span class="line"><span class="cl">git reset head 文件名            // 将待提交文件移出add列表中
-</span></span><span class="line"><span class="cl">git reset --hard 版本号            // 将当前版本回退到指定版本
-</span></span><span class="line"><span class="cl">git config --list            // 显示当前的Git配置
-</span></span><span class="line"><span class="cl">git pull origin master --allow-unrelated-histories // pull 允许不相关的历史 用于不同的远程地址作代码同步
-</span></span><span class="line"><span class="cl">git checkout -b 分支名            // 创建本地临时分支
-</span></span><span class="line"><span class="cl">git merge 分支名            // 将指定分支合并到当前分支
-</span></span><span class="line"><span class="cl">git push --set-upstream origin 分支名 // 此操作可将临时分支推至度小满icode
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone git地址            <span class="c1"># down项目到当前文件夹下 例:git clone http://xxx.git</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;邮箱&#34;</span>   <span class="c1"># 设置邮箱(push时必填)</span>
+</span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;名字&#34;</span>    <span class="c1"># 设置名字(push时必填)</span>
+</span></span><span class="line"><span class="cl">git config --global gui.encoding utf-8    <span class="c1"># gitk编码修改为utf-8</span>
+</span></span><span class="line"><span class="cl">gitk                    <span class="c1"># 查看最近提交版本记录的图形化界面(可以清楚的查看到提交用户名称,时间,注释,提交的代码等)</span>
+</span></span><span class="line"><span class="cl">git log                    <span class="c1"># 显示当前分支的版本历史</span>
+</span></span><span class="line"><span class="cl">git branch -av                <span class="c1"># 查看当前分支详情 -a表示分支列表 -v表示版本号及注释</span>
+</span></span><span class="line"><span class="cl">git checkout 分支名            <span class="c1"># 切换分支, 分支名选最后一个/后面的名称</span>
+</span></span><span class="line"><span class="cl">git checkout 文件名            <span class="c1"># 恢复暂存区的指定文件到工作区(不可逆) 例: git checkout *</span>
+</span></span><span class="line"><span class="cl">git status                <span class="c1"># 显示有变更的文件</span>
+</span></span><span class="line"><span class="cl">git stash                <span class="c1"># 将当前操作的文件压入暂存栈</span>
+</span></span><span class="line"><span class="cl">git stash pop                <span class="c1"># 将暂存栈的文件 恢复到上一次操作的状态(如果与当前文件有冲突,会自动合并冲突,需要手动找到位置并处理)</span>
+</span></span><span class="line"><span class="cl">git pull                <span class="c1"># 下载最新代码</span>
+</span></span><span class="line"><span class="cl">git add 文件名/目录名            <span class="c1"># 添加指定文件到暂存区</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;注释&#34;</span>           <span class="c1"># 提交add过的文件至本地git仓库</span>
+</span></span><span class="line"><span class="cl">git push                <span class="c1"># 将本地git仓库的版本推送到远程git仓库</span>
+</span></span><span class="line"><span class="cl">git reset head 文件名           <span class="c1"># 将待提交文件移出add列表中</span>
+</span></span><span class="line"><span class="cl">git reset --hard 版本号            <span class="c1"># 将当前版本回退到指定版本</span>
+</span></span><span class="line"><span class="cl">git config --list            <span class="c1"># 显示当前的Git配置</span>
+</span></span><span class="line"><span class="cl">git pull origin master --allow-unrelated-histories <span class="c1"># pull 允许不相关的历史 用于不同的远程地址作代码同步</span>
+</span></span><span class="line"><span class="cl">git checkout -b 分支名            <span class="c1"># 创建本地临时分支</span>
+</span></span><span class="line"><span class="cl">git merge 分支名            <span class="c1"># 将指定分支合并到当前分支</span>
+</span></span><span class="line"><span class="cl">git push --set-upstream origin 分支名  <span class="c1"># 此操作可将临时分支推至度小满icode</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="删除git-config中某一项配置">删除git config中某一项配置</h3>
@@ -643,7 +628,7 @@
 <p>用于说明本次 commit 的类别，只允许使用下面的英文标识：</p>
 <ul>
 <li>
-<p>**feat：**增加了一个新功能或由于需求变更导致的修改</p>
+<p><strong>feat</strong>：增加了一个新功能或由于需求变更导致的修改</p>
 </li>
 <li>
 <p><strong>fix</strong>：修复了一个 Bug</p>
@@ -655,25 +640,25 @@
 <p><strong>style</strong>：代码的格式美化，不涉及到功能修改（比如改了缩进）</p>
 </li>
 <li>
-<p>**refactor：**一些代码结构上优化，既不是新特性也不是修复 Bug（比如函数改个名字）</p>
+<p><strong>refactor</strong>：一些代码结构上优化，既不是新特性也不是修复 Bug（比如函数改个名字）</p>
 </li>
 <li>
-<p>**perf：**优化了性能的代码改动</p>
+<p><strong>perf</strong>：优化了性能的代码改动</p>
 </li>
 <li>
-<p>**test：**新增或者修改已有的测试代码</p>
+<p><strong>test</strong>：新增或者修改已有的测试代码</p>
 </li>
 <li>
-<p>**build：**影响构建系统或外部依赖的更改（比如 gulp，grunt，webpack、package.json）</p>
+<p><strong>build</strong>：影响构建系统或外部依赖的更改（比如 gulp，grunt，webpack、package.json）</p>
 </li>
 <li>
-<p>**chore：**其它不修改 src 或测试文件的变更（比如新增一个文档生成工具）</p>
+<p><strong>chore</strong>：其它不修改 src 或测试文件的变更（比如新增一个文档生成工具）</p>
 </li>
 <li>
-<p>**ci：**更改 CI 的配置文件或脚本（比如 GitLab CI)</p>
+<p><strong>c</strong>i：更改 CI 的配置文件或脚本（比如 GitLab CI)</p>
 </li>
 <li>
-<p>**revert：**恢复先前的一次提交</p>
+<p><strong>revert</strong>：恢复先前的一次提交</p>
 </li>
 </ul>
 <h2 id="删除gitlab中的文件夹">删除gitlab中的文件夹</h2>
@@ -718,64 +703,6 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 添加远程仓库地址</span>
 </span></span><span class="line"><span class="cl">git remote add origin git@github.com:chengtry/chengtry.github.io.git（仓库的SSH URL）
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="hexo更新文件">Hexo更新文件</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hexo clean
-</span></span><span class="line"><span class="cl">hexo generate
-</span></span><span class="line"><span class="cl">hexo deploy
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="hugo更新部署">hugo更新部署</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#添加新博客</span>
-</span></span><span class="line"><span class="cl">hugo new post/test.md
-</span></span><span class="line"><span class="cl"><span class="c1"># 生成网站所需数据</span>
-</span></span><span class="line"><span class="cl">hugo -D 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># hugo标签和目录</span>
-</span></span><span class="line"><span class="cl">在md文件中加上如下即可配置即可，categories：目录，tags：标签
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: <span class="s2">&#34;Java&#34;</span>
-</span></span><span class="line"><span class="cl">date: 2023-02-14T19:55:47+08:00
-</span></span><span class="line"><span class="cl">draft: <span class="nb">true</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">categories: 
-</span></span><span class="line"><span class="cl">- Study
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">tags:
-</span></span><span class="line"><span class="cl">- Java
-</span></span><span class="line"><span class="cl">- Spring
-</span></span><span class="line"><span class="cl">---
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="github">Github</h1>
@@ -941,6 +868,33 @@
 </span></span><span class="line"><span class="cl">git reset HEAD~
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="git回退到指定版本代码">git回退到指定版本代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看指定版本的提交号</span>
+</span></span><span class="line"><span class="cl">git log
+</span></span><span class="line"><span class="cl"><span class="c1"># 回退指定版本</span>
+</span></span><span class="line"><span class="cl">git checkout f6a6617346a2ccc08404d67b56051eb36a1d014e <span class="c1"># 这个是版本号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 回到原始代码</span>
+</span></span><span class="line"><span class="cl">git checkout 原始代码提交号 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者切换到主分支，默认回到最新代码位置</span>
+</span></span><span class="line"><span class="cl">git switch master
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -952,7 +906,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-03-13 19:18:22
+        2023-04-27 14:32:30
         
     </span>
   </p>
