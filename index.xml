@@ -6,7 +6,16 @@
     <description>Recent content on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 Apr 2023 17:31:33 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Apr 2023 16:21:38 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MinIo</title>
+      <link>https://chengtry.github.io/post/minio/</link>
+      <pubDate>Fri, 28 Apr 2023 16:21:38 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/minio/</guid>
+      <description>MinIo安装部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 # 下载安装 cd /yc mkdir minio cd minio wget https://dl.min.io/server/minio/release/linux-amd64/minio # 下载完成后，当前minio目录下，</description>
+    </item>
+    
     <item>
       <title>记录MySQL遇到的一个奇怪的问题</title>
       <link>https://chengtry.github.io/post/%E8%AE%B0%E5%BD%95mysql%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%A5%87%E6%80%AA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
