@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>闪屏 on chengtry</title>
+    <link>https://chengtry.github.io/tags/%E9%97%AA%E5%B1%8F/</link>
+    <description>Recent content in 闪屏 on chengtry</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 Jun 2023 22:20:12 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/%E9%97%AA%E5%B1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录下电脑闪屏的问题</title>
+      <link>https://chengtry.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 09 Jun 2023 22:20:12 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>起因 今天下班回家打开电脑，一开始一切正常，过了一会发现电源图标不见了，设置里也开启了电源图标展示，于是重启电脑，然后就一直闪屏。 经过 一开始闪</description>
+    </item>
+    
+  </channel>
+</rss>
