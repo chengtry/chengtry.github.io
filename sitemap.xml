@@ -3,28 +3,49 @@
   
   <url>
     <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-06-09T22:35:03+08:00</lastmod>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-06-09T22:35:03+08:00</lastmod>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/linux/</loc>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
-    <lastmod>2023-06-09T22:35:03+08:00</lastmod>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/shell/</loc>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/shell/</loc>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/tags/</loc>
-    <lastmod>2023-06-09T22:35:03+08:00</lastmod>
+    <lastmod>2023-06-10T20:35:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -417,13 +438,6 @@
   <url>
     <loc>https://chengtry.github.io/post/springcloud/</loc>
     <lastmod>2023-02-27T19:47:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/linux/</loc>
-    <lastmod>2023-04-27T18:31:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

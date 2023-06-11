@@ -6,7 +6,16 @@
     <description>Recent content in Linux on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Feb 2023 21:57:36 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 20:14:32 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell</title>
+      <link>https://chengtry.github.io/post/shell/</link>
+      <pubDate>Sat, 10 Jun 2023 20:14:32 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/shell/</guid>
+      <description>shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一</description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://chengtry.github.io/post/linux/</link>

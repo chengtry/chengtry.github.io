@@ -6,7 +6,16 @@
     <description>Recent content in Posts on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Jun 2023 22:20:12 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 20:14:32 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell</title>
+      <link>https://chengtry.github.io/post/shell/</link>
+      <pubDate>Sat, 10 Jun 2023 20:14:32 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/shell/</guid>
+      <description>shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一</description>
+    </item>
+    
     <item>
       <title>记录下电脑闪屏的问题</title>
       <link>https://chengtry.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>

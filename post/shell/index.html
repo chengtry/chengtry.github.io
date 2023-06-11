@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/shell/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f4f3850fc1de83dad6ea2e076bd92fabda928cb902ec9662f80aad35fb865d2d.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell" />
+<meta property="og:description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/shell/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-10T20:14:32+08:00" />
+<meta property="article:modified_time" content="2023-06-10T20:35:42+08:00" />
+
+<meta itemprop="name" content="Shell">
+<meta itemprop="description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"><meta itemprop="datePublished" content="2023-06-10T20:14:32+08:00" />
+<meta itemprop="dateModified" content="2023-06-10T20:35:42+08:00" />
+<meta itemprop="wordCount" content="1294">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell"/>
+<meta name="twitter:description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+  
+  <br>
+  <span id="jinrishici-sentence">正在加载今日诗词....</span>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-06-10 20:14:32 </span>
+        <div class="post-category">
+            <a href="/categories/shell/"> shell </a>
+            </div>
+          <span class="more-meta"> 约 1294 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell编程">shell编程</a>
+      <ul>
+        <li><a href="#什么是shell">什么是shell</a></li>
+        <li><a href="#什么是shell脚本">什么是shell脚本</a></li>
+        <li><a href="#shebang">shebang</a></li>
+        <li><a href="#shell花括号集合简化">shell花括号集合（简化）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell编程">shell编程</h1>
+<h2 id="什么是shell">什么是shell</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一个文件，可以先写一段C语言的代码，然后调用系统函数，通过gCc编译后，运行程序才能找到文件。。。
+</span></span><span class="line"><span class="cl">因此有大牛开发出了shell解释器，能够让我们方便的使用Linux,例如只要敲下ls -1h这样的字符串，shell解释器就会针对这句话翻译，解释成ls -l -h然后执行，通过终端输出结果，无论是图形化或是命令行界面。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">shell的作用：
+</span></span><span class="line"><span class="cl">1.解释执行用户输入的命令或程序等
+</span></span><span class="line"><span class="cl">2·用户输入一条命令，shell就解释一条
+</span></span><span class="line"><span class="cl">3·键盘输入命令，Liux给与响应的方式，称之为交互式
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="什么是shell脚本">什么是shell脚本</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">当命令或者程序语句写在文件中，我们执行文件，读取其中的代码，这个程序文件就称之为shell脚本。
+</span></span><span class="line"><span class="cl">在shell脚本里定义多条Linux命令以及循环控制语句，然后将这些Liux命令一次性执行完毕，执行脚本文件的方式称之为：非交互式方式。
+</span></span><span class="line"><span class="cl">·windows中存在*.bat批处理脚本
+</span></span><span class="line"><span class="cl">·Linux中常用*.sh脚本文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="shebang">shebang</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">计算机程序中，shebang指的是出现在文本文件的第一行前两个字符#!
+</span></span><span class="line"><span class="cl">在Unix系统中，程序会分析shebang后面的内容，作为解释器的指令，例如
+</span></span><span class="line"><span class="cl">·以#!/bin/sh开头的文件，程序在执行的时候会调用/bin/sh,也就是bash解释器
+</span></span><span class="line"><span class="cl">·以#!/usr/bin/python开头的文件，代表指定python解释器去执行
+</span></span><span class="line"><span class="cl">·以#!/usr/bin/env解释器名称，是一种在不同平台上都能正确找到解释器的办法
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">注意事项：
+</span></span><span class="line"><span class="cl">·如果脚本未指定shebang,脚本执行的时候，默认用当前shell去解释脚本，即$SHELL
+</span></span><span class="line"><span class="cl">·如果shebang指定了可执行的解释器，如/bin/bash/usr/bin/python,脚本在执行时，文件名会作为参数传递给解释器
+</span></span><span class="line"><span class="cl">·如果#!指定的解释程序没有可执行权限，则会报错“bad interpreter:Permission denied&#34;。
+</span></span><span class="line"><span class="cl">·如果#!指定的解释程序不是一个可执行文件，那么指定的解释程序会被忽略，转而交给当前的SHELL去执行这个脚本。
+</span></span><span class="line"><span class="cl">·如果#!指定的解释程序不存在，那么会报错“bad interpreter:No such file or directory”。
+</span></span><span class="line"><span class="cl">·#!之后的解释程序，需要写其绝对路径（如：#!/bin/bash),它是不会自动到$PATH中寻找解释器的。
+</span></span><span class="line"><span class="cl">·如果你使用&#34;bash test..sh&#34;这样的命令来执行脚本，那么#!这一行将会被忽略掉，解释器当然是用命令行中显式指定的bash。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="shell花括号集合简化">shell花括号集合（简化）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># {}花括号也叫大括号，它定义了一个集合，集合内可以有多个枚举的项，每个项使用逗号分隔。花括号能启动一个展开的作用，可以把集合内的每一个项与外面的字符串组合，然后返回全部组合项，和前面命令配合起来，就能起到多个入参的效果</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 能够接收多个参数的命令都可以使用花括号，如：echo、cp、mkdir、mv、for</span>
+</span></span><span class="line"><span class="cl">cp test<span class="o">{</span>,.bak<span class="o">}</span> --&gt; 将test复制成test.bak，等同于 cp <span class="nb">test</span> test.bak
+</span></span><span class="line"><span class="cl">mkdir test<span class="o">{</span>,.bak<span class="o">}</span> --&gt; 创建两个目录：test test.bak
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="o">{</span>1..5<span class="o">}</span> --&gt; 输出：1 <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-06-10 20:35:42
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/">
+            <span class="next-text nav-default">记录下电脑闪屏的问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  function createCopyButton(highlightDiv) {
+    const div = document.createElement("div");
+    div.className = "copy-code";
+    div.innerText = "Copy";
+    div.addEventListener("click", () =>
+      copyCodeToClipboard(div, highlightDiv)
+    );
+    addCopyButtonToDom(div, highlightDiv);
+  }
+
+  async function copyCodeToClipboard(button, highlightDiv) {
+    const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code")
+      .innerText;
+    await navigator.clipboard.writeText(codeToCopy);
+    button.blur();
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 2000);
+  }
+
+  function addCopyButtonToDom(button, highlightDiv) {
+    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    const wrapper = document.createElement("div");
+    wrapper.className = "highlight-wrapper";
+    highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+    wrapper.appendChild(highlightDiv);
+  }
+
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile){
+     document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+  }
+</script>  
+
+
+</body>
+</html>
