@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/git/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-03-10T18:37:15+08:00" />
-<meta property="article:modified_time" content="2023-05-31T16:21:01+08:00" />
+<meta property="article:modified_time" content="2023-06-12T20:47:47+08:00" />
 
 <meta itemprop="name" content="Git">
 <meta itemprop="description" content="Git Git与SVN的区别 1 2 3 4 5 6 7 8 9 Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版"><meta itemprop="datePublished" content="2023-03-10T18:37:15+08:00" />
-<meta itemprop="dateModified" content="2023-05-31T16:21:01+08:00" />
-<meta itemprop="wordCount" content="3431">
+<meta itemprop="dateModified" content="2023-06-12T20:47:47+08:00" />
+<meta itemprop="wordCount" content="3537">
 <meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git"/>
 <meta name="twitter:description" content="Git Git与SVN的区别 1 2 3 4 5 6 7 8 9 Git是分布式版本控制系统，没有中央服务器，每个人的电脑都是一个完整的版本库，工作时不用联网，因为版"/>
@@ -141,8 +141,8 @@
             <a href="/categories/study/"> Study </a>
             <a href="/categories/note/"> Note </a>
             </div>
-          <span class="more-meta"> 约 3431 字 </span>
-          <span class="more-meta"> 预计阅读 7 分钟 </span>
+          <span class="more-meta"> 约 3537 字 </span>
+          <span class="more-meta"> 预计阅读 8 分钟 </span>
         
       </div>
     </header>
@@ -158,11 +158,8 @@
         <li><a href="#常用命令">常用命令</a></li>
         <li><a href="#git-clone出错遇到的问题">git clone出错遇到的问题</a></li>
         <li><a href="#git文件操作">Git文件操作</a></li>
-        <li><a href="#git分支常用命令">Git分支常用命令</a>
-          <ul>
-            <li><a href="#常用命令-1">常用命令</a></li>
-          </ul>
-        </li>
+        <li><a href="#git分支常用命令">Git分支常用命令</a></li>
+        <li><a href="#常用命令-1">常用命令</a></li>
         <li><a href="#git提交">Git提交</a></li>
         <li><a href="#删除gitlab中的文件夹">删除gitlab中的文件夹</a></li>
         <li><a href="#查看远程仓库">查看远程仓库</a></li>
@@ -430,6 +427,14 @@
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 列出本地所有本地分支</span>
@@ -446,6 +451,14 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 合并指定分支到当前分支</span>
 </span></span><span class="line"><span class="cl">git merge <span class="o">[</span>branch<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 例如合并test分支到主分支</span>
+</span></span><span class="line"><span class="cl">git checkout -b <span class="nb">test</span> <span class="c1"># 新建并切换到test分支</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;测试test分支&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin <span class="nb">test</span> <span class="c1"># 推送到远程test分支</span>
+</span></span><span class="line"><span class="cl">git switch main <span class="c1"># 切换为主分支</span>
+</span></span><span class="line"><span class="cl">git merge <span class="nb">test</span> <span class="c1"># 合并test分支到主分支</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 删除分支</span>
 </span></span><span class="line"><span class="cl">git branch -d <span class="o">[</span>branch-name<span class="o">]</span>
@@ -467,7 +480,7 @@
 </span></span><span class="line"><span class="cl">git branch --set-upstream-to<span class="o">=</span>origin/province_xizang
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="常用命令-1">常用命令</h3>
+</div><h2 id="常用命令-1">常用命令</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -815,7 +828,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-05-31 16:21:01
+        2023-06-12 20:47:47
         
     </span>
   </p>
