@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/shell/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-06-10T20:14:32+08:00" />
-<meta property="article:modified_time" content="2023-06-10T20:35:42+08:00" />
+<meta property="article:modified_time" content="2023-06-13T22:45:22+08:00" />
 
 <meta itemprop="name" content="Shell">
 <meta itemprop="description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"><meta itemprop="datePublished" content="2023-06-10T20:14:32+08:00" />
-<meta itemprop="dateModified" content="2023-06-10T20:35:42+08:00" />
-<meta itemprop="wordCount" content="1294">
+<meta itemprop="dateModified" content="2023-06-13T22:45:22+08:00" />
+<meta itemprop="wordCount" content="1995">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell"/>
 <meta name="twitter:description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"/>
@@ -140,8 +140,8 @@
         <div class="post-category">
             <a href="/categories/shell/"> shell </a>
             </div>
-          <span class="more-meta"> 约 1294 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1995 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
     </header>
@@ -157,6 +157,8 @@
         <li><a href="#什么是shell脚本">什么是shell脚本</a></li>
         <li><a href="#shebang">shebang</a></li>
         <li><a href="#shell花括号集合简化">shell花括号集合（简化）</a></li>
+        <li><a href="#shell变量">shell变量</a></li>
+        <li><a href="#变量作用域">变量作用域</a></li>
       </ul>
     </li>
   </ul>
@@ -181,9 +183,9 @@
 </span></span><span class="line"><span class="cl">因此有大牛开发出了shell解释器，能够让我们方便的使用Linux,例如只要敲下ls -1h这样的字符串，shell解释器就会针对这句话翻译，解释成ls -l -h然后执行，通过终端输出结果，无论是图形化或是命令行界面。
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">shell的作用：
-</span></span><span class="line"><span class="cl">1.解释执行用户输入的命令或程序等
-</span></span><span class="line"><span class="cl">2·用户输入一条命令，shell就解释一条
-</span></span><span class="line"><span class="cl">3·键盘输入命令，Liux给与响应的方式，称之为交互式
+</span></span><span class="line"><span class="cl">● 解释执行用户输入的命令或程序等
+</span></span><span class="line"><span class="cl">● 用户输入一条命令，shell就解释一条
+</span></span><span class="line"><span class="cl">● 键盘输入命令，Liux给与响应的方式，称之为交互式
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="什么是shell脚本">什么是shell脚本</h2>
@@ -197,8 +199,8 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">当命令或者程序语句写在文件中，我们执行文件，读取其中的代码，这个程序文件就称之为shell脚本。
 </span></span><span class="line"><span class="cl">在shell脚本里定义多条Linux命令以及循环控制语句，然后将这些Liux命令一次性执行完毕，执行脚本文件的方式称之为：非交互式方式。
-</span></span><span class="line"><span class="cl">·windows中存在*.bat批处理脚本
-</span></span><span class="line"><span class="cl">·Linux中常用*.sh脚本文件
+</span></span><span class="line"><span class="cl">● windows中存在*.bat批处理脚本
+</span></span><span class="line"><span class="cl">● Linux中常用*.sh脚本文件
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="shebang">shebang</h2>
@@ -222,18 +224,18 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">计算机程序中，shebang指的是出现在文本文件的第一行前两个字符#!
 </span></span><span class="line"><span class="cl">在Unix系统中，程序会分析shebang后面的内容，作为解释器的指令，例如
-</span></span><span class="line"><span class="cl">·以#!/bin/sh开头的文件，程序在执行的时候会调用/bin/sh,也就是bash解释器
-</span></span><span class="line"><span class="cl">·以#!/usr/bin/python开头的文件，代表指定python解释器去执行
-</span></span><span class="line"><span class="cl">·以#!/usr/bin/env解释器名称，是一种在不同平台上都能正确找到解释器的办法
+</span></span><span class="line"><span class="cl">● 以#!/bin/sh开头的文件，程序在执行的时候会调用/bin/sh,也就是bash解释器
+</span></span><span class="line"><span class="cl">● 以#!/usr/bin/python开头的文件，代表指定python解释器去执行
+</span></span><span class="line"><span class="cl">● 以#!/usr/bin/env解释器名称，是一种在不同平台上都能正确找到解释器的办法
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">注意事项：
-</span></span><span class="line"><span class="cl">·如果脚本未指定shebang,脚本执行的时候，默认用当前shell去解释脚本，即$SHELL
-</span></span><span class="line"><span class="cl">·如果shebang指定了可执行的解释器，如/bin/bash/usr/bin/python,脚本在执行时，文件名会作为参数传递给解释器
-</span></span><span class="line"><span class="cl">·如果#!指定的解释程序没有可执行权限，则会报错“bad interpreter:Permission denied&#34;。
-</span></span><span class="line"><span class="cl">·如果#!指定的解释程序不是一个可执行文件，那么指定的解释程序会被忽略，转而交给当前的SHELL去执行这个脚本。
-</span></span><span class="line"><span class="cl">·如果#!指定的解释程序不存在，那么会报错“bad interpreter:No such file or directory”。
-</span></span><span class="line"><span class="cl">·#!之后的解释程序，需要写其绝对路径（如：#!/bin/bash),它是不会自动到$PATH中寻找解释器的。
-</span></span><span class="line"><span class="cl">·如果你使用&#34;bash test..sh&#34;这样的命令来执行脚本，那么#!这一行将会被忽略掉，解释器当然是用命令行中显式指定的bash。
+</span></span><span class="line"><span class="cl">● 如果脚本未指定shebang,脚本执行的时候，默认用当前shell去解释脚本，即$SHELL
+</span></span><span class="line"><span class="cl">● 如果shebang指定了可执行的解释器，如/bin/bash/usr/bin/python,脚本在执行时，文件名会作为参数传递给解释器
+</span></span><span class="line"><span class="cl">● 如果#!指定的解释程序没有可执行权限，则会报错“bad interpreter:Permission denied&#34;。
+</span></span><span class="line"><span class="cl">● 如果#!指定的解释程序不是一个可执行文件，那么指定的解释程序会被忽略，转而交给当前的SHELL去执行这个脚本。
+</span></span><span class="line"><span class="cl">● 如果#!指定的解释程序不存在，那么会报错“bad interpreter:No such file or directory”。
+</span></span><span class="line"><span class="cl">● #!之后的解释程序，需要写其绝对路径（如：#!/bin/bash),它是不会自动到$PATH中寻找解释器的。
+</span></span><span class="line"><span class="cl">● 如果你使用&#34;bash test..sh&#34;这样的命令来执行脚本，那么#!这一行将会被忽略掉，解释器当然是用命令行中显式指定的bash。
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="shell花括号集合简化">shell花括号集合（简化）</h2>
@@ -253,7 +255,116 @@
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="o">{</span>1..5<span class="o">}</span> --&gt; 输出：1 <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="shell变量">shell变量</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 变量定义与赋值，注意变量与值之间不得有空格，bash默认把所有变量都认为是字符串。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bash变量是弱类型，无需事先声明类型，是将声明和赋值同时进行</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="s2">&#34;yangcheng&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 变量替换/引用</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="s2">&#34;yangcheng&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$name</span> <span class="c1"># {}花括号可以省略</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">变量名规则
+</span></span><span class="line"><span class="cl">● 名称定义要做到见名知意，按照规则来，切不得引用保留关键字<span class="o">(</span>help检查保留字<span class="o">)</span>
+</span></span><span class="line"><span class="cl">● 只能包含数字、字母、下划线
+</span></span><span class="line"><span class="cl">● 不能以数字开头
+</span></span><span class="line"><span class="cl">● 不能用标点符号
+</span></span><span class="line"><span class="cl">● 变量名严格区分大小写
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">位置参数变量：用于shell脚本中传递的参数
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">特殊变量：shell内置的特殊功效变量
+</span></span><span class="line"><span class="cl"><span class="nv">$?</span>  <span class="c1"># 判断上一次命令是否执行成功。0：成功，1-255：错误码</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">自定义变量
+</span></span><span class="line"><span class="cl">● 变量赋值：varName<span class="o">=</span>value
+</span></span><span class="line"><span class="cl">● 变量引用：<span class="si">${</span><span class="nv">varName</span><span class="si">}</span>、<span class="nv">$varName</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="变量作用域">变量作用域</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">变量作用域
+</span></span><span class="line"><span class="cl">● 本地变量，只针对当前的shell进程
+</span></span><span class="line"><span class="cl">pstree <span class="c1"># 检查进程树命令</span>
+</span></span><span class="line"><span class="cl">● 环境变量，也称为全局变量，针对当前shell以及其任意子进程，环境变量也分自定义、内置两种环境变量
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="c1"># 这个切换shell，$PATH显示的内容还是一样的</span>
+</span></span><span class="line"><span class="cl">● 局部变量，针对在shell函数或是shell脚本中定义
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 单引号变量，不识别特殊语法</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="s2">&#34;yangcheng&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name1</span><span class="o">=</span><span class="s1">&#39;${name}&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$name1</span> --&gt; <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 双引号变量，能识别特殊符号</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="s2">&#34;yangcheng&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name2</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$name2</span> --&gt; yangcheng
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 不同的执行方式，不同的shell环境</span>
+</span></span><span class="line"><span class="cl">1.每次调用bash/sh解释器执行脚本都会开启一个子shell,因此不保留当前的shell变量，通过pstree命令检查进程树
+</span></span><span class="line"><span class="cl">2.调用source或者.符号，在当前shell环境加载脚本，因此保留变量
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># `linux反引号`：在linux中反引号，中的命令执行结果会被保留下来</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$name</span> --&gt; /root
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230613224028.png" alt=""></p>
+
     </div>
 
     <div class="post-copyright">
@@ -264,7 +375,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-06-10 20:35:42
+        2023-06-13 22:45:22
         
     </span>
   </p>
