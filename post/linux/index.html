@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-18T21:57:36+08:00" />
-<meta property="article:modified_time" content="2023-04-27T18:31:44+08:00" />
+<meta property="article:modified_time" content="2023-06-14T21:57:33+08:00" />
 
 <meta itemprop="name" content="Linux">
 <meta itemprop="description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解"><meta itemprop="datePublished" content="2023-02-18T21:57:36+08:00" />
-<meta itemprop="dateModified" content="2023-04-27T18:31:44+08:00" />
-<meta itemprop="wordCount" content="9393">
+<meta itemprop="dateModified" content="2023-06-14T21:57:33+08:00" />
+<meta itemprop="wordCount" content="9672">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
 <meta name="twitter:description" content="Linux命令 基础命令： tar解压命令： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 # 解压 tar包 tar -xvf file.tar # 解压tar.gz tar -zxvf file.tar.gz 例如：tar -zxvf redis-6.0.6.tar.gz # 解"/>
@@ -140,8 +140,8 @@
         <div class="post-category">
             <a href="/categories/study/"> Study </a>
             </div>
-          <span class="more-meta"> 约 9393 字 </span>
-          <span class="more-meta"> 预计阅读 19 分钟 </span>
+          <span class="more-meta"> 约 9672 字 </span>
+          <span class="more-meta"> 预计阅读 20 分钟 </span>
         
       </div>
     </header>
@@ -221,6 +221,7 @@
         <li><a href="#linux通过df和du查看磁盘使用的大小不一致问题">Linux通过df和du查看磁盘使用的大小不一致问题</a></li>
         <li><a href="#linux中scp在后台运行">Linux中scp在后台运行</a></li>
         <li><a href="#查看文件是否是同一个文件">查看文件是否是同一个文件</a></li>
+        <li><a href="#linux文件权限">linux文件权限</a></li>
       </ul>
     </li>
     <li><a href="#linux防火墙问题">Linux防火墙问题</a>
@@ -1519,6 +1520,37 @@
 </span></span><span class="line"><span class="cl">ls -ilL  文件名
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="linux文件权限">linux文件权限</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">r(read)--读--数字4
+</span></span><span class="line"><span class="cl">w(write)--写--数字2
+</span></span><span class="line"><span class="cl">x(excute)--执行--数字1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">文件权限		属主权限		属组权限		其他用户权限
+</span></span><span class="line"><span class="cl">   0			123			   456			  789
+</span></span><span class="line"><span class="cl">例如：-rewr-xr-x 1 wasadmin wasadmin 110 Jun 14 13:27 yangcheng.sh
+</span></span><span class="line"><span class="cl">表明这是一个文件，自己对该文件有读、写、执行权限，同组用户对该文件有读、执行权限，其他用户对该文件有读、执行权限。
+</span></span><span class="line"><span class="cl">第0位字母：表示文件类型：[-]：文件，[d]：目录
+</span></span><span class="line"><span class="cl">第123位字母：rwx：4+2+1=7，有读、写、执行权限
+</span></span><span class="line"><span class="cl">第456位字母：r-x：4+0+1=5，有读、执行权限
+</span></span><span class="line"><span class="cl">第789位字母：r-x：4+0+1=5，有读、执行权限
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h1 id="linux防火墙问题">Linux防火墙问题</h1>
 <h2 id="1查看firewall服务状态">1、查看firewall服务状态</h2>
 <div class="highlight"><div class="chroma">
@@ -2308,7 +2340,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-04-27 18:31:44
+        2023-06-14 21:57:33
         
     </span>
   </p>

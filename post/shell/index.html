@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/shell/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-06-10T20:14:32+08:00" />
-<meta property="article:modified_time" content="2023-06-13T22:45:22+08:00" />
+<meta property="article:modified_time" content="2023-06-14T21:51:40+08:00" />
 
 <meta itemprop="name" content="Shell">
 <meta itemprop="description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"><meta itemprop="datePublished" content="2023-06-10T20:14:32+08:00" />
-<meta itemprop="dateModified" content="2023-06-13T22:45:22+08:00" />
-<meta itemprop="wordCount" content="1995">
+<meta itemprop="dateModified" content="2023-06-14T21:51:40+08:00" />
+<meta itemprop="wordCount" content="2810">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell"/>
 <meta name="twitter:description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"/>
@@ -140,8 +140,8 @@
         <div class="post-category">
             <a href="/categories/shell/"> shell </a>
             </div>
-          <span class="more-meta"> 约 1995 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+          <span class="more-meta"> 约 2810 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
     </header>
@@ -159,6 +159,8 @@
         <li><a href="#shell花括号集合简化">shell花括号集合（简化）</a></li>
         <li><a href="#shell变量">shell变量</a></li>
         <li><a href="#变量作用域">变量作用域</a></li>
+        <li><a href="#环境变量设置">环境变量设置</a></li>
+        <li><a href="#特殊变量">特殊变量</a></li>
       </ul>
     </li>
   </ul>
@@ -364,7 +366,81 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230613224028.png" alt=""></p>
-
+<h2 id="环境变量设置">环境变量设置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">环境变量一般指的是用export内置命令导出的变量，用于定义shell的运行环境、保证shell命令的正确执行。
+</span></span><span class="line"><span class="cl">shell通过环境变量确定登录的用户名、PATH路径、文件系统等各种应用。
+</span></span><span class="line"><span class="cl">环境变量可以在命令行中临时创建，但是用户退出shell终端，变量即丢失，如要永久生效，需要修改环境变量配置文件
+</span></span><span class="line"><span class="cl">● 用户个人配置文件~/.bash_profile、~/.bashrc远程登录用户特有文件，以个人配置文件优先生效，优先加载、读取
+</span></span><span class="line"><span class="cl">● 全局配置文件/etc/profile、/etc/bashrc,且系统建议最好创建在/etc/profile.d/,而非直接修改主文件，修改全局配置文件，影响所有登录系统的用户
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">检查系统环境变量的命令
+</span></span><span class="line"><span class="cl">● set,输出所有变量，包括全局变量、局部变量
+</span></span><span class="line"><span class="cl">● env,只显示全局变量
+</span></span><span class="line"><span class="cl">● declare,输出所有的变量，如同set
+</span></span><span class="line"><span class="cl">● export,显示和设置环境变量值
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">撤销环境变量
+</span></span><span class="line"><span class="cl">● unset变量名，删除变量或函数。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">设置只读变量
+</span></span><span class="line"><span class="cl">● readonly,只有shell结束，只读变量失效
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">系统保留环境变量关键字
+</span></span><span class="line"><span class="cl"><span class="c1"># bash内嵌了诸多环境变量，用于定义bash的工作环境</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="p">|</span>awk -F <span class="s1">&#39;[ :=]&#39;</span> <span class="s1">&#39;{print $3}&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bash多命令执行：以分号（;）分隔</span>
+</span></span><span class="line"><span class="cl">ls /data/<span class="p">;</span><span class="nb">cd</span> /tmp/<span class="p">;</span><span class="nb">cd</span> /home<span class="p">;</span><span class="nb">cd</span> /data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="特殊变量">特殊变量</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># shell的特殊变量，用在如脚本，函数传递参数使用，有如下特殊的，位置参数变量</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$0</span>   <span class="c1"># 获取shell脚本文件名，以及脚本路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$n</span>   <span class="c1"># 获取shell脚本的第n个参数，n在1~9之间，如$1，$2，$9，大于9则需要写，${10}，参数空格隔开</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$#</span>   <span class="c1"># 获取执行的shell脚本后面的参数总个数</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$*</span>   <span class="c1"># 获取shell脚本所有参数，不加引号等同于$@作用，加上引号&#34;$*&#34;作用是接收所有参数为单个字符串，&#34;$1$2..</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$@</span>   <span class="c1"># 不加引号，效果同上，加引号，是接收所有参数为独立字符串，如&#34;$1&#34; &#34;$2&#34; &#34;$3&#34; ...，空格保留</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -375,7 +451,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-06-13 22:45:22
+        2023-06-14 21:51:40
         
     </span>
   </p>
