@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chengtry.github.io/post/shell/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-06-10T20:14:32+08:00" />
-<meta property="article:modified_time" content="2023-06-20T20:10:19+08:00" />
+<meta property="article:modified_time" content="2023-06-25T00:03:42+08:00" />
 
 <meta itemprop="name" content="Shell">
 <meta itemprop="description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"><meta itemprop="datePublished" content="2023-06-10T20:14:32+08:00" />
-<meta itemprop="dateModified" content="2023-06-20T20:10:19+08:00" />
-<meta itemprop="wordCount" content="3691">
+<meta itemprop="dateModified" content="2023-06-25T00:03:42+08:00" />
+<meta itemprop="wordCount" content="5286">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell"/>
 <meta name="twitter:description" content="shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一"/>
@@ -140,8 +140,8 @@
         <div class="post-category">
             <a href="/categories/shell/"> shell </a>
             </div>
-          <span class="more-meta"> 约 3691 字 </span>
-          <span class="more-meta"> 预计阅读 8 分钟 </span>
+          <span class="more-meta"> 约 5286 字 </span>
+          <span class="more-meta"> 预计阅读 11 分钟 </span>
         
       </div>
     </header>
@@ -164,6 +164,23 @@
         <li><a href="#shell子串">shell子串</a></li>
         <li><a href="#shell子串的花式用法">shell子串的花式用法</a></li>
         <li><a href="#特殊shell扩展变量">特殊shell扩展变量</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell开发">shell开发</a>
+      <ul>
+        <li><a href="#shell数学运算">shell数学运算</a></li>
+        <li><a href="#用于数值计算的命令">用于数值计算的命令</a>
+          <ul>
+            <li><a href="#双小括号">双小括号(())</a></li>
+            <li><a href="#shell数值计算脚本示例">shell数值计算脚本示例</a></li>
+            <li><a href="#let命令运算">let命令运算</a></li>
+            <li><a href="#expr命令">expr命令</a></li>
+            <li><a href="#expr模式匹配">expr模式匹配</a></li>
+            <li><a href="#bc命令">bc命令</a></li>
+            <li><a href="#awk计算">awk计算</a></li>
+            <li><a href="#中括号计算">中括号计算</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -560,6 +577,374 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 例：echo $name --&gt; (这里表示空); echo ${name:+test} --&gt; (这里表示空);</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h1 id="shell开发">shell开发</h1>
+<h2 id="shell数学运算">shell数学运算</h2>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230624230234.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230624230355.png" alt=""></p>
+<h2 id="用于数值计算的命令">用于数值计算的命令</h2>
+<h3 id="双小括号">双小括号(())</h3>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230624230528.png" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># shell的一些基础命令，只支持整数的运算，小数的计算需要如bc这样的命令才支持</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出时必须在(())加上$，如果值为真返回1，否则返回0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo ((8&gt;7))</span>
+</span></span><span class="line"><span class="cl">-bash: syntax error near unexpected token <span class="sb">`</span><span class="o">(</span><span class="err">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((8&gt;7))</span>
+</span></span><span class="line"><span class="cl"><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((8&lt;7))</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((4&lt;1&amp;&amp;1==1))</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((4&gt;1&amp;&amp;1==1))</span>
+</span></span><span class="line"><span class="cl"><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((1*2))</span>
+</span></span><span class="line"><span class="cl"><span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((1.1*2))</span>
+</span></span><span class="line"><span class="cl">-bash: 1.1*2: syntax error: invalid arithmetic operator <span class="o">(</span>error token is <span class="s2">&#34;.1*2&#34;</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="shell数值计算脚本示例">shell数值计算脚本示例</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#/bin/bash</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 脚本开发</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 函数的作用，就是把你写的功能代码，进行打包，封装成一个函数名，然后调用该函数名，函数就会执行</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 函数体中的代码就会执行</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 函数的名字</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这个函数作用是，告诉用户，你到底应该输入什么的一个简单提示函数而已</span>
+</span></span><span class="line"><span class="cl">print_usage<span class="o">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">printf</span> <span class="s2">&#34;Please enter an integer\n&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 给脚本的执行结果，赋予一个状态码，退出码</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 接受用户输入的命令，参数后面写，给用户看到的提示信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># read-p&#34;提示信息”接受用户输入的变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Please input your number:&#34;</span> firstnum
+</span></span><span class="line"><span class="cl"><span class="c1"># 进行对用户输入判断f语句</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意语法格式！！</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 限制用户必须输入纯数字</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 中括号里面前后必须有一个空格，是固定的语法</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -n参数是if的语句，对字符串判断，如果字符串为空，条件就不成立，如果字符串不为空，条件成立</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># qwe123</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sed的作用就是把上述字符串&#34;qwe123”进行替换，我把所有的数字都替换为空，那么就剩下其他非数字的内容了</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;`echo </span><span class="nv">$firstnum</span><span class="s2"> | sed &#39;s/[0-9]//g&#39;`&#34;</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">then</span>
+</span></span><span class="line"><span class="cl">		print_usage
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 上面的代码都是对用户输入进行判断，希望用户输入3+5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 此时对运算符进行输入</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Please input your operator:&#34;</span> operator
+</span></span><span class="line"><span class="cl"><span class="c1"># 对运算符进行判断</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 限制在 + - * / 四个符号</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">operator</span><span class="si">}</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;+&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">operator</span><span class="si">}</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;-&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">operator</span><span class="si">}</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;*&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">operator</span><span class="si">}</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;/&#34;</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">then</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;只允许输入+|-|*|/&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">exit</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 对第二个变量进行处理</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Please input second number:&#34;</span> secondnum
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;`echo </span><span class="nv">$secondnum</span><span class="s2"> | sed &#39;s/[0-9]//g&#39;`&#34;</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">	print_usage
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 最后进行数值计算，利用双小括号计算</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">firstnum</span><span class="si">}${</span><span class="nv">operator</span><span class="si">}${</span><span class="nv">secondnum</span><span class="si">}</span><span class="s2">结果是：</span><span class="k">$((</span><span class="si">${</span><span class="nv">firstnum</span><span class="si">}${</span><span class="nv">operator</span><span class="si">}${</span><span class="nv">secondnum</span><span class="si">}</span><span class="k">))</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="let命令运算">let命令运算</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># let命令的执行，效果等同于双小括号。但是，双括号效率更高</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># num=2</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># let num=num+3</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $num</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="expr命令">expr命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># expr命令并不是很好用，基于空格传入参数，但是在shell里一些元字符都是有特殊含义的，需要转义</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 数值计算</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr 3 + 5</span>
+</span></span><span class="line"><span class="cl"><span class="m">8</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr 3 * 5</span>
+</span></span><span class="line"><span class="cl">expr: syntax error
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr 3 \* 5</span>
+</span></span><span class="line"><span class="cl"><span class="m">15</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 求长度</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr length yangc</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 逻辑判断,true返回1，否则返回0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr 1 \&gt; 2</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr 2 \&gt; 1</span>
+</span></span><span class="line"><span class="cl"><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="expr模式匹配">expr模式匹配</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># expr命令也支持模式匹配功能</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2个特殊符号</span>
+</span></span><span class="line"><span class="cl">: 冒号，计算字符串的字符数量，yangc 5个字符
+</span></span><span class="line"><span class="cl">.* 任意的字符串重复次或者多次
+</span></span><span class="line"><span class="cl"><span class="c1"># 语法 expr 字符串 &#34;:&#34; &#34;.*&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr yangc &#34;:&#34; &#34;.*&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># expr yangc &#34;:&#34; &#34;.a&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出小于6的字符串</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/bin/bash</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> var in i am yangcheng, i am learning studying shell programming
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[</span>  <span class="sb">`</span>expr length <span class="si">${</span><span class="nv">var</span><span class="si">}</span> <span class="sb">`</span> -lt <span class="m">6</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">then</span> 
+</span></span><span class="line"><span class="cl">                        <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="bc命令">bc命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># bc计算器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># awk支持数值计算</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 中括号运算</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># bc命令当作计算器来用的，命令行的计算器，支持交互式的操作</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># bc</span>
+</span></span><span class="line"><span class="cl">bc 1.06.95
+</span></span><span class="line"><span class="cl">Copyright 1991-1994, 1997, 1998, 2000, 2004, <span class="m">2006</span> Free Software Foundation, Inc.
+</span></span><span class="line"><span class="cl">This is free software with ABSOLUTELY NO WARRANTY.
+</span></span><span class="line"><span class="cl">For details <span class="nb">type</span> <span class="sb">`</span>warranty<span class="err">&#39;</span>. 
+</span></span><span class="line"><span class="cl">1+1
+</span></span><span class="line"><span class="cl"><span class="m">2</span>
+</span></span><span class="line"><span class="cl">2*2
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="cl">1.1*5
+</span></span><span class="line"><span class="cl">5.5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># bc命令结合管道符来计算数学，支持小数</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo 4*4 | bc</span>
+</span></span><span class="line"><span class="cl"><span class="m">16</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo 4.1*4 | bc</span>
+</span></span><span class="line"><span class="cl">16.4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 案例：计算1~100的总和</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bc命令计算</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tr &#34; &#34; &#34;+&#34; ： 将空格替换为+号</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((`echo {1..100} | tr &#34; &#34; &#34;+&#34;`))</span>
+</span></span><span class="line"><span class="cl"><span class="m">5050</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo {1..100} | tr &#34; &#34; &#34;+&#34; | bc</span>
+</span></span><span class="line"><span class="cl"><span class="m">5050</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 双括号计算</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $((`seq -s &#34;+&#34; 100`))</span>
+</span></span><span class="line"><span class="cl"><span class="m">5050</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># expr命令计算，这里稍有复杂，expr命令是接受多个参数来计算的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># expr接受以空格分割的，多个参数</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># linux下构造参数的命令xargs</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># seq -s &#34; + &#34; 100 | xargs expr</span>
+</span></span><span class="line"><span class="cl"><span class="m">5050</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="awk计算">awk计算</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># awk支持小数计算、支持if条件判断，数组等</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo &#34;2.2 2&#34; | awk &#39;{print (($1*$2))}&#39;</span>
+</span></span><span class="line"><span class="cl">4.4
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo &#34;2.2 1&#34; | awk &#39;{print (($1+2*$2))}&#39;</span>
+</span></span><span class="line"><span class="cl">4.2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="中括号计算">中括号计算</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># $[表达式]</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># num=1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@yc ~<span class="o">]</span><span class="c1"># echo $[num+2]</span>
+</span></span><span class="line"><span class="cl"><span class="m">3</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -571,7 +956,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-06-20 20:10:19
+        2023-06-25 00:03:42
         
     </span>
   </p>
