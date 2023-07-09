@@ -3,28 +3,49 @@
   
   <url>
     <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/tags/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/%E7%94%B5%E5%8A%A8%E8%BD%A6/</loc>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/%E4%B9%B0%E4%BA%86%E8%BE%86%E7%94%B5%E7%93%B6%E8%BD%A6/</loc>
+    <lastmod>2023-07-09T10:54:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,21 +73,21 @@
   
   <url>
     <loc>https://chengtry.github.io/tags/linux/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:32:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/categories/shell/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:32:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/shell/</loc>
-    <lastmod>2023-06-25T00:03:42+08:00</lastmod>
+    <lastmod>2023-07-09T10:32:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -95,13 +116,6 @@
   <url>
     <loc>https://chengtry.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%8Bidea%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2023-06-07T23:47:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2023-06-01T23:19:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
