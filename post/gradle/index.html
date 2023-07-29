@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Gradle - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/gradle/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f4f3850fc1de83dad6ea2e076bd92fabda928cb902ec9662f80aad35fb865d2d.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Gradle" />
+<meta property="og:description" content="最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/gradle/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-29T23:22:52+08:00" />
+<meta property="article:modified_time" content="2023-07-30T00:01:51+08:00" />
+
+<meta itemprop="name" content="Gradle">
+<meta itemprop="description" content="最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major"><meta itemprop="datePublished" content="2023-07-29T23:22:52+08:00" />
+<meta itemprop="dateModified" content="2023-07-30T00:01:51+08:00" />
+<meta itemprop="wordCount" content="1302">
+<meta itemprop="keywords" content="Gradlez," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gradle"/>
+<meta name="twitter:description" content="最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+  
+  <br>
+  <span id="jinrishici-sentence">正在加载今日诗词....</span>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Gradle</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-07-29 23:22:52 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            </div>
+          <span class="more-meta"> 约 1302 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#gradle安装">Gradle安装</a>
+          <ul>
+            <li><a href="#jdk版要求">JDK版要求</a></li>
+            <li><a href="#springboot版本要求">SpringBoot版本要求</a></li>
+            <li><a href="#idea版本要求">IDEA版本要求</a></li>
+            <li><a href="#下载安装">下载安装</a></li>
+            <li><a href="#配置环境变量">配置环境变量</a></li>
+          </ul>
+        </li>
+        <li><a href="#gradle项目">Gradle项目</a>
+          <ul>
+            <li><a href="#gradle项目结构">Gradle项目结构</a></li>
+            <li><a href="#修改maven下载源">修改maven下载源</a></li>
+            <li><a href="#initgradle文件说明">init.gradle文件说明</a></li>
+          </ul>
+        </li>
+        <li><a href="#gradle常用的指令">Gradle常用的指令</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>最近项目用到了gradle来构建项目，因此正好学习记录下</p>
+</blockquote>
+<h2 id="gradle安装">Gradle安装</h2>
+<h3 id="jdk版要求">JDK版要求</h3>
+<p>gradle官方文档指明JDK版本要在8以上</p>
+<p><a href="https://gradle.org/install/">https://gradle.org/install/</a></p>
+<p>Gradle runs on all major operating systems and requires only a <code>Java JDK version 8</code> or higher to be installed. To check, run <code>java -version</code>:</p>
+<h3 id="springboot版本要求">SpringBoot版本要求</h3>
+<p>SpringBoot官方文档明确指出，目前SpringBoot的Gradle插件需要gradle6.x版本及以上</p>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.5.0/gradle-plugin/reference/htmlsingle/#getting-started">https://docs.spring.io/spring-boot/docs/2.5.0/gradle-plugin/reference/htmlsingle/#getting-started</a></p>
+<p>The Spring Boot Gradle Plugin provides Spring Boot support in Gradle. It allows you to package executable jar or war archives, run Spring Boot applications, and use the dependency management provided by spring-boot-dependencies. Spring Boot’s Gradle plugin requires <code>Gradle 6.8, 6.9, or 7.x </code>and can be used with Gradle’s configuration cache.</p>
+<h3 id="idea版本要求">IDEA版本要求</h3>
+<p>除了Spring Boot与Gradle存在版本兼容问题，IDEA与Gradle也存在兼容问题。</p>
+<p>在IDEA安装目录：<code>IntelliJ IDEA 2023.1\plugins\gradle\lib</code>记录着与当前IDEA版本匹配的Gradle版本。我这里用的是2023.1版本，对应Gradle版本是8.0</p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230729233630.png" alt=""></p>
+<h3 id="下载安装">下载安装</h3>
+<p>官网下载gradle安装包太慢，可以选择国内镜像下载，这里我用的是腾讯镜像下载的</p>
+<p><a href="http://mirrors.cloud.tencent.com/gradle/">http://mirrors.cloud.tencent.com/gradle/</a></p>
+<h3 id="配置环境变量">配置环境变量</h3>
+<p><code>GRADLE_HOME</code>  <code>E:\soft\gradle\gradle-8.0</code>（对应的gradle安装目录）</p>
+<p><code>GRADLE_USER_HOME</code>  <code>E:\.m2\maven-repository</code>（对应的maven仓库目录）</p>
+<p>cmd 命令输入 <code>gradle -v</code> 能显示版本即安装成功</p>
+<h2 id="gradle项目">Gradle项目</h2>
+<h3 id="gradle项目结构">Gradle项目结构</h3>
+<p>Gradle项目默认目录结构和Maven项目的目录结构一致都是基于约定大于配置【Convention Over Configuration】。
+其完整项目目录结构如下所示：</p>
+<p><img src="https://raw.githubusercontent.com/chengtry/my-picture/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230729235003.png" alt=""></p>
+<h3 id="修改maven下载源">修改maven下载源</h3>
+<p>Gradle自带的Maven源地址是国外的，该Maven源在国内的访问速度是很慢的，除非使用了特别的手段。一般情况下，
+我们建议使用国内的第三方开放的Maven源或企业内部自建Maven源。</p>
+<p>我们可以在gradle的init.d目录下创建以gradle结尾的文件，gradle文件可以实现在build开始之前执行，所以你可以在
+这个文件配置一些你想预先加载的操作。</p>
+<p><code>gradle-8.0\init.d\init.gradle</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gradle" data-lang="gradle"><span class="line"><span class="cl"><span class="n">allprojects</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">repositories</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mavenLocal</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="o">{</span> <span class="n">name</span> <span class="s2">&#34;Alibaba&#34;</span> <span class="o">;</span> <span class="n">url</span> <span class="s2">&#34;https://maven.aliyun.com/repository/public&#34;</span> <span class="o">}</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="o">{</span> <span class="n">name</span> <span class="s2">&#34;Bstek&#34;</span> <span class="o">;</span> <span class="n">url</span> <span class="s2">&#34;https://nexus.bsdn.org/content/groups/public/&#34;</span> <span class="o">}</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">mavenCentral</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">buildscript</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">repositories</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">maven</span> <span class="o">{</span> <span class="n">name</span> <span class="s2">&#34;Alibaba&#34;</span> <span class="o">;</span> <span class="n">url</span> <span class="s1">&#39;https://maven.aliyun.com/repository/public&#39;</span> <span class="o">}</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">maven</span> <span class="o">{</span> <span class="n">name</span> <span class="s2">&#34;Bstek&#34;</span> <span class="o">;</span> <span class="n">url</span> <span class="s1">&#39;https://nexus.bsdn.org/content/groups/public/&#39;</span> <span class="o">}</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">maven</span> <span class="o">{</span> <span class="n">name</span> <span class="s2">&#34;M2&#34;</span> <span class="o">;</span> <span class="n">url</span> <span class="s1">&#39;https://plugins.gradle.org/m2/&#39;</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="initgradle文件说明">init.gradle文件说明</h3>
+<p>启用init.gradle文件的方法有：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">1.在命令行指定文件,例如：gradle --init-script yourdir/init.gradle -q taskName。你可以多次输入此命令来指定多个init文件
+</span></span><span class="line"><span class="cl">2.把init.gradle文件放到 USER_HOME/.gradle/ 目录下
+</span></span><span class="line"><span class="cl">3. 把以.gradle结尾的文件放到 USER_HOME/.gradle/init.d/ 目录下
+</span></span><span class="line"><span class="cl">4. 把以.gradle结尾的文件放到 GRADLE_HOME/init.d/ 目录下
+</span></span><span class="line"><span class="cl">如果存在上面的4种方式的2种以上，gradle会按上面的1-4序号依次执行这些文件，如果给定目录下存在多个init脚本，会按拼音a-z顺序执行这些脚本，每个init脚本都存在一个对应的gradle实例,你在这个文件中调用的所有方法和属性，都会委托给这个gradle实例，每个init脚本都实现了Script接口。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="gradle常用的指令">Gradle常用的指令</h2>
+<p><strong>需要注意的是：gradle的指令要在含有build.gradle的目录执行。</strong></p>
+<p><code>gradle clean</code> 清空build目录</p>
+<p><code>gradle classes</code> 编译业务代码和配置文件</p>
+<p><code>gradle test</code> 编译测试代码，生成测试报告</p>
+<p><code>gradle build</code> 构建项目</p>
+<p><code>gradle build-x test</code>跳过测试构建构建</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-07-30 00:01:51
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/gradlez/">Gradlez</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/idea%E6%8E%A7%E5%88%B6%E5%8F%B0tomcat%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/">
+            <span class="next-text nav-default">IDEA控制台tomcat中文乱码的问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  function createCopyButton(highlightDiv) {
+    const div = document.createElement("div");
+    div.className = "copy-code";
+    div.innerText = "Copy";
+    div.addEventListener("click", () =>
+      copyCodeToClipboard(div, highlightDiv)
+    );
+    addCopyButtonToDom(div, highlightDiv);
+  }
+
+  async function copyCodeToClipboard(button, highlightDiv) {
+    const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code")
+      .innerText;
+    await navigator.clipboard.writeText(codeToCopy);
+    button.blur();
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 2000);
+  }
+
+  function addCopyButtonToDom(button, highlightDiv) {
+    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    const wrapper = document.createElement("div");
+    wrapper.className = "highlight-wrapper";
+    highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+    wrapper.appendChild(highlightDiv);
+  }
+
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile){
+     document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+  }
+</script>  
+
+
+</body>
+</html>

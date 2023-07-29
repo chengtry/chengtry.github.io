@@ -6,7 +6,16 @@
     <description>Recent content in Study on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 Apr 2023 16:21:38 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 23:22:52 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle</title>
+      <link>https://chengtry.github.io/post/gradle/</link>
+      <pubDate>Sat, 29 Jul 2023 23:22:52 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/gradle/</guid>
+      <description>最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major</description>
+    </item>
+    
     <item>
       <title>MinIo</title>
       <link>https://chengtry.github.io/post/minio/</link>

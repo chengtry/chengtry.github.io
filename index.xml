@@ -6,7 +6,16 @@
     <description>Recent content on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Jul 2023 23:48:00 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 23:22:52 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle</title>
+      <link>https://chengtry.github.io/post/gradle/</link>
+      <pubDate>Sat, 29 Jul 2023 23:22:52 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/gradle/</guid>
+      <description>最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major</description>
+    </item>
+    
     <item>
       <title>IDEA控制台tomcat中文乱码的问题</title>
       <link>https://chengtry.github.io/post/idea%E6%8E%A7%E5%88%B6%E5%8F%B0tomcat%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/</link>
