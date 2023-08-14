@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on chengtry</title>
+    <link>https://chengtry.github.io/tags/gradle/</link>
+    <description>Recent content in Gradle on chengtry</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 29 Jul 2023 23:22:52 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle</title>
+      <link>https://chengtry.github.io/post/gradle/</link>
+      <pubDate>Sat, 29 Jul 2023 23:22:52 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/gradle/</guid>
+      <description>最近项目用到了gradle来构建项目，因此正好学习记录下 Gradle安装 JDK版要求 gradle官方文档指明JDK版本要在8以上 https://gradle.org/install/ Gradle runs on all major</description>
+    </item>
+    
+  </channel>
+</rss>
