@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>chengtry</title>
+  <title>MyBatis - chengtry</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="chengtry" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="chengtry" /><meta name="description" content="记录下MyBatis入参的一个问题 最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQ" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.98.0 with theme even" />
 
 
-<link rel="canonical" href="https://chengtry.github.io/" />
-  <link href="https://chengtry.github.io/index.xml" rel="alternate" type="application/rss+xml" title="chengtry" />
-  <link href="https://chengtry.github.io/index.xml" rel="feed" type="application/rss+xml" title="chengtry" />
+<link rel="canonical" href="https://chengtry.github.io/post/mybatis/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="chengtry" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://chengtry.github.io/" />
+<meta property="og:title" content="MyBatis" />
+<meta property="og:description" content="记录下MyBatis入参的一个问题 最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/mybatis/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-22T22:53:50+08:00" />
+<meta property="article:modified_time" content="2023-08-22T23:03:24+08:00" />
 
-<meta itemprop="name" content="chengtry">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="chengtry"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="MyBatis">
+<meta itemprop="description" content="记录下MyBatis入参的一个问题 最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQ"><meta itemprop="datePublished" content="2023-08-22T22:53:50+08:00" />
+<meta itemprop="dateModified" content="2023-08-22T23:03:24+08:00" />
+<meta itemprop="wordCount" content="299">
+<meta itemprop="keywords" content="MyBatis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MyBatis"/>
+<meta name="twitter:description" content="记录下MyBatis入参的一个问题 最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQ"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,136 +130,93 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E6%82%B2%E4%BC%A4%E6%97%A5%E8%AE%B0-2023.06.18/">悲伤日记 2023.06.18</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-06-18 20:11:42 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
-          </div>
-        <span class="more-meta"> 约 266 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      起因 今天礼拜日，晚上出去买库迪咖啡（有优惠才去的哈哈） 经过 刚出去的时候，看下的雨不大（毛毛细雨），于是出去就没带伞。走到卖库迪咖啡的地方，大
-    </div>
-    <div class="read-more">
-      <a href="/post/%E6%82%B2%E4%BC%A4%E6%97%A5%E8%AE%B0-2023.06.18/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MyBatis</h1>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/shell/">Shell</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-06-10 20:14:32 </span>
-      <div class="post-category">
-          <a href="/categories/shell/"> shell </a>
-          </div>
-        <span class="more-meta"> 约 7239 字 </span>
-        <span class="more-meta"> 预计阅读 15 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      shell编程 什么是shell 1 2 3 4 5 6 7 我们想要获取计算机的数据，不可能每次都编写程序，编译后，再运行，再得到我们想要的，例如你想找到一
-    </div>
-    <div class="read-more">
-      <a href="/post/shell/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
+      <div class="post-meta">
+        <span class="post-time"> 2023-08-22 22:53:50 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            </div>
+          <span class="more-meta"> 约 299 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/">记录下电脑闪屏的问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-06-09 22:20:12 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
-          </div>
-        <span class="more-meta"> 约 419 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      起因 今天下班回家打开电脑，一开始一切正常，过了一会发现电源图标不见了，设置里也开启了电源图标展示，于是重启电脑，然后就一直闪屏。 经过 一开始闪
-    </div>
-    <div class="read-more">
-      <a href="/post/%E8%AE%B0%E5%BD%95%E4%B8%8B%E7%94%B5%E8%84%91%E9%97%AA%E5%B1%8F%E7%9A%84%E9%97%AE%E9%A2%98/" class="read-more-link">阅读更多</a>
-    </div>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#记录下mybatis入参的一个问题">记录下MyBatis入参的一个问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
-</article>
+</div>
+    <div class="post-content">
+      <h2 id="记录下mybatis入参的一个问题">记录下MyBatis入参的一个问题</h2>
+<p>最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQL中用${}去替换占位符，结果就是调用这个SQL报错：There is no getter for property &lsquo;COLUMN&rsquo; in &lsquo;class java.lang.String&rsquo;。如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="k">select</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s2">&#34;selectJobList&#34;</span><span class="w"> </span><span class="n">parameterType</span><span class="o">=</span><span class="s2">&#34;java.lang.String&#34;</span><span class="w"> </span><span class="n">resultMap</span><span class="o">=</span><span class="s2">&#34;java.util.Map&#34;</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">${</span><span class="k">COLUMN</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">&lt;/</span><span class="k">select</span><span class="o">&gt;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个问题就出现在用${}去替换占位符，搜索一番得出：和#{}不同的是，${}不会替换成对应的字段，需要我们手动去改成_parameter。</p>
+<p>解决办法：</p>
+<p>1、将${COLUMN}替换成${_parameter}</p>
+<p>2、将入参改为Map接收：parameterType=&ldquo;java.util.Map&rdquo;</p>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%B0%E5%BD%95%E4%B8%8Bidea%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">记录下IDEA启动项目报错的问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-06-07 23:36:34 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-08-22 23:03:24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mybatis/">MyBatis</a>
           </div>
-        <span class="more-meta"> 约 352 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      项目背景 IBMJDK1.6、Spring、MyBatis、Tomcat7(tomcat直接启动项目，不是maven项目) 启动报错 Error:java: Illegal character in scheme at
-    </div>
-    <div class="read-more">
-      <a href="/post/%E8%AE%B0%E5%BD%95%E4%B8%8Bidea%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">面试经验</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-06-01 22:41:53 </span>
-      <div class="post-category">
-          <a href="/categories/%E9%9D%A2%E7%BB%8F/"> 面经 </a>
-          </div>
-        <span class="more-meta"> 约 3598 字 </span>
-        <span class="more-meta"> 预计阅读 8 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      基本情况 从离职前一周到接受offer，一共花了不到3周时间，面了挺多的，大部分是外包，也拿到了几个offer，最后选择了一个上海的offer
-    </div>
-    <div class="read-more">
-      <a href="/post/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    <a class="prev" href="/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
-      </a>
-    <a class="next" href="/page/3/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E8%B6%81%E6%97%A9%E8%A7%84%E5%88%92/">
+            <span class="next-text nav-default">趁早规划</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>

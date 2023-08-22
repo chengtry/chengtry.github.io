@@ -6,7 +6,16 @@
     <description>Recent content in Posts on chengtry</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Aug 2023 23:33:51 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 22:53:50 +0800</lastBuildDate><atom:link href="https://chengtry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MyBatis</title>
+      <link>https://chengtry.github.io/post/mybatis/</link>
+      <pubDate>Tue, 22 Aug 2023 22:53:50 +0800</pubDate>
+      
+      <guid>https://chengtry.github.io/post/mybatis/</guid>
+      <description>记录下MyBatis入参的一个问题 最近项目中碰到这样一个场景：XML中的SQL语句parameterType入参是一个String类型，SQ</description>
+    </item>
+    
     <item>
       <title>趁早规划</title>
       <link>https://chengtry.github.io/post/%E8%B6%81%E6%97%A9%E8%A7%84%E5%88%92/</link>
