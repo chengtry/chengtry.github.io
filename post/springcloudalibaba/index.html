@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SpringCloudAlibaba - chengtry</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="chengtry" /><meta name="description" content="Spring Cloud Alibaba 开源组件 1 2 3 4 5 6 7 8 9 10 11 Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。 Sentinel：把流量作为" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
+
+
+<link rel="canonical" href="https://chengtry.github.io/post/springcloudalibaba/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f4f3850fc1de83dad6ea2e076bd92fabda928cb902ec9662f80aad35fb865d2d.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SpringCloudAlibaba" />
+<meta property="og:description" content="Spring Cloud Alibaba 开源组件 1 2 3 4 5 6 7 8 9 10 11 Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。 Sentinel：把流量作为" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chengtry.github.io/post/springcloudalibaba/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-20T19:46:43+08:00" />
+<meta property="article:modified_time" content="2023-09-18T23:03:39+08:00" />
+
+<meta itemprop="name" content="SpringCloudAlibaba">
+<meta itemprop="description" content="Spring Cloud Alibaba 开源组件 1 2 3 4 5 6 7 8 9 10 11 Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。 Sentinel：把流量作为"><meta itemprop="datePublished" content="2023-02-20T19:46:43+08:00" />
+<meta itemprop="dateModified" content="2023-09-18T23:03:39+08:00" />
+<meta itemprop="wordCount" content="3034">
+<meta itemprop="keywords" content="Spring Cloud Alibaba,Java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringCloudAlibaba"/>
+<meta name="twitter:description" content="Spring Cloud Alibaba 开源组件 1 2 3 4 5 6 7 8 9 10 11 Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。 Sentinel：把流量作为"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">chengtry</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">chengtry</a>
+  
+  <br>
+  <span id="jinrishici-sentence">正在加载今日诗词....</span>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SpringCloudAlibaba</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-20 19:46:43 </span>
+        <div class="post-category">
+            <a href="/categories/study/"> Study </a>
+            </div>
+          <span class="more-meta"> 约 3034 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spring-cloud-alibaba">Spring Cloud Alibaba</a>
+      <ul>
+        <li><a href="#开源组件">开源组件</a></li>
+        <li><a href="#创建父工程">创建父工程</a></li>
+        <li><a href="#nacos">Nacos</a>
+          <ul>
+            <li><a href="#windows下nacos启动报错">Windows下Nacos启动报错</a></li>
+            <li><a href="#服务提供者子工程">服务提供者（子工程）</a></li>
+            <li><a href="#运行多个程序">运行多个程序</a></li>
+            <li><a href="#服务注册-applicationyml配置">服务注册 application.yml配置</a></li>
+            <li><a href="#服务发现controller">服务发现Controller</a></li>
+            <li><a href="#nacos集群搭建">Nacos集群搭建</a></li>
+            <li><a href="#nacos-服务注册">Nacos 服务注册</a></li>
+            <li><a href="#nacos-配置中心">Nacos 配置中心</a></li>
+          </ul>
+        </li>
+        <li><a href="#ribbon负载均衡">Ribbon负载均衡</a></li>
+        <li><a href="#sentinel服务限流降级">Sentinel服务限流降级</a>
+          <ul>
+            <li><a href="#雪崩效应解决方案">雪崩效应解决方案</a></li>
+            <li><a href="#流控">流控</a></li>
+            <li><a href="#降级">降级</a></li>
+            <li><a href="#热点">热点</a></li>
+            <li><a href="#授权">授权</a></li>
+          </ul>
+        </li>
+        <li><a href="#rocketmq">RocketMQ</a>
+          <ul>
+            <li><a href="#安装启动rocketmq">安装启动RocketMQ</a></li>
+            <li><a href="#安装-rocketmq-控制台">安装 RocketMQ 控制台</a></li>
+            <li><a href="#rocketmq修改brokerip1修改不生效">RocketMQ修改brokerIP1修改不生效</a></li>
+          </ul>
+        </li>
+        <li><a href="#gateway">Gateway</a></li>
+        <li><a href="#seata">Seata</a></li>
+      </ul>
+    </li>
+    <li><a href="#cap原则">CAP原则</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="spring-cloud-alibaba">Spring Cloud Alibaba</h1>
+<h2 id="开源组件">开源组件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Nacos：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Sentinel：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">RocketMQ：开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dubbo：这个就不用多说了，在国内应用非常广泛的一款高性能 Java RPC 框架。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Arthas：开源的Java动态追踪工具，基于字节码增强技术，功能非常强大。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="创建父工程">创建父工程</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>2.3.0.RELEASE<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/parent&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.yc<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>springcloudalibaba<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;name&gt;</span>springcloudalibaba<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;java.version&gt;</span>1.8<span class="nt">&lt;/java.version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--spring cloud版本--&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>spring-cloud-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>Hoxton.SR3<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--spring cloud alibaba版本--&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>spring-cloud-alibaba-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>2.2.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;excludes&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;exclude&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;/exclude&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/excludes&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/build&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nacos">Nacos</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Nacos：Naming和Configuration前两个字母，最后的s为service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dynamic Naming and Configuration Service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">服务注册 + 服务发现   Nacos Discovery（Nacos = Eureka + Config + Bus）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Nacos支持CP和AP的切换（CAP原则）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="windows下nacos启动报错">Windows下Nacos启动报错</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">java.net.UnknownHostException: jmenv.tbsite.net
+</span></span><span class="line"><span class="cl"><span class="c1"># Nacos默认是集群（cluster）启动，将其设置为单机（standalone）启动则不会报这个错。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 若需要集群启动则需要进行相关的集群配置。</span>
+</span></span><span class="line"><span class="cl">解决办法：以单机方式启动
+</span></span><span class="line"><span class="cl">windows启动：startup.cmd -m standalone
+</span></span><span class="line"><span class="cl">linux启动：startup.sh -m standalone
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="服务提供者子工程">服务提供者（子工程）</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">将parent替换为复工程的名字即可    
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>com.yc<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>springcloudalibaba<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/parent&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="运行多个程序">运行多个程序</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Run</span><span class="o">/</span><span class="n">Debug</span> <span class="n">Configurations</span>  <span class="n">右上角中</span> <span class="n">Allow</span> <span class="n">parallel</span> <span class="n">run</span> <span class="n">勾选上</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="服务注册-applicationyml配置">服务注册 application.yml配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">discovery</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">yc-provider</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8081</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="服务发现controller">服务发现Controller</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//两个核心：DiscoveryClient 和 ServiceInstance
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.yc.controller</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.cloud.client.ServiceInstance</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.cloud.client.discovery.DiscoveryClient</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConsumerController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">DiscoveryClient</span> <span class="n">discoveryClient</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/instances&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ServiceInstance</span><span class="o">&gt;</span> <span class="nf">instances</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">ServiceInstance</span><span class="o">&gt;</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">discoveryClient</span><span class="o">.</span><span class="na">getInstances</span><span class="o">(</span><span class="s">&#34;yc-provider&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">provider</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>RestTemplate不自动装配解决办法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span><span class="c1">//RestTemplate不会自动装载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//@Configuration+@Bean将RestTemplate注入IOC容器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">package</span> <span class="nn">com.yc.configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.web.client.RestTemplate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConsumerConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">RestTemplate</span> <span class="nf">restTemplate</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">RestTemplate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nacos集群搭建">Nacos集群搭建</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 官网下载对应版本的nacos安装包，我这里用的1.4.2的版本</span>
+</span></span><span class="line"><span class="cl">https://github.com/alibaba/nacos/releases/download/1.4.2/nacos-server-1.4.2.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压安装包</span>
+</span></span><span class="line"><span class="cl">tar -zxvf nacos-server-1.4.2.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改配置（端口号，数据库连接，启动参数）</span>
+</span></span><span class="line"><span class="cl">配置文件位置: nacos/conf/application.properties
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 复制cluster.conf.example一份并修改为cluster.conf</span>
+</span></span><span class="line"><span class="cl">配置nacos集群的IP和端口
+</span></span><span class="line"><span class="cl">例如：
+</span></span><span class="line"><span class="cl">127.0.0.1:8849
+</span></span><span class="line"><span class="cl">127.0.0.1:8850
+</span></span><span class="line"><span class="cl">127.0.0.1:8851
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动nacos</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /nacos/bin
+</span></span><span class="line"><span class="cl">sh start.sh
+</span></span><span class="line"><span class="cl">tail -f ../logs/start.out
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nacos-服务注册">Nacos 服务注册</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># application.yml内容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8102</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">stock-nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">discovery</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">8.140.1.39</span><span class="p">:</span><span class="m">8888</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nacos-配置中心">Nacos 配置中心</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># bootstrap.yml内容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">com.chengtry.order</span><span class="w"> </span><span class="c">#对应Nacos配置中心的Data Id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">8.140.1.39</span><span class="p">:</span><span class="m">8888</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 如果发现读取配置中心内容未生效，加入如下依赖</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">&lt;!--引入bootstrap依赖--&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">&lt;dependency&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="l">&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="l">&lt;artifactId&gt;spring-cloud-starter-bootstrap&lt;/artifactId&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">&lt;/dependency&gt;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="ribbon负载均衡">Ribbon负载均衡</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Ribbon不是Spring</span> <span class="n">Cloud</span> <span class="n">的组件</span><span class="err">，</span><span class="n">而是NetFlix旗下的一个组件</span>
+</span></span><span class="line"><span class="cl"><span class="n">1</span><span class="o">.</span><span class="na">默认使用轮询算法</span><span class="err">（</span><span class="n">依次调用</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//@LoadBalanced注解
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">  <span class="nd">@LoadBalanced</span> <span class="c1">//加上这个注解，Ribbon就加载进来
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">public</span> <span class="n">RestTemplate</span> <span class="nf">restTemplate</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">new</span> <span class="n">RestTemplate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">2</span><span class="o">.</span><span class="na">随机的算法</span>
+</span></span><span class="line"><span class="cl"><span class="n">yml配置文件加上如下</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">  <span class="n">yc</span><span class="o">-</span><span class="n">provider</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ribbon</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">NFLoadBalancerRuleClassName</span><span class="o">:</span> <span class="n">com</span><span class="o">.</span><span class="na">netflix</span><span class="o">.</span><span class="na">loadbalancer</span><span class="o">.</span><span class="na">RandomRule</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">3</span><span class="o">.</span><span class="na">基于权重的算法</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NacosWeightedRule</span> <span class="kd">extends</span> <span class="n">AbstractLoadBalancerRule</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">NacosDiscoveryProperties</span> <span class="n">nacosDiscoveryProperties</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initWithNiwsConfig</span><span class="o">(</span><span class="n">IClientConfig</span> <span class="n">iClientConfig</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//读取配置文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Server</span> <span class="nf">choose</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ILoadBalancer</span> <span class="n">loadBalancer</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getLoadBalancer</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BaseLoadBalancer</span> <span class="n">baseLoadBalancer</span> <span class="o">=</span> <span class="o">(</span><span class="n">BaseLoadBalancer</span><span class="o">)</span> <span class="n">loadBalancer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取要请求的微服务名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">baseLoadBalancer</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取服务发现的相关API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">NamingService</span> <span class="n">namingService</span> <span class="o">=</span> <span class="n">nacosDiscoveryProperties</span><span class="o">.</span><span class="na">namingServiceInstance</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Instance</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">namingService</span><span class="o">.</span><span class="na">selectOneHealthyInstance</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;选择的实例是port={},instance={}&#34;</span><span class="o">,</span><span class="n">instance</span><span class="o">.</span><span class="na">getPort</span><span class="o">(),</span><span class="n">instance</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">new</span> <span class="n">NacosServer</span><span class="o">(</span><span class="n">instance</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NacosException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="nl">
+</span></span></span><span class="line"><span class="cl"><span class="nl">server:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">port</span><span class="o">:</span> <span class="n">8180</span>
+</span></span><span class="line"><span class="cl"><span class="n">yc</span><span class="o">-</span><span class="n">provider</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ribbon</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">NFLoadBalancerRuleClassName</span><span class="o">:</span> <span class="n">com</span><span class="o">.</span><span class="na">southwind</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">NacosWeightedRule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="sentinel服务限流降级">Sentinel服务限流降级</h2>
+<h3 id="雪崩效应解决方案">雪崩效应解决方案</h3>
+<p>1.设置线程超时</p>
+<p>2.设置限流</p>
+<p>3.熔断器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">alibaba</span><span class="o">.</span><span class="na">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">alibaba</span><span class="o">-</span><span class="n">sentinel</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">actuator</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>yml配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">discovery</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sentinel</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">transport</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dashboard</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">filter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">yc-provider</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">management</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">web</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">exposure</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="流控">流控</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">流控模式分为3种</span><span class="err">：</span><span class="n">直接</span><span class="err">、</span><span class="n">关联</span><span class="err">、</span><span class="n">链路</span>
+</span></span><span class="line"><span class="cl"><span class="n">一般限流的是QPS</span><span class="err">（</span><span class="n">每秒查询率</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">流控效果也分为3种</span><span class="err">：</span><span class="n">快速失败</span><span class="err">、</span><span class="n">Warm</span> <span class="n">Up</span><span class="err">、</span><span class="n">排队等待</span>
+</span></span><span class="line"><span class="cl"><span class="n">快速失败</span><span class="err">：</span><span class="n">QPS超过设定的数值立刻请求失败</span>
+</span></span><span class="line"><span class="cl"><span class="n">Warm</span> <span class="n">Up</span><span class="err">：</span><span class="n">实际QPS在设定的预热时间内是设置QPS的1</span><span class="o">/</span><span class="n">3</span><span class="err">，</span><span class="n">预热时间一过就恢复为设置的QPS</span>
+</span></span><span class="line"><span class="cl"><span class="n">排队等待</span><span class="err">：</span><span class="n">第一次调用服务失败不会立刻抛异常</span><span class="err">，</span><span class="n">而是在设定的超时时间后再次调用该服务</span><span class="err">，</span><span class="n">如果再次失败则抛出异常</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20210605141802745.png" alt="image-20210605141802745"></p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605141827627.png" alt="image-20210605141827627"></p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605141849083.png" alt="image-20210605141849083"></p>
+<h3 id="降级">降级</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">降级策略有3种</span><span class="err">：</span><span class="n">RT</span><span class="err">、</span><span class="n">异常比例</span><span class="err">、</span><span class="n">异常数</span>
+</span></span><span class="line"><span class="cl"><span class="n">RT</span><span class="err">：</span><span class="n">第一次请求成功但是相应时间超过设定的时间</span><span class="err">，</span><span class="n">进入准降级状态</span><span class="err">，</span><span class="n">接下来在设定时间连续请求5次服务</span><span class="err">，</span><span class="n">达到降级标准</span><span class="err">，</span><span class="n">这时候立刻降级</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="n">异常比例</span><span class="err">：</span><span class="n">每秒的异常数占用通过量的比值大于设定的数</span><span class="err">，</span><span class="n">进行降级</span>
+</span></span><span class="line"><span class="cl"><span class="n">异常数</span><span class="err">：</span><span class="n">一分钟的异常数超过设定的阈值</span><span class="err">，</span><span class="n">进行降级</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="F:%5Cimages%5CTypora%5Cimage-20210605145149559.png" alt="image-20210605145149559"></p>
+<h3 id="热点">热点</h3>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605150730329.png" alt="image-20210605150730329"></p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605150914387.png" alt="image-20210605150914387"></p>
+<h3 id="授权">授权</h3>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605151340331.png" alt="image-20210605151340331"></p>
+<h2 id="rocketmq">RocketMQ</h2>
+<h3 id="安装启动rocketmq">安装启动RocketMQ</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#解压缩</span>
+</span></span><span class="line"><span class="cl">unzip rocketmq-all-4.7.1-bin-release.zip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#启动 NameServer</span>
+</span></span><span class="line"><span class="cl">nohup ./bin/mqnamesrv <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#检查是否启动成功</span>
+</span></span><span class="line"><span class="cl">netstat -an <span class="p">|</span> grep <span class="m">9876</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#启动Broker之前需要编辑配置文件，修改 JVM 内存设置，默认给的内存 4 GB，超过我们的 JVM 了。</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bin
+</span></span><span class="line"><span class="cl">vim runserver.sh
+</span></span><span class="line"><span class="cl">修改为： -server -Xms256m -Xmx256m -Xmn128m
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vim runbroker.sh
+</span></span><span class="line"><span class="cl">修改为：JAVA_OPT<span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">JAVA_OPT</span><span class="si">}</span><span class="s2"> -server -Xms256m -Xmx256m -Xmn128m&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#启动 Broker</span>
+</span></span><span class="line"><span class="cl">nohup ./mqbroker -n localhost:9876 <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#查看日志</span>
+</span></span><span class="line"><span class="cl">tail -f ~/logs/rocketmqlogs/broker.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#测试 RocketMQ</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bin
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NAMESRV_ADDR</span><span class="o">=</span>localhost:9876  <span class="c1">#RocketMQ端口9876</span>
+</span></span><span class="line"><span class="cl">./tools.sh org.apache.rocketmq.example.quickstart.Producer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#消息接收</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bin
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NAMESRV_ADDR</span><span class="o">=</span>localhost:9876
+</span></span><span class="line"><span class="cl">./tools.sh org.apache.rocketmq.example.quickstart.Consumer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#关闭 RocketMQ</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bin
+</span></span><span class="line"><span class="cl">./mqshutdown broker
+</span></span><span class="line"><span class="cl">./mqshutdown namesrv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-rocketmq-控制台">安装 RocketMQ 控制台</h3>
+<p>修改application.properties的配置</p>
+<p><img src="F:%5Cimages%5CTypora%5Cimage-20210605175223763.png" alt="image-20210605175223763"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#打包 (windows环境下)</span>
+</span></span><span class="line"><span class="cl">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#进入 target 启动 jar</span>
+</span></span><span class="line"><span class="cl">java -jar rocketmq-console-ng-1.0.0.jar 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#开放端口</span>
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>10911/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>10909/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>9876/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="rocketmq修改brokerip1修改不生效">RocketMQ修改brokerIP1修改不生效</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">在broker.conf加上brokerIP1 <span class="o">=</span> 8.140.1.39 <span class="o">(</span>阿里云外网地址<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">启动时以-c方式加上配置文件启动
+</span></span><span class="line"><span class="cl">nohup bin/mqbroker -n localhost:9876 -c broker.conf <span class="p">&amp;</span> <span class="o">(</span>broker.conf在rocketmq目录下<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="gateway">Gateway</h2>
+<h2 id="seata">Seata</h2>
+<h1 id="cap原则">CAP原则</h1>
+<p>数据库的中的事务四大特性：ACID( 原子性 , 一致性,隔离性, 持久性  )</p>
+<p>分布式事务CAP原则：C： 一致性（Consistency） A：可用性（Availability） P： 分区容错性（Partition tolerance）</p>
+<p>它指出对于一个分布式计算系统来说，不可能同时满足CAP三点</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chengtry</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-09-18 23:03:39
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring-cloud-alibaba/">Spring Cloud Alibaba</a>
+          <a href="/tags/java/">Java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/nginx/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Nginx</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/linux/">
+            <span class="next-text nav-default">Linux</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:412307724@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/chengtry" class="iconfont icon-github" title="github"></a>
+  <a href="https://chengtry.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>chengtry</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  function createCopyButton(highlightDiv) {
+    const div = document.createElement("div");
+    div.className = "copy-code";
+    div.innerText = "Copy";
+    div.addEventListener("click", () =>
+      copyCodeToClipboard(div, highlightDiv)
+    );
+    addCopyButtonToDom(div, highlightDiv);
+  }
+
+  async function copyCodeToClipboard(button, highlightDiv) {
+    const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code")
+      .innerText;
+    await navigator.clipboard.writeText(codeToCopy);
+    button.blur();
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 2000);
+  }
+
+  function addCopyButtonToDom(button, highlightDiv) {
+    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    const wrapper = document.createElement("div");
+    wrapper.className = "highlight-wrapper";
+    highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+    wrapper.appendChild(highlightDiv);
+  }
+
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile){
+     document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+  }
+</script>  
+
+
+</body>
+</html>
