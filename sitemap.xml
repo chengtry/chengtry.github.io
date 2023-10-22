@@ -3,27 +3,55 @@
   
   <url>
     <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-09-18T23:06:30+08:00</lastmod>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-09-18T23:06:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/java/</loc>
-    <lastmod>2023-09-18T23:06:30+08:00</lastmod>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/study/</loc>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/</loc>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/%E4%B8%8D%E6%83%B3%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2023-10-22T22:21:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/tags/java/</loc>
     <lastmod>2023-09-18T23:06:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -38,20 +66,6 @@
   
   <url>
     <loc>https://chengtry.github.io/post/springcloud/</loc>
-    <lastmod>2023-09-18T23:06:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/categories/study/</loc>
-    <lastmod>2023-09-18T23:06:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/</loc>
     <lastmod>2023-09-18T23:06:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -122,13 +136,6 @@
   
   <url>
     <loc>https://chengtry.github.io/categories/%E7%94%B5%E5%8A%A8%E8%BD%A6/</loc>
-    <lastmod>2023-07-10T00:19:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengtry.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2023-07-10T00:19:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
