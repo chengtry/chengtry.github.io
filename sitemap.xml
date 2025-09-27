@@ -3,21 +3,35 @@
   
   <url>
     <loc>https://chengtry.github.io/categories/</loc>
-    <lastmod>2023-11-05T21:31:52+08:00</lastmod>
+    <lastmod>2025-09-27T23:21:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/</loc>
-    <lastmod>2023-11-05T21:31:52+08:00</lastmod>
+    <lastmod>2025-09-27T23:21:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chengtry.github.io/post/</loc>
-    <lastmod>2023-11-05T21:31:52+08:00</lastmod>
+    <lastmod>2025-09-27T23:21:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/categories/%E8%BF%91%E6%9D%A5%E7%8A%B6%E5%86%B5/</loc>
+    <lastmod>2025-09-27T23:21:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengtry.github.io/post/%E8%BF%91%E6%9D%A5%E7%8A%B6%E5%86%B5-20250927/</loc>
+    <lastmod>2025-09-27T23:21:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
